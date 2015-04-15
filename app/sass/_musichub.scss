@@ -34,7 +34,7 @@
 }
 .mh-sidebar-wrapper {
   top: $navbar-height;
-  background-image: url('../img/ah-sidemenu-pattern-bg.png');
+  background-image: url('../img/mh-sidemenu-pattern-bg.png');
   background-color: darken($violet-base,12%);
   height: 100%;
   padding-top: $navbar-margin-bottom;
@@ -57,7 +57,7 @@
   width: 100%;
 }
 .mh-sidebar-footer {
-  & .ah-sidebar-footer-social {
+  & .mh-sidebar-footer-social {
     margin: 0px 10px 0px 10px;
     font-size: 2em;
     & a i {
