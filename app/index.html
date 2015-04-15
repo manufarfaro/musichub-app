@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>MusicHUB</title>
+  <title>MusicHUB - Encontr&aacute; tu pr&oacute;xima banda...</title>
   <meta name="description" content="">
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,7 +28,7 @@
           <img src="img/mh-logo-header-invert.png" class="mh-header-brand-logo" />
         </a>
       </div>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right hidden-sm hidden-xs">
         <li>
           <a href="#">
             <i class="fa fa-key"></i>
@@ -40,7 +40,7 @@
     </div>
   </nav>
   <div class="row mh-body-wrapper">
-      <aside id="mh-body-menu" class="col-md-2 col-sm-3 col-xs-9 mh-sidebar-wrapper">
+      <aside id="mh-body-menu" class="col-md-3 col-lg-2 col-sm-3 col-xs-9 hidden-sm hidden-xs mh-sidebar-wrapper">
         <form class="mh-bands-search-form">
           <div class="form-group">
             <label for="band-search">
@@ -84,19 +84,18 @@
           </div>
           <div class="text-right mh-sidebar-footer-legend">
             <small>
-              UNLaM. 2015.
+              UNLaM. {{Date().getFullYear()}} 2015.
             </small>
           </div>
         </footer>
       </aside>
+      <section id="mh-body-wrapper" class="col-md-10 col-lg-10 col-sm-12 col-xs-12" ng-view></section>
   </div>
 
 
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
-
-  <div ng-view></div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>

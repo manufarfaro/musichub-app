@@ -16,7 +16,9 @@ module.exports = function(grunt) {
           'app/vendor/bootstrap-sass-official/assets/javascripts/bootstrap.min.js',
           'app/vendor/angular/angular.js',
           'app/vendor/angular-route/angular-route.js',
-          'app/js/app.js'
+          'app/js/app.js',
+          'app/js/routes.js',
+          'app/js/controllers/**/*.js',
         ],
         dest: 'app/js/app.min.js'
       }
