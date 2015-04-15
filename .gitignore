@@ -1,0 +1,14 @@
+logs/*
+!.gitkeep
+node_modules/
+.sass-cache/
+bower_components/
+app/vendor/
+app/fonts/font-awesome/
+app/fonts/glyphicons-halflings-regular*
+app/css/app.min.css
+app/js/app.min.js
+app/css/app.min.css.map
+tmp
+.DS_Store
+.idea

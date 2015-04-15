@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="es" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="es" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="es" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="es" ng-app="musicHub" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>MusicHUB</title>
+  <meta name="description" content="">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/app.min.css">
+  <script src="vendor/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle for mobile display -->
+      <div class="navbar-header">
+        <!-- Let angular do the collapse transition -->
+        <a class="navbar-brand btn toggle">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="fa fa-bars"></span>
+        </a>
+        <a class="navbar-brand" href="#">
+          <img src="img/mh-logo-header-invert.png" class="mh-header-brand-logo" />
+        </a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="#">
+            <i class="fa fa-key"></i>
+            Ingresar
+          </a>
+        </li>
+      </ul>
+
+    </div>
+  </nav>
+  <div class="row mh-body-wrapper">
+      <aside id="mh-body-menu" class="col-md-2 col-sm-3 col-xs-9 mh-sidebar-wrapper">
+        <form class="mh-bands-search-form">
+          <div class="form-group">
+            <label for="band-search">
+              <small>Busc&aacute; Artistas o Bandas:</small>
+            </label>
+            <div class="input-group">
+              <input type="text" class="form-control" id="band-search" placeholder="Artistas o Bandas" required>
+              <span class="input-group-btn">
+                <button type="submit" class="btn btn-warning">
+                  <i class="fa fa-search"></i>
+                </button>
+              </span>
+            </div>
+          </div>
+        </form>
+        <hr />
+        <ul class="nav nav-pills nav-stacked mh-sidebar-nav">
+          <li class="active"><a href="#/">Inicio</a></li>
+          <li><a href="#/me">Mi Perfil</a></li>
+          <li><a href="#/me/bands">Mis Bandas</a></li>
+          <li><a href="#/me/propousals">Mis Postulaciones</a></li>
+        </ul>
+        <footer class="text-center mh-sidebar-footer">
+          <hr />
+          <div class="mh-sidebar-footer-social row">
+            <div class="col-md-4">
+              <a href="#">
+                <i class="fa fa-facebook-square"></i>
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a href="#">
+                <i class="fa fa-twitter"></i>
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a href="#">
+                <i class="fa fa-google-plus-square"></i>
+              </a>
+            </div>
+          </div>
+          <div class="text-right mh-sidebar-footer-legend">
+            <small>
+              UNLaM. 2015.
+            </small>
+          </div>
+        </footer>
+      </aside>
+  </div>
+
+
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div ng-view></div>
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="js/app.min.js"></script>
+</body>
+</html>

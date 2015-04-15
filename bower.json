@@ -1,0 +1,18 @@
+{
+  "name": "musichub",
+  "description": "A site for musicians",
+  "version": "0.0.0",
+  "homepage": "https://artisthub.us",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "1.2.x",
+    "angular-route": "1.2.x",
+    "angular-loader": "1.2.x",
+    "angular-mocks": "~1.2.x",
+    "html5-boilerplate": "~4.3.0",
+    "bootstrap-sass-official": "~3.3.4",
+    "jquery": "~2.1.3",
+    "font-awesome-sass": "~4.3.1"
+  }
+}

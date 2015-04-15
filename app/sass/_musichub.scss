@@ -1,0 +1,83 @@
+// Custom Fonts - Open Sans
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/open-sans/OpenSans-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/open-sans/OpenSans-Italic.ttf');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/open-sans/OpenSans-Semibold.ttf');
+  font-weight: bolder;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/open-sans/OpenSans-Light.ttf');
+  font-weight: normal;
+  font-style: lighter;
+}
+
+// Custom Ids
+
+// Custom Classes
+.mh-body-wrapper {
+}
+.mh-header-brand-logo{
+  height: 100%;
+}
+.mh-sidebar-wrapper {
+  top: $navbar-height;
+  background-image: url('../img/ah-sidemenu-pattern-bg.png');
+  background-color: darken($violet-base,12%);
+  height: 100%;
+  padding-top: $navbar-margin-bottom;
+  overflow-y: auto;
+  position: fixed;
+  border-right: $gray-darker;
+  @include box-shadow(0 3px 9px rgba(0,0,0,.5));
+  transition: all 0.5s ease 0s;
+  padding-right: 0;
+  z-index: 1000;
+  & li {
+    border-radius: 0;
+  }
+}
+.mh-bands-search-form {
+  width: 80%;
+  margin: 0px auto 0px auto;
+}
+.mh-sidebar-nav {
+  width: 100%;
+}
+.mh-sidebar-footer {
+  & .ah-sidebar-footer-social {
+    margin: 0px 10px 0px 10px;
+    font-size: 2em;
+    & a i {
+        &.fa-twitter:hover {
+          color: $brand-info;
+        }
+        &.fa-facebook-square:hover {
+          color: $blue-facebook;
+        }
+        &.fa-google-plus-square:hover {
+          color: $brand-danger;
+        }
+    }
+  }
+  & .mh-sidebar-footer-legend {
+    margin-top: 10px;
+    padding-right: 10px;
+  }
+}
+// Form
+.mh-form-group-submit {
+  margin-top: -5px;
+}
