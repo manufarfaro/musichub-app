@@ -1,4 +1,6 @@
-'use strict';
+(function(){
+  'use strict';
 
-// Declare app level module which depends on views, and components
-angular.module('musicHub', ['ngRoute']);
+  // Declare app level module which depends on views, and components
+  angular.module('musicHub', ['ngRoute']);  
+})();

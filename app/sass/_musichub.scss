@@ -30,6 +30,10 @@
   font-style: lighter;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 // Custom Ids
 #mh-body-wrapper {
   top: $navbar-height;

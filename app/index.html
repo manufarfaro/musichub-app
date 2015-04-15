@@ -13,14 +13,14 @@
   <link rel="stylesheet" href="css/app.min.css">
   <script src="vendor/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
-<body>
+<body ng-controller="MainController as mainCtrl">
   <!-- Header -->
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
       <!-- Brand and toggle for mobile display -->
       <div class="navbar-header">
         <!-- Let angular do the collapse transition -->
-        <a class="navbar-brand btn toggle">
+        <a class="navbar-brand btn toggle" ng-click="mainCtrl.menu = !mainCtrl.menu">
           <span class="sr-only">Toggle navigation</span>
           <span class="fa fa-bars"></span>
         </a>
@@ -40,7 +40,7 @@
     </div>
   </nav>
   <div class="row mh-body-wrapper">
-      <aside id="mh-body-menu" class="col-md-3 col-lg-2 col-sm-3 col-xs-9 hidden-sm hidden-xs mh-sidebar-wrapper">
+      <aside id="mh-body-menu" class="col-md-3 col-lg-2 col-sm-3 col-xs-9 hidden-sm hidden-xs mh-sidebar-wrapper" ng-show="mainCtrl.menu">
         <form class="mh-bands-search-form">
           <div class="form-group">
             <label for="band-search">
@@ -58,10 +58,10 @@
         </form>
         <hr />
         <ul class="nav nav-pills nav-stacked mh-sidebar-nav">
-          <li class="active"><a href="#/">Inicio</a></li>
-          <li><a href="#/me">Mi Perfil</a></li>
-          <li><a href="#/me/bands">Mis Bandas</a></li>
-          <li><a href="#/me/propousals">Mis Postulaciones</a></li>
+          <li ng-class="{active: $route.current.name == 'home'}"><a href="#/">Inicio</a></li>
+          <li ng-class="{active: $route.current.name == 'profile'}"><a href="#/me">Mi Perfil</a></li>
+          <li ng-class="{active: $route.current.name == 'profile-bands'}"><a href="#/me/bands">Mis Bandas</a></li>
+          <li ng-class="{active: $route.current.name == 'profile-propousals'}"><a href="#/me/propousals">Mis Postulaciones</a></li>
         </ul>
         <footer class="text-center mh-sidebar-footer">
           <hr />
