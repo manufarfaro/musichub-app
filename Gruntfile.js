@@ -32,8 +32,20 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      files: ['<%= jshint.files %>', 'app/sass/*', 'app/js/**.js'],
-      tasks: ['jshint', 'concat', 'sass']
+      options: {
+        livereload: true
+      },
+      css: {
+        files: ['app/sass/*'],
+        tasks: ['jshint', 'concat', 'sass']
+      },
+      js: {
+        files: ['<%= jshint.files %>', 'app/js/**.js', '!app/js/app.min.js'],
+        tasks: ['jshint', 'concat']
+      },
+      html: {
+        files: ['app/index.html', 'app/templates/**']
+      }
     },
     sass: {
       dist: {

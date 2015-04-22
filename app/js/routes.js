@@ -6,6 +6,14 @@
         templateUrl: 'templates/pages/home/index.html',
         controller: 'HomeIndexController'
       })
+      .when('/login', {
+        templateUrl: 'templates/pages/login/index.html',
+        controller: 'LoginController'
+      })
+      .when('/register', {
+        templateUrl: 'templates/pages/register/index.html',
+        controller: 'RegisterController'
+      })
       .when('/me', {
         redirectTo: '/'
       })

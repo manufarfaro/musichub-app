@@ -30,32 +30,66 @@
   font-style: lighter;
 }
 
-body {
-  overflow-x: hidden;
+html {
+  height: 100%;
+  & body {
+    overflow-x: hidden;
+    height: 100%;
+  }
 }
 
 // Custom Ids
-#mh-body-wrapper {
-  top: $navbar-height;
-  padding-left: 0;
-  @media (max-width: $screen-sm-max) {
-    margin-left: 0;
-  }
-  @media (min-width: $screen-sm-max) {
-    margin-left: percentage((2 / 12));
-  }
-}
 
 // Custom Classes
 .mh-body-wrapper {
-}
-.mh-header-brand-logo{
+  //top: $navbar-height;
+  padding-left: 0;
+  margin-left: 0;
   height: 100%;
+  transition: all 0.5s ease 0s;
+  &.toggle {
+    & .mh-sidebar-wrapper {
+      width: 0px;
+    }
+    & .mh-content-body {
+      margin-left: 0;
+    }
+  }
 }
+
+.mh-container-wrapper {
+  position: relative;
+  margin-right: 0px;
+  height: 100%;
+  & .mh-show-container {
+    position: absolute;
+    z-index: 100;
+    background-color: rgba($gray-darker, 0.2);
+  }
+  & .mh-content-body {
+    transition: all 0.5s ease 0s;
+    padding-left: 0;
+    height: 100%;
+    @media (min-width: $screen-xs-min) and (max-width: $screen-xs-max) {
+      margin-left: percentage((9 / 12))
+    }
+    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+      margin-left: percentage((3 / 12))
+    }
+    @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+      margin-left: percentage((3 / 12))
+    }
+    @media (min-width: $screen-lg-min){
+      margin-left: percentage((2 / 12))
+    }
+  }
+}
+
+//col-md-3 col-lg-2 col-sm-3 col-xs-9
 .mh-sidebar-wrapper {
-  top: $navbar-height;
+  //top: $navbar-height;
   background-image: url('../img/mh-sidemenu-pattern-bg.png');
-  background-color: darken($violet-base,12%);
+  background-color: darken($gray,12%);
   height: 100%;
   padding-top: $navbar-margin-bottom;
   overflow-y: auto;
@@ -65,45 +99,67 @@ body {
   transition: all 0.5s ease 0s;
   padding-right: 0;
   z-index: 1000;
+  @media (min-width: $screen-xs-min) and (max-width: $screen-xs-max) {
+    width: percentage((9 / 12));
+  }
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    width: percentage((3 / 12));
+  }
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    width: percentage((3 / 12));
+  }
+  @media (min-width: $screen-lg-min){
+    width: percentage((2 / 12));
+  }
+
   & li {
     border-radius: 0;
   }
-}
-.mh-bands-search-form {
-  width: 80%;
-  margin: 0px auto 0px auto;
-}
-.mh-sidebar-nav {
-  width: 100%;
-}
-.mh-sidebar-footer {
-  & .mh-sidebar-footer-social {
-    margin: 0px 10px 0px 10px;
-    font-size: 2em;
-    & a i {
-        &.fa-twitter:hover {
-          color: $brand-info;
-        }
-        &.fa-facebook-square:hover {
-          color: $blue-facebook;
-        }
-        &.fa-google-plus-square:hover {
-          color: $brand-danger;
-        }
+  & .mh-sidebar-brand-logo{
+    height: 100%;
+  }
+  & .mh-bands-search-form {
+    width: 80%;
+    margin: 0px auto 0px auto;
+  }
+  & .mh-sidebar-nav {
+    width: 100%;
+  }
+  & .mh-auth-wrapper {
+    margin: auto 10px auto 10px;
+    & .mh-auth-haveaccount {
+      margin-top: 10px;
     }
   }
-  & .mh-sidebar-footer-legend {
-    margin-top: 10px;
-    padding-right: 10px;
+  & .mh-sidebar-footer {
+    & .mh-sidebar-footer-social {
+      margin: 0px 20px 0px 20px;
+      font-size: 2em;
+      & a i {
+          &.fa-twitter:hover {
+            color: $brand-info;
+          }
+          &.fa-facebook-square:hover {
+            color: $blue-facebook;
+          }
+          &.fa-google-plus-square:hover {
+            color: $brand-danger;
+          }
+      }
+    }
+    & .mh-sidebar-footer-legend {
+      margin-top: 10px;
+      padding-right: 10px;
+    }
   }
 }
 // Form
 .mh-form-group-submit {
   margin-top: -5px;
 }
-
 // Home - Index
 .mh-home-landing {
+  position: relative;
   min-height: 280px;
   max-height: 100%;
   background-color: #ffffff;
@@ -111,35 +167,65 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  & .mh-landing-legend {
+    text-transform: uppercase;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    p {
+      color: $violet-base;
+      font-size: 1.3em;
+      padding-left: 10px;
+      font-weight: bolder;
+      margin-bottom: 0;
+      @include text-shadow();
+      @media (max-width: $screen-sm-max) and (min-width: $screen-xs-max) {
+        text-align: center;
+      }
+    }
+    h1 {
+      margin-top: 0;
+      font-weight: bolder;
+      font-size: 4em;
+      color: $brand-warning;
+      @include text-shadow();
+      @media (max-width: $screen-lg-min) {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 3em;
+      }
+    }
+  }
 }
 
-.mh-landing-legend {
-  margin-top: 9%;
-  text-transform: uppercase;
+// Login -> To be refactorized
+
+.mh-auth-login-wrapper {
+  position: relative;
+  background-image: url('../img/mh-background-fabulososcadillacs.jpg');
+  background-size: cover;
+  background-position: center center;
+  height: 100%;
+}
+
+.mh-auth-bg {
+  padding: 20px;
   position: absolute;
   left: 0;
   right: 0;
-  p {
-    color: $violet-base;
-    font-size: 1.3em;
-    padding-left: 10px;
-    font-weight: bolder;
-    margin-bottom: 0;
-    @include text-shadow();
-    @media (max-width: $screen-sm-max) and (min-width: $screen-xs-max) {
-      text-align: center;
-    }
-  }
-  h1 {
-    margin-top: 0;
-    font-weight: bolder;
-    font-size: 4em;
-    color: $brand-warning;
-    @include text-shadow();
-    @media (max-width: $screen-lg-min) {
-      margin-top: 10px;
-      text-align: center;
-      font-size: 3em;
+  margin-top: 40px;
+  background-color: rgba($gray-darker,0.7);
+  @include box-shadow(0 3px 9px rgba(0,0,0,.5));
+  & .mh-auth-login {
+    & .mh-auth-quote {
+      background-color: darken(rgba(#ffffff, .5), 80%);
+      & blockquote {
+        margin-bottom: 0;
+        & small {
+          color: #ffffff;
+        }
+      }
     }
   }
 }
