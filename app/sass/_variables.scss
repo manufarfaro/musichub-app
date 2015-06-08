@@ -10,7 +10,8 @@
 $gray-base:              #000;
 $gray-darker:            #272B30; // #222
 $gray-dark:              #3A3F44;   // #333
-$gray:                   #52575C; // #555
+//$gray:                   #52575C; // #555
+$gray:                   #253330;
 $gray-light:             #7A8288;   // #999
 $gray-lighter:           #dddfe4; //#999; // #eee
 
@@ -30,6 +31,7 @@ $brand-danger:          #ee5f5b;
 
 //** Background color for `<body>`.
 $body-bg:               $gray-light;
+
 //** Global text color on `<body>`.
 $text-color:            #C8C8C8;
 

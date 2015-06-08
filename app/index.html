@@ -13,88 +13,22 @@
   <link rel="stylesheet" href="css/app.min.css">
   <script src="vendor/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
-<body ng-controller="MainController as mainCtrl" ng-init="mainCtrl.menu = true">
-  <div class="row mh-body-wrapper" ng-class="{ toggle: !mainCtrl.menu }">
-    <!-- col-md-3 col-lg-2 col-sm-3 col-xs-9 -->
-      <aside class="mh-sidebar-wrapper">
-        <header>
-          <a class="btn pull-right" ng-click="mainCtrl.menu = !mainCtrl.menu">
-            <i class="fa fa-close"></i>
-          </a>
-          <img src="img/mh-logo-header-inverted.png" class="mh-sidebar-brand-logo" />
-        </header>
-        <hr />
-        <form class="mh-bands-search-form">
-          <div class="form-group">
-            <label for="band-search">
-              <small>Busc&aacute; Artistas o Bandas:</small>
-            </label>
-            <div class="input-group">
-              <input type="text" class="form-control" id="band-search" placeholder="Artistas o Bandas" required>
-              <span class="input-group-btn">
-                <button type="submit" class="btn btn-warning">
-                  <i class="fa fa-search"></i>
-                </button>
-              </span>
-            </div>
-          </div>
-        </form>
-        <hr />
-        <ul class="nav nav-pills nav-stacked mh-sidebar-nav">
-          <li ng-class="{active: $route.current.scope.name == 'home'}"><a href="#/">Inicio</a></li>
-          <li ng-class="{active: $route.current.name == 'profile'}"><a href="#/me">Mi Perfil</a></li>
-          <li ng-class="{active: $route.current.name == 'profile-bands'}"><a href="#/me/bands">Mis Bandas</a></li>
-          <li ng-class="{active: $route.current.name == 'profile-propousals'}"><a href="#/me/propousals">Mis Postulaciones</a></li>
-        </ul>
-        <hr />
-        <section class="mh-auth-wrapper">
-          <a href="#/register" class="btn btn-success btn-block">
-            &iexcl;Registrate Gratis!
-          </a>
-          <p class="text-center mh-auth-haveaccount">
-            &iquest;Ya ten&eacute;s una cuenta? <a href="#/login">Ingres&aacute;</a>
-          </p>
-        </section>
-        <footer class="text-center mh-sidebar-footer">
-          <hr />
-          <div class="mh-sidebar-footer-social row">
-            <div class="col-md-4 col-sm-4 col-xs-4">
-              <a href="#">
-                <i class="fa fa-facebook-square"></i>
-              </a>
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-4">
-              <a href="#">
-                <i class="fa fa-twitter"></i>
-              </a>
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-4">
-              <a href="#">
-                <i class="fa fa-google-plus-square"></i>
-              </a>
-            </div>
-          </div>
-          <div class="text-right mh-sidebar-footer-legend">
-            <small>
-              UNLaM. 2015.
-            </small>
-          </div>
-        </footer>
-      </aside>
-      <div class="mh-container-wrapper">
-        <a class="btn mh-show-container" ng-show="!mainCtrl.menu" ng-click="mainCtrl.menu = !mainCtrl.menu">
-          <i class="fa fa-bars"></i>
-        </a>
-        <section class="container-fluid mh-content-body" ng-view></section>
-      </div>
+<body ng-controller="MainController">
+  <div class="row mh-body-wrapper" ng-class="{ toggle: !menuVisible }">
+    <sidebar-menu visible="menuVisible"></sidebar-menu>
+    <div class="mh-container-wrapper">
+      <a class="btn mh-show-container" ng-show="!menuVisible" ng-click="menuVisible = !menuVisible">
+        <i class="fa fa-bars"></i>
+      </a>
+      <section class="container-fluid mh-content-body" ng-view></section>
+    </div>
   </div>
-
 
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
   <!-- In Developmen use -->
-  <script src="//localhost:35729/livereload.js"></script>
+  <script src="//localhost:4000/livereload.js"></script>
   <!-- End -->
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>

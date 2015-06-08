@@ -16,6 +16,18 @@ MusicHUB es una red social para músicos que brinda oportunidades para encontrar
 ## Links
 * [Respositorio Aplicacion Api](https://github.com/manufarfaro/musichub-api)
 
+## Instalación / Inicializando la Aplicación
+
+Escribir en la consola el siguiente comando:
+
+> npm start
+
+Este comando baja las dependencias (la primera vez que se le invoca, luego este proceso ya es omitido) e inicia el servidor embebido sobre la dirección **localhost:8080** por favor asegúrese de tener desocupado el puerto antes de correr el comando.
+
+
+En el caso de solo querer instalar las dependencias sin correr el servidor embebido ni correr la aplicación, es necesario escribir el siguiente comando en la consola:
+
+> npm install
 
 ## Integración Continua
 

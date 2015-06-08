@@ -19,6 +19,9 @@ module.exports = function(grunt) {
           'app/js/app.js',
           'app/js/routes.js',
           'app/js/controllers/**/*.js',
+          'app/js/directives/*',
+          'app/js/services/*.js',
+          'app/js/filters/*.js'
         ],
         dest: 'app/js/app.min.js'
       }
@@ -33,7 +36,9 @@ module.exports = function(grunt) {
     },
     watch: {
       options: {
-        livereload: true
+        livereload: {
+          port: 4000
+        }
       },
       css: {
         files: ['app/sass/*'],

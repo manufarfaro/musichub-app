@@ -35,6 +35,7 @@ html {
   & body {
     overflow-x: hidden;
     height: 100%;
+    background-image: url('../img/mh-background.jpg');
   }
 }
 
@@ -71,7 +72,7 @@ html {
     padding-left: 0;
     height: 100%;
     @media (min-width: $screen-xs-min) and (max-width: $screen-xs-max) {
-      margin-left: percentage((9 / 12))
+      margin-left: percentage((8.8 / 12))
     }
     @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
       margin-left: percentage((3 / 12))
@@ -88,8 +89,7 @@ html {
 //col-md-3 col-lg-2 col-sm-3 col-xs-9
 .mh-sidebar-wrapper {
   //top: $navbar-height;
-  background-image: url('../img/mh-sidemenu-pattern-bg.png');
-  background-color: darken($gray,12%);
+  background-color: darken(rgba($gray, 0.5),12%);
   height: 100%;
   padding-top: $navbar-margin-bottom;
   overflow-y: auto;
