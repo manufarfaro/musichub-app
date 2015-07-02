@@ -1,21 +1,93 @@
 <section class="row mh-home-landing">
   <div class="col-md-8 col-sm-12 center-block mh-landing-legend">
     <p class="text-left">con MUSICHUB<small><i class="fa fa-copyright"></i></small></p>
-    <h1>Encontrá tu próxima banda</h1>
   </div>
 </section>
-<section class="row">
-  <div class="col-md-8 col-sm-12">
-    <h1>Pr&oacute;ximos Eventos</h1>
+<section class="row mh-home-videos">
+  <div class="col-md-12 col-sm-12 center-block mh-videos-legend">
+    <h1>VIDEOS +</h1>
+    <div class="owl-carousel1">
+      <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=CJezAqoNxRQ"></a></div>
+      <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=CJezAqoNxRQ"></a></div>
+      <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=CJezAqoNxRQ"></a></div>
+      <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=CJezAqoNxRQ"></a></div>
+      <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=CJezAqoNxRQ"></a></div>
+      <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=CJezAqoNxRQ"></a></div>
+      <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=CJezAqoNxRQ"></a></div>
+      <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=CJezAqoNxRQ"></a></div>
+  	</div>
   </div>
 </section>
-<section class="row">
-  <div class="col-md-8 col-sm-12">
-    <h1>Artistas al Azar</h1>
+<section class="row mh-home-postulaciones">
+  <div class="col-md-12 col-sm-12 center-block mh-postulaciones-legend">
+    <h1>POSTULACIONES +</h1>
   </div>
 </section>
-<section class="row">
-  <div class="col-md-8 col-sm-12">
-    <h1>&Uacute;ltimas Busqueda</h1>
+<section class="row mh-home-fechas">
+  <div class="col-md-12 col-sm-12 center-block mh-fechas-legend">
+    <h1>FECHAS +</h1>
+      <ul class="mh-fecha-lista">
+        <li>Viejas Locas - Lujan - 14/01/2013 <a href="#" class="mh-fecha-info">+</a> </li>
+        <li>Viejas Locas - Moreno - 14/01/2015 <a href="#">+</a> </li>
+        <li>Viejas Locas - Lujan - 14/01/2012 <a href="#">+</a> </li>
+      </ul>
   </div>
 </section>
+<section class="row mh-home-imagenes">
+  <div class="col-md-12 col-sm-12 center-block mh-imagenes-legend">
+    <h1>IMAGENES +</h1>
+    <div class="owl-carousel">
+  			<div class="item"><h4>1</h4></div>
+  			<div class="item"><h4>2</h4></div>
+  			<div class="item"><h4>3</h4></div>
+  			<div class="item"><h4>4</h4></div>
+  			<div class="item"><h4>5</h4></div>
+  			<div class="item"><h4>6</h4></div>
+  			<div class="item"><h4>7</h4></div>
+  			<div class="item"><h4>8</h4></div>
+  			<div class="item"><h4>9</h4></div>
+  			<div class="item"><h4>10</h4></div>
+  			<div class="item"><h4>11</h4></div>
+  			<div class="item"><h4>12</h4></div>
+  		</div>
+  </div>
+</section>
+
+
+<script>
+ $('.owl-carousel1').owlCarousel({
+    items:1,
+    merge:true,
+    loop:true,
+    margin:10,
+    video:true,
+    lazyLoad:true,
+    center:true,
+    responsive:{
+        480:{
+            items:2
+        },
+        600:{
+            items:4
+        }
+    }
+})
+
+$('.owl-carousel').owlCarousel
+  ({
+    loop:true,
+    margin:10,
+    nav:false,
+    responsive:{
+      0:{
+        items:1
+      },
+      600:{
+        items:3
+      },
+      1000:{
+        items:5
+      }
+    }
+  })
+</script>

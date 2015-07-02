@@ -14,14 +14,29 @@
         templateUrl: 'templates/pages/register/index.html',
         controller: 'RegisterController'
       })
+      .when('/recoverpassword', {
+        templateUrl: 'templates/pages/recover/index.html',
+        controller: 'RecoverpasswordController'
+      })
       .when('/me', {
-        redirectTo: '/'
+        templateUrl: 'templates/pages/me/meform.html',
+        controller: 'me/ProfileController'
       })
       .when('/me/bands', {
-        redirectTo: '/'
+        templateUrl: 'templates/pages/me/bandsform.html',
+        controller: 'me/BandsController'
       })
       .when('/me/propousals', {
-        redirectTo: '/'
+        templateUrl: 'templates/pages/me/indexPropousals.html',
+        controller: 'me/PropousalsController'
+      })
+      .when('/a/artistsview', {
+        templateUrl: 'templates/pages/artists/index.html',
+        controller: 'artist/ArtistViewController'
+      })
+      .when('/b/bandsview', {
+        templateUrl: 'templates/pages/bands/index.html',
+        controller: 'artist/BandViewController'
       })
       .otherwise({
         redirectTo: '/'

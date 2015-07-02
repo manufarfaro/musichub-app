@@ -32,12 +32,13 @@
 
 html {
   height: 100%;
-  & body {
+}
+body {
     overflow-x: hidden;
     height: 100%;
-    background-image: url('../img/mh-background.jpg');
+    background-image: url('../img/mh-background-home.png');
+    background-color: darken($gray,12%);
   }
-}
 
 // Custom Ids
 
@@ -54,6 +55,7 @@ html {
     }
     & .mh-content-body {
       margin-left: 0;
+
     }
   }
 }
@@ -65,9 +67,10 @@ html {
   & .mh-show-container {
     position: absolute;
     z-index: 100;
-    background-color: rgba($gray-darker, 0.2);
+
   }
   & .mh-content-body {
+
     transition: all 0.5s ease 0s;
     padding-left: 0;
     height: 100%;
@@ -86,10 +89,12 @@ html {
   }
 }
 
+
 //col-md-3 col-lg-2 col-sm-3 col-xs-9
 .mh-sidebar-wrapper {
   //top: $navbar-height;
-  background-color: darken(rgba($gray, 0.5),12%);
+  background-image: url('../img/mh-sidemenu-pattern-bg.png');
+  background-color: darken(rgba($gray-light, 0.9),12%);
   height: 100%;
   padding-top: $navbar-margin-bottom;
   overflow-y: auto;
@@ -160,8 +165,10 @@ html {
 // Home - Index
 .mh-home-landing {
   position: relative;
-  min-height: 280px;
+  min-height: 180px;
   max-height: 100%;
+
+  margin-left: 0;
   background-color: #ffffff;
   background-image: url('../img/mh-home-index-bg.jpg');
   background-repeat: no-repeat;
@@ -199,11 +206,527 @@ html {
   }
 }
 
+.mh-home-videos {
+  position: relative;
+  min-height: 380px;
+  max-height: 100%;
+  & .mh-videos-legend {
+    text-transform: uppercase;
+    position: absolute;
+    left: 0;
+    right: 0;
+    p {
+      color: $violet-base;
+      font-size: 1.3em;
+      padding-left: 10px;
+      font-weight: bolder;
+      margin-bottom: 0;
+      @include text-shadow();
+      @media (max-width: $screen-sm-max) and (min-width: $screen-xs-max) {
+        text-align: center;
+      }
+    }
+    h1 {
+      margin-top: 0;
+      margin-left: 3%;
+      font-weight: bolder;
+      font-size: 2em;
+      color: #ffffff;
+      @include text-shadow();
+      @media (max-width: $screen-lg-min) {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 1em;
+      }
+    }
+  }
+}
+
+.mh-home-postulaciones {
+  position: relative;
+  min-height: 180px;
+  max-height: 100%;
+  width: 96%;
+  margin-left: 2%;
+  background-color: rgba($gray-darker,0.7);
+  @include box-shadow(0 3px 9px rgba(0,0,0,.5));
+  border-top-style: solid;
+  border-top-color: #62c462;
+  & .mh-postulaciones-legend {
+    text-transform: uppercase;
+    position: absolute;
+    left: 0;
+    right: 0;
+    p {
+      color: $violet-base;
+      font-size: 1.3em;
+      padding-left: 10px;
+      font-weight: bolder;
+      margin-bottom: 0;
+      @include text-shadow();
+      @media (max-width: $screen-sm-max) and (min-width: $screen-xs-max) {
+        text-align: center;
+      }
+    }
+    h1 {
+      margin-top: 0;
+      font-weight: bolder;
+      font-size: 2em;
+      color: #ffffff;
+      @include text-shadow();
+      @media (max-width: $screen-lg-min) {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 1em;
+      }
+    }
+  }
+}
+
+
+.mh-home-fechas {
+  margin-top: 1%;
+  position: relative;
+  min-height: 180px;
+  max-height: 100%;
+  width: 96%;
+  margin-left: 2%;
+  background-color: rgba($gray-darker,0.7);
+  @include box-shadow(0 3px 9px rgba(0,0,0,.5));
+  border-top-style: solid;
+  border-top-color: #f89406;
+  & .mh-fechas-legend {
+    text-transform: uppercase;
+    position: absolute;
+    left: 0;
+    right: 0;
+    p {
+      color: $violet-base;
+      font-size: 1.3em;
+      padding-left: 10px;
+      font-weight: bolder;
+      margin-bottom: 0;
+      @include text-shadow();
+      @media (max-width: $screen-sm-max) and (min-width: $screen-xs-max) {
+        text-align: center;
+      }
+    }
+    h1 {
+      margin-top: 0;
+      font-weight: bolder;
+      font-size: 2em;
+      color: #ffffff;
+      @include text-shadow();
+      @media (max-width: $screen-lg-min) {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 1em;
+      }
+    }
+    ul{
+      list-style: none;
+
+    }
+  }
+}
+
+.mh-home-imagenes {
+  position: relative;
+  min-height: 180px;
+  max-height: 100%;
+  & .mh-imagenes-legend {
+    text-transform: uppercase;
+    position: absolute;
+    left: 0;
+    right: 0;
+    h1 {
+      font-weight: bolder;
+      font-size: 2em;
+      margin-left: 3%;
+      color: #ffffff;
+      @include text-shadow();
+      @media (max-width: $screen-lg-min) {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 3em;
+      }
+    }
+  }
+}
+
+//band forms
+
+
+.mh-me-formband {
+  margin-top: 1%;
+  position: relative;
+  min-height: 150%;
+  max-height: 155%;
+  width: 70%;
+  margin-left: 15%;
+  background-color: rgba($gray-darker,0.7);
+  @include box-shadow(0 3px 9px rgba(0,0,0,.5));
+  border-top-style: solid;
+  border-top-color: #62c462;
+  & .mh-me-formband-legend {
+    text-transform: uppercase;
+    position: absolute;
+    left: 0;
+    right: 0;
+    p {
+      color: $violet-base;
+      font-size: 1.3em;
+      padding-left: 10px;
+      font-weight: bolder;
+      margin-bottom: 0;
+      @include text-shadow();
+      @media (max-width: $screen-sm-max) and (min-width: $screen-xs-max) {
+        text-align: center;
+      }
+    }
+    h1 {
+      margin-top: 0;
+      font-weight: bolder;
+      font-size: 2em;
+      color: #ffffff;
+      @include text-shadow();
+      @media (max-width: $screen-lg-min) {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 1em;
+      }
+    }
+  }
+}
+
+
+
+
+//me forms
+
+
+.mh-me-form {
+  margin-top: 1%;
+  position: relative;
+  min-height: 135%;
+  max-height: 140%;
+  width: 70%;
+  margin-left: 15%;
+  background-color: rgba($gray-darker,0.7);
+  @include box-shadow(0 3px 9px rgba(0,0,0,.5));
+  border-top-style: solid;
+  border-top-color: #62c462;
+  & .mh-me-form-legend {
+    text-transform: uppercase;
+    position: absolute;
+    left: 0;
+    right: 0;
+    p {
+      color: $violet-base;
+      font-size: 1.3em;
+      padding-left: 10px;
+      font-weight: bolder;
+      margin-bottom: 0;
+      @include text-shadow();
+      @media (max-width: $screen-sm-max) and (min-width: $screen-xs-max) {
+        text-align: center;
+      }
+    }
+    h1 {
+      margin-top: 0;
+      font-weight: bolder;
+      font-size: 2em;
+      color: #ffffff;
+      @include text-shadow();
+      @media (max-width: $screen-lg-min) {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 1em;
+      }
+    }
+  }
+}
+
+
+
+
+
+//me
+.mh-me-presentacion {
+  position: relative;
+  min-height: 180px;
+  max-height: 100%;
+  }
+
+.mh-me-imagen-artista{
+  margin-top:7%;
+  margin-left: 14%;
+  width: 150px;
+  height: 150px;
+}
+
+.mh-me-descripcion{
+  color: #ffffff;
+  font-size: 1em;
+  padding-left: 10px;
+  }
+
+
+.mh-me-lista-banda{color: #ffffff;
+font-size: 1em;
+padding-left: 10px;}
+.mh-me-lista-integrantes{color: #ffffff;
+font-size: 1em;
+list-style: none;
+}
+
+.mh-me-nombre{
+  font-weight: bolder;
+  font-size: 2em;
+color: #ffffff;
+@include text-shadow();
+@media (max-width: $screen-lg-min) {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 3em;}}
+
+.mh-me-home-reproductor {
+  margin-top: 1%;
+  position: relative;
+  min-height: 180px;
+  max-height: 100%;
+  width: 96%;
+  margin-left: 2%;
+  background-color: rgba($gray-darker,0.7);
+  @include box-shadow(0 3px 9px rgba(0,0,0,.5));
+  border-top-style: solid;
+  border-top-color: #f89406;
+  & .mh-me-reproductor-legend {
+    text-transform: uppercase;
+    position: absolute;
+    left: 0;
+    right: 0;
+    p {
+      color: $violet-base;
+      font-size: 1.3em;
+      padding-left: 10px;
+      font-weight: bolder;
+      margin-bottom: 0;
+      @include text-shadow();
+      @media (max-width: $screen-sm-max) and (min-width: $screen-xs-max) {
+        text-align: center;
+      }
+    }
+    h1 {
+      margin-top: 0;
+      font-weight: bolder;
+      font-size: 2em;
+      color: #ffffff;
+      @include text-shadow();
+      @media (max-width: $screen-lg-min) {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 1em;
+      }
+    }
+    ul{
+      list-style: none;
+
+    }
+  }
+}
+
+.mh-me-home-imagenes {
+  position: relative;
+  min-height: 180px;
+  max-height: 100%;
+  & .mh-me-imagenes-legend {
+    text-transform: uppercase;
+    position: absolute;
+    left: 0;
+    right: 0;
+    h1 {
+      font-weight: bolder;
+      font-size: 2em;
+      margin-left: 3%;
+      color: #ffffff;
+      @include text-shadow();
+      @media (max-width: $screen-lg-min) {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 3em;
+      }
+    }
+  }
+}
+
+
+
+.mh-me-home-videos {
+  position: relative;
+  min-height: 380px;
+  max-height: 100%;
+  & .mh-me-videos-legend {
+    text-transform: uppercase;
+    position: absolute;
+    left: 0;
+    right: 0;
+    p {
+      color: $violet-base;
+      font-size: 1.3em;
+      padding-left: 10px;
+      font-weight: bolder;
+      margin-bottom: 0;
+      @include text-shadow();
+      @media (max-width: $screen-sm-max) and (min-width: $screen-xs-max) {
+        text-align: center;
+      }
+    }
+    h1 {
+      margin-top: 0;
+      margin-left: 3%;
+      font-weight: bolder;
+      font-size: 2em;
+      color: #ffffff;
+      @include text-shadow();
+      @media (max-width: $screen-lg-min) {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 1em;
+      }
+    }
+  }
+}
+
+// me -> Postulaciones
+
+
+.mh-me-postulaciones-crear {
+  margin-top: 1%;
+  position: relative;
+  min-height: 360px;
+  max-height: 100%;
+  width: 96%;
+  margin-left: 2%;
+  background-color: rgba($gray-darker,0.7);
+  @include box-shadow(0 3px 9px rgba(0,0,0,.5));
+  border-top-style: solid;
+  border-top-color: #62c462;
+  & .mh-me-postulaciones-crear-legend {
+    text-transform: uppercase;
+    position: absolute;
+    left: 0;
+    right: 0;
+    p {
+      color: $violet-base;
+      font-size: 1.3em;
+      padding-left: 10px;
+      font-weight: bolder;
+      margin-bottom: 0;
+      @include text-shadow();
+      @media (max-width: $screen-sm-max) and (min-width: $screen-xs-max) {
+        text-align: center;
+      }
+    }
+    h1 {
+      margin-top: 0;
+      font-weight: bolder;
+      font-size: 2em;
+      color: #ffffff;
+      @include text-shadow();
+      @media (max-width: $screen-lg-min) {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 1em;
+      }
+    }
+  }
+}
+
+
+.mh-me-postulaciones-listarme {
+  margin-top: 1%;
+  position: relative;
+  min-height: 180px;
+  max-height: 100%;
+  width: 96%;
+  margin-left: 2%;
+  background-color: rgba($gray-darker,0.7);
+  @include box-shadow(0 3px 9px rgba(0,0,0,.5));
+  border-top-style: solid;
+  border-top-color: #62c462;
+  & .mh-me-postulaciones-listarme-legend {
+    text-transform: uppercase;
+    position: absolute;
+    left: 0;
+    right: 0;
+    p {
+      color: $violet-base;
+      font-size: 1.3em;
+      padding-left: 10px;
+      font-weight: bolder;
+      margin-bottom: 0;
+      @include text-shadow();
+      @media (max-width: $screen-sm-max) and (min-width: $screen-xs-max) {
+        text-align: center;
+      }
+    }
+    h1 {
+      margin-top: 0;
+      font-weight: bolder;
+      font-size: 2em;
+      color: #ffffff;
+      @include text-shadow();
+      @media (max-width: $screen-lg-min) {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 1em;
+      }
+    }
+  }
+}
+// Recuperar password
+
+
+
+.mh-recuperar-wrapper {
+  position: relative;
+  background-image: url('../img/../img/mh-background-luis.jpg');
+  background-size: cover;
+  background-position: center center;
+  height: 100%;
+}
+.mh-recuperar-textos{margin-top: 15px;}
+
+.mh-recuperar-bg {
+  padding: 20px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-top: 40px;
+  background-color: rgba($gray-darker,0.7);
+  @include box-shadow(0 3px 9px rgba(0,0,0,.5));
+  & .mh-recuperar-login {
+    & .mh-recuperar-quote {
+      background-color: darken(rgba(#ffffff, .5), 80%);
+      & blockquote {
+        margin-bottom: 0;
+        border-left: 5px solid $brand-warning;
+        & small {
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
+
+
+
 // Login -> To be refactorized
 
 .mh-auth-login-wrapper {
   position: relative;
-  background-image: url('../img/mh-background-fabulososcadillacs.jpg');
+  background-image: url('../img/mh-background-luis.jpg');
   background-size: cover;
   background-position: center center;
   height: 100%;
@@ -222,6 +745,7 @@ html {
       background-color: darken(rgba(#ffffff, .5), 80%);
       & blockquote {
         margin-bottom: 0;
+        border-left: 5px solid $brand-warning;
         & small {
           color: #ffffff;
         }
@@ -229,3 +753,26 @@ html {
     }
   }
 }
+
+// Carousel
+
+.item{
+  background: #3fbf79;
+  padding: 30px 0px;
+  margin: 10px;
+  color: #FFF;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.item-video {
+height: 300px;
+background: #000;
+}
+
+.owl-carousel1 .owl-video-wrapper {
+position: relative;
+height: 100%;}
+/* background: #000; */

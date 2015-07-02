@@ -1,0 +1,101 @@
+<section class="row mh-me-presentacion">
+  <div class="col-md-3 col-sm-3 center-block">
+    <img class="mh-me-imagen-artista" src="img/intoxicadosbanda.jpg"/>
+  </div>
+  <div class="col-md-9 col-sm-9 center-block ">
+      <h1 class="mh-me-nombre">Cristian "Pity" Alvarez</h1>
+    <p class="mh-me-descripcion">
+      Cantante - Guitarrista - Compositor.
+      Vivo en Chacarita. integrante de <a href="#">Viejas locas</a>, rock and roll.
+    </p>
+    <h4 class="mh-me-lista-banda">Integrantes</h4>
+    <ul class="mh-me-lista-integrantes">
+      <li>Cristian "pity" Alvarez</li>
+      <li>Jorge Rossi</li>
+      <li>Abel Meyer</li>
+      <li>Felipe Barrozo</li>
+    </ul>
+  </div>
+</section>
+
+<section class="row mh-me-home-reproductor">
+  <div class="col-md-12 col-sm-12 center-block mh-me-reproductor-legend">
+    <h1>REPRODUCTOR</h1>
+
+  </div>
+</section>
+
+<section class="row mh-me-home-imagenes">
+  <div class="col-md-12 col-sm-12 center-block mh-me-imagenes-legend">
+    <h1>IMAGENES +</h1>
+    <div class="owl-carousel">
+  			<div class="item"><h4>1</h4></div>
+  			<div class="item"><h4>2</h4></div>
+  			<div class="item"><h4>3</h4></div>
+  			<div class="item"><h4>4</h4></div>
+  			<div class="item"><h4>5</h4></div>
+  			<div class="item"><h4>6</h4></div>
+  			<div class="item"><h4>7</h4></div>
+  			<div class="item"><h4>8</h4></div>
+  			<div class="item"><h4>9</h4></div>
+  			<div class="item"><h4>10</h4></div>
+  			<div class="item"><h4>11</h4></div>
+  			<div class="item"><h4>12</h4></div>
+  		</div>
+  </div>
+</section>
+
+<section class="row mh-me-home-videos">
+  <div class="col-md-12 col-sm-12 center-block mh-me-videos-legend">
+    <h1>VIDEOS +</h1>
+    <div class="owl-carousel1">
+      <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=CJezAqoNxRQ"></a></div>
+      <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=CJezAqoNxRQ"></a></div>
+      <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=CJezAqoNxRQ"></a></div>
+      <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=CJezAqoNxRQ"></a></div>
+      <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=CJezAqoNxRQ"></a></div>
+      <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=CJezAqoNxRQ"></a></div>
+      <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=CJezAqoNxRQ"></a></div>
+      <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=CJezAqoNxRQ"></a></div>
+  	</div>
+  </div>
+</section>
+
+
+<script>
+ $('.owl-carousel1').owlCarousel({
+    items:1,
+    merge:true,
+    loop:true,
+    margin:10,
+    video:true,
+    lazyLoad:true,
+    center:true,
+    responsive:{
+        480:{
+            items:2
+        },
+        600:{
+            items:4
+        }
+    }
+})
+
+$('.owl-carousel').owlCarousel
+  ({
+    loop:true,
+    margin:10,
+    nav:false,
+    responsive:{
+      0:{
+        items:1
+      },
+      600:{
+        items:3
+      },
+      1000:{
+        items:5
+      }
+    }
+  })
+</script>
