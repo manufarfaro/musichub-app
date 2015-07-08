@@ -1,7 +1,10 @@
 (function(){
   'use strict';
 
-  angular.module('musicHub')
-  .controller('RegisterController', ['$scope', '$http', function($scope, $http) {
-  }]);
+  angular.module('musicHub.authentication')
+  .controller('RegisterController', registerController);
+
+  registerController.$inject = ['$scope', '$http'];
+
+  function registerController() {}
 })();

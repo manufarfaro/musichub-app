@@ -12,14 +12,26 @@ module.exports = function(grunt) {
     concat: {
       js: {
         src: [
+          'app/vendor/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js',
           'app/vendor/jquery/dist/jquery.js',
           'app/vendor/bootstrap-sass-official/assets/javascripts/bootstrap.min.js',
           'app/vendor/angular/angular.js',
+          'app/vendor/angular-cookies/angular-cookies.js',
           'app/vendor/angular-route/angular-route.js',
+          'app/vendor/angular-ui-router/release/angular-ui-router.js',
+          'app/vendor/angular-ui-router.stateHelper/statehelper.js',
+          'app/vendor/angular-sanitize/angular-sanitize.js',
+          'app/vendor/angular-resource/angular-resource.js',
+          'app/vendor/angular-media-player/dist/angular-media-player.js',
+          'app/vendor/owl.carousel/dist/owl.carousel.js',
+          'app/vendor/typeahead.js/dist/typeahead.bundle.js',
           'app/js/app.js',
-          'app/js/routes.js',
+          'app/js/constants.js',
+          'app/js/app.config.js',
+          'app/js/musichub.routes.js',
           'app/js/controllers/**/*.js',
           'app/js/directives/*',
+          'app/js/providers/*.js',
           'app/js/services/*.js',
           'app/js/filters/*.js'
         ],
@@ -45,7 +57,7 @@ module.exports = function(grunt) {
         tasks: ['jshint', 'concat', 'sass']
       },
       js: {
-        files: ['<%= jshint.files %>', 'app/js/**.js', '!app/js/app.min.js'],
+        files: ['<%= jshint.files %>', 'app/js/**', '!app/js/app.min.js'],
         tasks: ['jshint', 'concat']
       },
       html: {

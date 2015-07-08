@@ -2,7 +2,12 @@
   'use strict';
 
   angular.module('musicHub')
-  .controller('SidebarMenuController', ['$scope', '$http', function($scope, $http) {
-    $scope.time = Date.now();
-  }]);
+  .controller('SidebarMenuController', sidebarMenuController);
+
+  sidebarMenuController.$inject = [];
+
+  function sidebarMenuController() {
+    var vm = this;
+    vm.currentYear = Date.now();
+  }
 })();

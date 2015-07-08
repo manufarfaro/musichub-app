@@ -6,88 +6,119 @@
 <section class="row mh-home-videos">
   <div class="col-md-12 col-sm-12 center-block mh-videos-legend">
     <h1>VIDEOS +</h1>
-    <div class="owl-carousel1">
-      <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=CJezAqoNxRQ"></a></div>
-      <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=CJezAqoNxRQ"></a></div>
-      <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=CJezAqoNxRQ"></a></div>
-      <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=CJezAqoNxRQ"></a></div>
-      <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=CJezAqoNxRQ"></a></div>
-      <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=CJezAqoNxRQ"></a></div>
-      <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=CJezAqoNxRQ"></a></div>
-      <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=CJezAqoNxRQ"></a></div>
-  	</div>
+    <owl-carousel class="owl-carousel mh-owl-carousel" data-options="{ items:1, merge:true, loop:false, lazyLoad:true, nav:false, margin:10, video:false, responsive:{480:{items:2},600:{items:4}}}">
+      <div owl-carousel-item="" data-merge="" ng-repeat="video in vm.videos" class="item-custom-video">
+        <video class='videoPlayer' controls preload='metadata'>
+          <source src='{{video.url}}' type='video/mp4'>
+        </video>
+      </div>
+    </owl-carousel>
   </div>
 </section>
 <section class="row mh-home-postulaciones">
   <div class="col-md-12 col-sm-12 center-block mh-postulaciones-legend">
     <h1>POSTULACIONES +</h1>
+    <div class="media">
+      <div class="media-left">
+        <a href="#">
+          <img class="media-object" width="140" src="http://drive.google.com/uc?export=view&id=0B7q228Dq2WUuVUlUSUEtR0pkWEk" alt="...">
+        </a>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">Viejas Locas - Lujan - 14/01/2013 +</h4>
+        Texto - Texto - Texto - Texto - Texto - Texto - Texto - Texto - Texto - Texto
+      </div>
+    </div>
+    <div class="media">
+      <div class="media-left">
+        <a href="#">
+          <img class="media-object" width="140" src="http://drive.google.com/uc?export=view&id=0B7q228Dq2WUuVUlUSUEtR0pkWEk" alt="...">
+        </a>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">Viejas Locas - Lujan - 14/01/2013 +</h4>
+        Texto - Texto - Texto - Texto - Texto - Texto - Texto - Texto - Texto - Texto
+      </div>
+    </div>
+    <div class="media">
+      <div class="media-left">
+        <a href="#">
+          <img class="media-object" width="140" src="http://drive.google.com/uc?export=view&id=0B7q228Dq2WUuVUlUSUEtR0pkWEk" alt="...">
+        </a>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">Viejas Locas - Lujan - 14/01/2013 +</h4>
+        Texto - Texto - Texto - Texto - Texto - Texto - Texto - Texto - Texto - Texto
+      </div>
+    </div>
   </div>
 </section>
 <section class="row mh-home-fechas">
   <div class="col-md-12 col-sm-12 center-block mh-fechas-legend">
     <h1>FECHAS +</h1>
-      <ul class="mh-fecha-lista">
-        <li>Viejas Locas - Lujan - 14/01/2013 <a href="#" class="mh-fecha-info">+</a> </li>
-        <li>Viejas Locas - Moreno - 14/01/2015 <a href="#">+</a> </li>
-        <li>Viejas Locas - Lujan - 14/01/2012 <a href="#">+</a> </li>
-      </ul>
+    <div class="media">
+      <div class="media-left">
+        <a href="#">
+          <img class="media-object" width="140" src="http://drive.google.com/uc?export=view&id=0B7q228Dq2WUuVUlUSUEtR0pkWEk" alt="...">
+        </a>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">Viejas Locas - Lujan - 14/01/2013 +</h4>
+        Texto - Texto - Texto - Texto - Texto - Texto - Texto - Texto - Texto - Texto
+      </div>
+    </div>
+    <div class="media">
+      <div class="media-left">
+        <a href="#">
+          <img class="media-object" width="140" src="http://drive.google.com/uc?export=view&id=0B7q228Dq2WUuVUlUSUEtR0pkWEk" alt="...">
+        </a>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">Viejas Locas - Lujan - 14/01/2013 +</h4>
+        Texto - Texto - Texto - Texto - Texto - Texto - Texto - Texto - Texto - Texto
+      </div>
+    </div>
+    <div class="media">
+      <div class="media-left">
+        <a href="#">
+          <img class="media-object" width="140" src="http://drive.google.com/uc?export=view&id=0B7q228Dq2WUuVUlUSUEtR0pkWEk" alt="...">
+        </a>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">Viejas Locas - Lujan - 14/01/2013 +</h4>
+        Texto - Texto - Texto - Texto - Texto - Texto - Texto - Texto - Texto - Texto
+      </div>
+    </div>
   </div>
 </section>
 <section class="row mh-home-imagenes">
   <div class="col-md-12 col-sm-12 center-block mh-imagenes-legend">
     <h1>IMAGENES +</h1>
-    <div class="owl-carousel">
-  			<div class="item"><h4>1</h4></div>
-  			<div class="item"><h4>2</h4></div>
-  			<div class="item"><h4>3</h4></div>
-  			<div class="item"><h4>4</h4></div>
-  			<div class="item"><h4>5</h4></div>
-  			<div class="item"><h4>6</h4></div>
-  			<div class="item"><h4>7</h4></div>
-  			<div class="item"><h4>8</h4></div>
-  			<div class="item"><h4>9</h4></div>
-  			<div class="item"><h4>10</h4></div>
-  			<div class="item"><h4>11</h4></div>
-  			<div class="item"><h4>12</h4></div>
-  		</div>
+    <owl-carousel class="owl-carousel mh-owl-carousel" data-options="{loop:false, autoHeight : false, margin:10, lazyLoad:true, nav:false, responsive:{ 0:{ items:1 }, 600:{ items:3 }, 1000:{ items:5 } } }">
+      <div owl-carousel-item="" data-merge="" ng-repeat="photo in vm.photos" class="item">
+        <img class="lazyOwl" ng-src="http://drive.google.com/uc?export=view&id={{photo.fileId}}" alt="{{photo.title}}" width="100%" />
+      </div>
+    </owl-carousel>
   </div>
 </section>
 
 
 <script>
- $('.owl-carousel1').owlCarousel({
-    items:1,
-    merge:true,
-    loop:true,
-    margin:10,
-    video:true,
-    lazyLoad:true,
-    center:true,
-    responsive:{
-        480:{
-            items:2
-        },
-        600:{
-            items:4
-        }
-    }
-})
-
-$('.owl-carousel').owlCarousel
-  ({
-    loop:true,
-    margin:10,
-    nav:false,
-    responsive:{
-      0:{
-        items:1
-      },
-      600:{
-        items:3
-      },
-      1000:{
-        items:5
-      }
-    }
-  })
+/*
+$('.owl-carousel2').owlCarousel({
+   loop:true,
+   margin:10,
+   nav:false,
+   responsive:{
+     0:{
+       items:1
+     },
+     600:{
+       items:3
+     },
+     1000:{
+       items:5
+     }
+   }
+}*/
 </script>

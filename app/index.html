@@ -11,19 +11,17 @@
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/app.min.css">
-  <script src="vendor/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
   <!-- Carousel-->
-  <link rel="stylesheet" href="vendor/mh-owl2-video/css/owl.carouselorig.css">
 
 </head>
-<body ng-controller="MainController">
+<body ng-controller="MainController as mainCtrl">
   <div class="row mh-body-wrapper" ng-class="{ toggle: !menuVisible }">
     <sidebar-menu visible="menuVisible"></sidebar-menu>
     <div class="mh-container-wrapper">
       <a class="btn mh-show-container" ng-show="!menuVisible" ng-click="menuVisible = !menuVisible">
         <i class="fa fa-bars"></i>
       </a>
-      <section class="container-fluid mh-content-body" ng-view></section>
+      <section class="container-fluid mh-content-body" ui-view></section>
     </div>
   </div>
 
@@ -33,10 +31,6 @@
   <!-- In Developmen use -->
   <script src="//localhost:4000/livereload.js"></script>
   <!-- End -->
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
   <script src="js/app.min.js"></script>
-  <script src="vendor/mh-owl2-video/js/owl.carouselorig.js"></script>
 </body>
 </html>

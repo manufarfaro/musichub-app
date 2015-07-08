@@ -2,17 +2,25 @@
   "name": "musichub",
   "description": "A site for musicians",
   "version": "0.0.0",
-  "homepage": "https://artisthub.us",
+  "homepage": "http://musichub.com.ar",
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "angular": "1.2.x",
-    "angular-route": "1.2.x",
-    "angular-loader": "1.2.x",
-    "angular-mocks": "~1.2.x",
-    "html5-boilerplate": "~4.3.0",
-    "bootstrap-sass-official": "~3.3.4",
     "jquery": "~2.1.3",
-    "font-awesome-sass": "~4.3.1"
+    "angular": "~1.4.2",
+    "angular-route": "~1.4.2",
+    "angular-loader": "~1.4.2",
+    "angular-mocks": "~1.4.2",
+    "angular-resource": "~1.4.2",
+    "angular-sanitize": "~1.4.2",
+    "angular-cookies": "~1.4.2",
+    "angular-ui-router": "~0.2.15",
+    "angular-ui-router.stateHelper": "~1.3.0",
+    "html5-boilerplate": "~5.2.0",
+    "bootstrap-sass-official": "~3.3.5",
+    "font-awesome-sass": "~4.3.1",
+    "owl.carousel": "~2.0.0-beta.3",
+    "typeahead.js": "~0.11.1",
+    "angular-media-player": "~0.5.8"
   }
 }
