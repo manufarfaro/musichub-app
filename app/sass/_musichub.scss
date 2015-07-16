@@ -227,7 +227,6 @@ body {
       }
     }
     h1 {
-      margin-top: 0;
       margin-left: 3%;
       font-weight: bolder;
       font-size: 2em;
@@ -243,6 +242,7 @@ body {
 }
 
 .mh-home-postulaciones {
+  margin-top: 1%;
   position: relative;
   padding-bottom: 15px;
   min-height: 200px;
@@ -253,11 +253,20 @@ body {
   @include box-shadow(0 3px 9px rgba(0,0,0,.5));
   border-top-style: solid;
   border-top-color: #62c462;
-  & .mh-postulaciones-legend {
+  & .mh-legend {
     text-transform: uppercase;
     position: relative;
     left: 0;
     right: 0;
+    & .media {
+      width: 100%;
+      & .media-left {
+        width: 20%;
+        & img {
+          width: 100%;
+        }
+      }
+    }
     p {
       color: $violet-base;
       font-size: 1.3em;
@@ -297,10 +306,19 @@ body {
   @include box-shadow(0 3px 9px rgba(0,0,0,.5));
   border-top-style: solid;
   border-top-color: $brand-warning;
-  & .mh-fechas-legend {
+  & .mh-legend {
     text-transform: uppercase;
     left: 0;
     right: 0;
+    & .media {
+      width: 100%;
+      & .media-left {
+        width: 20%;
+        & img {
+          width: 100%;
+        }
+      }
+    }
     p {
       color: #ffffff;
       font-size: 1.3em;
@@ -462,22 +480,35 @@ body {
 //me
 .mh-me-presentacion {
   position: relative;
-  min-height: 180px;
   max-height: 100%;
+  margin-left: 0;
+  margin: 0px auto;
+  @media (min-width: $screen-md-min) {
+    width: 96%;
   }
+}
 
-.mh-me-imagen-artista{
+.mh-me-avatar{
   margin-top:7%;
-  margin-left: 14%;
-  width: 150px;
-  height: 150px;
+  margin-left: 0;
+  width: 100%;
+}
+
+.mh-gravatar-legend {
+  font-size: 0.8em;
+  margin-left: 0;
 }
 
 .mh-me-descripcion{
   color: #ffffff;
-  font-size: 1em;
-  padding-left: 10px;
+  text-align: center;
+  margin-left: 0;
+  margin-top: 20px;
+  width: 100%;
+  @media (max-width: $screen-sm-max) and (min-width: $screen-xs-max) {
+    font-size: 0.8em;
   }
+}
 
 
 .mh-me-lista-banda{color: #ffffff;
@@ -491,25 +522,37 @@ list-style: none;
 .mh-me-nombre{
   font-weight: bolder;
   font-size: 2em;
-color: #ffffff;
-@include text-shadow();
-@media (max-width: $screen-lg-min) {
-  margin-top: 10px;
-  text-align: center;
-  font-size: 3em;}}
+  color: #ffffff;
+  @include text-shadow();
+  @media (min-width: $screen-xs-min) and (max-width: $screen-sm-max) {
+    font-size: 1em;
+  }
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    font-size: 2em;
+    width: 96%;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: 96%;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 3em;
+  }
+}
 
-.mh-me-home-reproductor {
+.mh-me-description {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.mh-me-reproductor {
   margin-top: 1%;
   position: relative;
   min-height: 180px;
   max-height: 100%;
-  width: 96%;
-  margin-left: 2%;
-  background-color: rgba($gray-darker,0.7);
-  @include box-shadow(0 3px 9px rgba(0,0,0,.5));
   border-top-style: solid;
   border-top-color: $brand-warning;
-  & .mh-me-reproductor-legend {
+  & .mh-me-legend {
     text-transform: uppercase;
     position: absolute;
     left: 0;
@@ -526,14 +569,13 @@ color: #ffffff;
       }
     }
     h1 {
-      margin-top: 0;
+      margin-top: 20px;
       font-weight: bolder;
       font-size: 2em;
       color: #ffffff;
       @include text-shadow();
       @media (max-width: $screen-lg-min) {
         margin-top: 10px;
-        text-align: center;
         font-size: 1em;
       }
     }
@@ -544,11 +586,15 @@ color: #ffffff;
   }
 }
 
-.mh-me-home-imagenes {
+.mh-me-comments {
   position: relative;
-  min-height: 180px;
   max-height: 100%;
-  & .mh-me-imagenes-legend {
+  width: 96%;
+  margin-top: 1%;
+  margin-left: 2%;
+  border-top-style: solid;
+  border-top-color: $brand-info;
+  & .mh-me-legend {
     text-transform: uppercase;
     position: absolute;
     left: 0;
@@ -556,25 +602,64 @@ color: #ffffff;
     h1 {
       font-weight: bolder;
       font-size: 2em;
-      margin-left: 3%;
       color: #ffffff;
       @include text-shadow();
-      @media (max-width: $screen-lg-min) {
-        margin-top: 10px;
-        text-align: center;
-        font-size: 3em;
+    }
+  }
+}
+
+.mh-me-imagenes {
+  margin-top: 1%;
+  position: relative;
+  max-height: 100%;
+  width: 96%;
+  margin-left: 2%;
+  border-top-style: solid;
+  border-top-color: $brand-success;
+  min-height: 470px;
+  & .mh-me-legend {
+    text-transform: uppercase;
+    position: absolute;
+    left: 0;
+    right: 0;
+    & .owl-carousel {
+      height: 420px;
+      & .owl-stage-outer {
+        min-height: 100%;
       }
+      & .item {
+        min-height: 100%;
+        width: 100%;
+        & img {
+          max-height: 340px;
+        }
+      }
+    }
+    h1 {
+      font-weight: bolder;
+      font-size: 2em;
+      color: #ffffff;
+      @include text-shadow();
     }
   }
 }
 
 
 
-.mh-me-home-videos {
+.mh-me-videos {
+  margin-top: 1%;
   position: relative;
-  min-height: 380px;
+  min-height: 360px;
   max-height: 100%;
-  & .mh-me-videos-legend {
+  & .mh-separator {
+    margin: 0px auto 0px auto;
+    width: 96%;
+    height: 1px;
+    border-top-style: solid;
+    border-top-color: $brand-danger;
+
+  }
+  & .mh-me-legend {
     text-transform: uppercase;
     position: absolute;
     left: 0;
@@ -586,22 +671,17 @@ color: #ffffff;
       font-weight: bolder;
       margin-bottom: 0;
       @include text-shadow();
-      @media (max-width: $screen-sm-max) and (min-width: $screen-xs-max) {
+      @media (max-width: $screen-sm-max) and (min-width: $screen-xs-min) {
         text-align: center;
       }
     }
     h1 {
-      margin-top: 0;
+      margin-top: 20px;
       margin-left: 3%;
       font-weight: bolder;
       font-size: 2em;
       color: #ffffff;
       @include text-shadow();
-      @media (max-width: $screen-lg-min) {
-        margin-top: 10px;
-        text-align: center;
-        font-size: 1em;
-      }
     }
   }
 }
@@ -699,7 +779,6 @@ color: #ffffff;
 
 .mh-recuperar-wrapper {
   position: relative;
-  background-image: url('../img/../img/mh-background-luis.jpg');
   background-size: cover;
   background-position: center center;
   height: 100%;
@@ -734,7 +813,6 @@ color: #ffffff;
 
 .mh-auth-login-wrapper {
   position: relative;
-  background-image: url('../img/mh-background-luis.jpg');
   background-size: cover;
   background-position: center center;
   height: 100%;
@@ -800,6 +878,7 @@ color: #ffffff;
   & .owl-stage {
     height: 300px;
     & .owl-item {
+      width: 100%;
       & .item-custom-video {
       background-color: $gray-base;
         min-height: 100%;
@@ -807,7 +886,12 @@ color: #ffffff;
         height: 300px;
         text-align: center;
         & .videoPlayer {
-          height: 100%;
+          height: 300px;
+          width: 100%;
+          @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+
+            height: auto;
+          }
         }
       }
     }
@@ -860,4 +944,54 @@ color: #ffffff;
 		width: 728px;
 		height: 50px;
 	}
+}
+
+
+.mh-search-box {
+  width: 100%;
+  & .twitter-typeahead {
+    width: 100%;
+    & .tt-hint {
+      color: darken($brand-warning, 10%);
+    }
+    & .tt-dropdown-menu {
+      width: 100%;
+      background-color: $brand-warning;
+      & .mh-search-header {
+        color: #ffffff;
+        background-color: $brand-warning;
+        border-bottom: 1px solid darken($brand-warning, 30%);
+        padding-left: 5px;
+        margin-bottom: 0px;
+      }
+      & .tt-dataset-artists {
+        margin-top: -10px;
+        background-color: darken($brand-warning, 10%);
+        & .tt-suggestions {
+          color: #ffffff;
+          & :hover {
+            background-color: darken($brand-warning, 20%);
+            cursor: hand;
+            cursor: pointer;
+          }
+          & .tt-suggestion {
+            padding-left: 5px;
+          }
+        }
+      }
+    }
+  }
+  & input {
+    height: 37px;
+  }
+  & span {
+    color: $brand-warning;
+    line-height: 37px;
+  }
+}
+
+.mh-stripped-button-loading {
+  @include gradient-striped;
+  background-size: 40px 40px;
+  @include animation(progress-bar-stripes 2s linear infinite);
 }

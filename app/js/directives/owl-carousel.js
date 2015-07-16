@@ -10,7 +10,7 @@
     return {
       restrict: 'E',
       transclude: false,
-      link: function (scope) {
+      link: function (scope, element, attrs) {
         scope.initCarousel = function(element) {
           var defaultOptions = {};
           var customOptions = scope.$eval($(element).attr('data-options'));

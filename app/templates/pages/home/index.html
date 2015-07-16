@@ -6,7 +6,7 @@
 <section class="row mh-home-videos">
   <div class="col-md-12 col-sm-12 center-block mh-videos-legend">
     <h1>VIDEOS +</h1>
-    <owl-carousel class="owl-carousel mh-owl-carousel" data-options="{ items: 3, merge:true, loop:false, lazyLoad:true, nav:false, margin:10, video:false, responsive:{480:{items:2},600:{items:4}}}">
+    <owl-carousel class="owl-carousel mh-owl-carousel" data-options="{ items: 3, merge:true, loop:false, lazyLoad:true, nav:false, margin:10, video:false, responsive:{0:{items:1}, 480:{items:2},600:{items:4}}}">
       <div owl-carousel-item="" data-merge="1.54" ng-repeat="video in vm.videos" class="item-custom-video">
         <video class='videoPlayer' controls preload='metadata'>
           <source src='{{video.url}}' type='video/mp4'>
@@ -16,12 +16,12 @@
   </div>
 </section>
 <section class="row mh-home-postulaciones">
-  <div class="col-md-12 col-sm-12 center-block mh-postulaciones-legend">
+  <div class="col-md-12 col-sm-12 center-block mh-legend">
     <h1>POSTULACIONES +</h1>
     <div class="media">
       <div class="media-left">
         <a href="#">
-          <img class="media-object" width="140" src="http://drive.google.com/uc?export=view&id=0B7q228Dq2WUuVUlUSUEtR0pkWEk" alt="...">
+          <img class="media-object" src="http://drive.google.com/uc?export=view&id=0B7q228Dq2WUuVUlUSUEtR0pkWEk" alt="...">
         </a>
       </div>
       <div class="media-body">
@@ -54,7 +54,7 @@
   </div>
 </section>
 <section class="row mh-home-fechas">
-  <div class="col-md-12 col-sm-12 center-block mh-fechas-legend">
+  <div class="col-md-12 col-sm-12 center-block mh-legend">
     <h1>FECHAS +</h1>
     <div class="media">
       <div class="media-left">
@@ -101,24 +101,3 @@
     </owl-carousel>
   </div>
 </section>
-
-
-<script>
-/*
-$('.owl-carousel2').owlCarousel({
-   loop:true,
-   margin:10,
-   nav:false,
-   responsive:{
-     0:{
-       items:1
-     },
-     600:{
-       items:3
-     },
-     1000:{
-       items:5
-     }
-   }
-}*/
-</script>

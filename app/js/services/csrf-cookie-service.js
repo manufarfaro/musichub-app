@@ -5,7 +5,6 @@
     .provider("CsrfCookieService", csrfCookieService)
       .config(configBlock);
 
-  get.$inject = ['$cookies'];
   configBlock.$inject = ['$httpProvider'];
 
   function csrfCookieService() {
@@ -14,49 +13,54 @@
     var cookieName = 'XSRF-TOKEN';
     var allowedMethods = ['GET'];
 
-    this.setHeaderName = setHeaderName;
-    this.setCookieName = setCookieName;
-    this.setAllowedMethods = setAllowedMethods;
-    this.$get = get;
-  }
+    vm.getHeaderName = getHeaderName;
+    vm.getCookieName = getCookieName;
+    vm.getAllowedMethods = getAllowedMethods;
+    vm.setHeaderName = setHeaderName;
+    vm.setCookieName = setCookieName;
+    vm.setAllowedMethods = setAllowedMethods;
+    vm.$get = get;
 
-  function get($cookies) {
-    return {
-      request: function(config) {
-        if(config.method == 'GET') {
-          // do something on success
-          config.headers[csrfCookieService.getHeaderName] = $cookies[csrfCookieService.cookieName];
+    get.$inject = ['$cookies'];
+
+    function get($cookies) {
+      return {
+        request: function(config) {
+          if(vm.getAllowedMethods().indexOf(config.method) === -1) {
+            config.headers[vm.getHeaderName] = $cookies[vm.getCookieName];
+          }
+          return config;
         }
-        return config;
       }
     }
-  }
 
-  function getHeaderName() {
-    return headerName;
-  }
+    function getHeaderName() {
+      return headerName;
+    }
 
-  function getCookieName() {
-    return cookieName;
-  }
+    function getCookieName() {
+      return cookieName;
+    }
 
-  function getAllowedMethods() {
-    return allowedMethods;
-  }
+    function getAllowedMethods() {
+      return allowedMethods;
+    }
 
-  function setHeaderName(name) {
-    headerName = name;
-  }
+    function setHeaderName(name) {
+      headerName = name;
+    }
 
-  function setCookieName(name) {
-    cookieName = name;
-  }
+    function setCookieName(name) {
+      cookieName = name;
+    }
 
-  function setAllowedMethods(methods) {
-    allowedMethods = methods;
+    function setAllowedMethods(methods) {
+      allowedMethods = methods;
+    }
   }
 
   function configBlock($httpProvider) {
     $httpProvider.interceptors.push('CsrfCookieService');
   }
+
 })();

@@ -14,7 +14,11 @@
       'ngResource',
       'ngSanitize',
       'ngCookies',
-			'mediaPlayer'
+			'mediaPlayer',
+      'ui.bootstrap',
+      'flash',
+      'angularUtils.directives.dirDisqus',
+      'ui.gravatar'
     ])
     .run(run);
 

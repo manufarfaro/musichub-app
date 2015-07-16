@@ -4,6 +4,7 @@
 <!--[if IE 8]>         <html lang="es" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="es" ng-app="musicHub" class="no-js"> <!--<![endif]-->
 <head>
+  <base href="/#!/">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>MusicHUB - Encontr&aacute; tu pr&oacute;xima banda...</title>
@@ -11,14 +12,12 @@
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/app.min.css">
-  <!-- Carousel-->
-
 </head>
 <body ng-controller="MainController as mainCtrl">
-  <div class="row mh-body-wrapper" ng-class="{ toggle: !menuVisible }">
-    <sidebar-menu visible="menuVisible"></sidebar-menu>
+  <div class="row mh-body-wrapper" ng-class="{ toggle: !mainCtrl.menuVisible }">
+    <sidebar-menu visible="mainCtrl.menuVisible"></sidebar-menu>
     <div class="mh-container-wrapper">
-      <a class="btn mh-show-container" ng-show="!menuVisible" ng-click="menuVisible = !menuVisible">
+      <a class="btn mh-show-container" ng-show="!mainCtrl.menuVisible" ng-click="mainCtrl.menuVisible = !mainCtrl.menuVisible">
         <i class="fa fa-bars"></i>
       </a>
       <section class="container-fluid mh-content-body" ui-view></section>
@@ -28,7 +27,7 @@
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
-  <!-- In Developmen use -->
+  <!-- In Development use -->
   <script src="//localhost:4000/livereload.js"></script>
   <!-- End -->
   <script src="js/app.min.js"></script>

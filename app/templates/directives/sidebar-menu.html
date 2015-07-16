@@ -1,26 +1,12 @@
 <aside class="mh-sidebar-wrapper">
   <header>
-    <a class="btn pull-right" ng-click="visible = !visible">
+    <a class="btn pull-right" ng-click="vm.visible = !vm.visible">
       <i class="fa fa-close"></i>
     </a>
     <img src="img/mh-logo-header-inverted.png" class="mh-sidebar-brand-logo" />
   </header>
   <hr />
-  <form class="mh-bands-search-form">
-    <div class="form-group">
-      <label for="band-search">
-        <small>Busc&aacute; Artistas o Bandas:</small>
-      </label>
-      <div class="input-group">
-        <input type="text" class="form-control" id="band-search" placeholder="Artistas o Bandas" required>
-        <span class="input-group-btn">
-          <button type="submit" class="btn btn-warning">
-            <i class="fa fa-search"></i>
-          </button>
-        </span>
-      </div>
-    </div>
-  </form>
+  <home-search></home-search>
   <hr />
   <ul class="nav nav-pills nav-stacked mh-sidebar-nav">
     <li ui-sref-active-eq="active"><a ui-sref="home">Inicio</a></li>

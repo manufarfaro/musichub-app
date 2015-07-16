@@ -1,28 +1,29 @@
-<section class="mh-auth-login-wrapper">
+<section random-quotes quote="quoteText" class="mh-auth-login-wrapper">
   <div class="row">
     <div class="col-lg-4 col-md-5 col-sm-8 col-xs-12 center-block mh-auth-bg">
       <div class="mh-auth-login">
         <h2 class="text-center">Registrate en Musichub</h2>
         <br />
-        <form novalidate>
+        <alert-flash-messages></alert-flash-messages>
+        <form name="form" role="form" novalidate>
           <div class="form-group">
             <label for="mh-whois">&iquest;Qu&eacute; sos?</label>
-            <select id="mh-whois" class="form-control">
+            <select id="mh-whois" class="form-control input-lg">
               <option value="0">Artista</option>
               <option value="1">Lugar para Tocar</option>
             </select>
           </div>
           <div class="form-group">
             <label for="mh-email">Email</label>
-            <input type="email" class="form-control" id="mh-email" placeholder="Email">
+            <input type="email" class="form-control input-lg" id="mh-email" placeholder="Email">
           </div>
           <div class="form-group">
             <label for="mh-password">Password</label>
-            <input type="password" class="form-control" id="mh-password" placeholder="Password">
+            <input type="password" class="form-control input-lg" id="mh-password" placeholder="Password">
           </div>
           <div class="form-group">
             <label for="mh-password-confirm">Confirmar Password</label>
-            <input type="password" class="form-control" id="mh-password-confirm" placeholder="Password">
+            <input type="password" class="form-control input-lg" id="mh-password-confirm" placeholder="Password">
           </div>
           <button type="submit" class="btn btn-success btn-block">&iexcl;Registrate!</button>
         </form>
@@ -32,7 +33,7 @@
         </p>
         <div class="mh-auth-quote">
           <blockquote>
-            <small>Somos Actores de ese gran escenario que se llama vida, pasiones, amores, traiciones, sueños y mentiras...</small>
+            <small ng-bind="quoteText">Somos Actores de ese gran escenario que se llama vida, pasiones, amores, traiciones, sueños y mentiras...</small>
           </blockquote>
         </div>
       </div>

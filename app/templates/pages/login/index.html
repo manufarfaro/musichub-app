@@ -1,35 +1,31 @@
-<section class="mh-auth-login-wrapper">
+<section random-quotes quote="quoteText" class="mh-auth-login-wrapper">
   <div class="row">
     <div class="col-lg-4 col-md-5 col-sm-8 col-xs-12 center-block mh-auth-bg">
       <div class="mh-auth-login">
         <h2 class="text-center">Ingresá a Musichub</h2>
         <br />
-        <div ng-show="vm.error" class="alert alert-danger">
-          {{vm.error}}
-        </div>
-        <form name="form" ng-submit="vm.login()" role="form">
+        <alert-flash-messages></alert-flash-messages>
+        <form name="form" ng-submit="vm.login()" role="form" novalidate>
           <div class="form-group">
             <label for="username">Nombre de Usuario</label>
-            <input type="username" class="form-control" id="username" ng-model="vm.username" placeholder="Nombre de Usuario">
-            <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">El usuario no puede estar vacio.</span>
+            <input type="username" class="form-control input-lg" id="username" ng-model="vm.username" placeholder="Nombre de Usuario">
           </div>
           <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" ng-model="vm.password" placeholder="Password">
-            <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">La contrase&ntilde;a no puede estar vacia.</span>
+            <label for="password">Contrase&ntilde;a</label>
+            <input type="password" class="form-control input-lg" id="password" ng-model="vm.password" placeholder="Contrase&ntilde;a">
           </div>
-          <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-success btn-block">
+          <button type="submit" ng-class="{'mh-stripped-button-loading': vm.dataLoading}" ng-disabled="vm.dataLoading" class="btn btn-success btn-block">
             &iexcl;Ingres&aacute;!
-            <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
           </button>
         </form>
         <hr />
         <p class="text-right mh-auth-haveaccount">
-          &iquest;No estas Registrado? <a href="#/register">Create una Cuenta</a>
+          &iquest;No estas Registrado?
+          <a href="/register">Create una Cuenta</a>
         </p>
         <div class="mh-auth-quote">
           <blockquote>
-            <small>Somos Actores de ese gran escenario que se llama vida, pasiones, amores, traiciones, sueños y mentiras...</small>
+            <small ng-bind="quoteText"></small>
           </blockquote>
         </div>
       </div>

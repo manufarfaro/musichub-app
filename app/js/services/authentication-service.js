@@ -15,18 +15,23 @@
     service.clearCredentials = clearCredentials;
     return service;
 
-    function login(username, password, callback) {
+    function login(username, password, callbackSuccess, callbackError) {
       $http({
         method: 'GET',
-        url: 'http://api.musichub.com.ar/profile',
-        data: {
-          username: username,
-          password: password
-        }
+        url: 'http://api.musichub.com.ar/profile'
       })
-      .success(function (response) {
-        callback(response);
-      });
+      .success(loginSuccess)
+      .error(loginError);
+
+      function loginSuccess(response) {
+        console.log("Musichub | login success -> response: " + response == null ? response.message : 'Undefined');
+        callbackSuccess(response);
+      }
+
+      function loginError(response) {
+        console.log("Musichub | login error -> response: " + response == null ? response.message : 'Undefined');
+        callbackError(response);
+      }
     }
 
     function setCredentials(username, password) {
@@ -37,7 +42,7 @@
               authdata: authdata
           }
       };
-      $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata; // jshint ignore:line
+      $http.defaults.headers.common.Authorization = 'Basic ' + authdata; // jshint ignore:line
       $cookies.put('globals', $rootScope.globals);
     }
 
@@ -51,7 +56,7 @@
   function runBlock ($rootScope, $location, $cookies, $http) {
     $rootScope.globals = $cookies.get('globals') || {};
     if ($rootScope.globals.currentUser) {
-        $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
+        $http.defaults.headers.common.Authorization = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
     }
   }
 })();

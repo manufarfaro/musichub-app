@@ -6,5 +6,12 @@
 
   registerController.$inject = ['$scope', '$http'];
 
-  function registerController() {}
+  function registerController($scope, $http) {
+    var vm = this;
+    vm.register = register;
+
+    function register() {
+      vm.dataLoading = true;
+    }
+  }
 })();

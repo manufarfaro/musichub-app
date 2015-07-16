@@ -1,4 +1,4 @@
-<section class="mh-recuperar-wrapper">
+<section random-quotes quote="quoteText" class="mh-recuperar-wrapper">
   <div class="row">
     <div class="col-lg-4 col-md-5 col-sm-8 col-xs-12 center-block mh-recuperar-bg">
       <div class="mh-recuperar-login">
@@ -11,23 +11,24 @@
         <form novalidate>
           <div class="form-group">
             <label for="mh-email">Email</label>
-            <input type="email" class="form-control" id="mh-email" placeholder="Email">
+            <input type="email" class="form-control input-lg" id="mh-email" placeholder="Email">
           </div>
           <button type="submit" class="btn btn-success btn-block">&iexcl;Solicit&#225; el C&#243;digo!</button>
+          <br />
           <div class="form-group">
-            <label for="mh-codigo">Codigo</label>
-            <input type="codigo" class="form-control" id="mh-codigo" placeholder="Codigo">
+            <label for="mh-codigo">C&oacute;digo</label>
+            <input type="codigo" class="form-control input-lg" id="mh-codigo" placeholder="Codigo">
           </div>
           <button type="submit" class="btn btn-success btn-block">&iexcl;Ingres&aacute; el c&#243;digo!</button>
         </form>
         <p class="mh-recuperar-textos">
-      Si el mismo es correcto vas a poder recibir en tu mail una contraseña temporal la cual
-      deberas cambiar la proxima vez que ingreses.
+          Si el mismo es correcto vas a poder recibir en tu mail una contraseña temporal la cual
+          deberas cambiar la proxima vez que ingreses.
         </p>
         <hr />
         <div class="mh-recuperar-quote">
           <blockquote>
-            <small>Somos Actores de ese gran escenario que se llama vida, pasiones, amores, traiciones, sueños y mentiras...</small>
+            <small ng-bind="quoteText">Somos Actores de ese gran escenario que se llama vida, pasiones, amores, traiciones, sueños y mentiras...</small>
           </blockquote>
         </div>
       </div>

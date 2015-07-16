@@ -4,29 +4,31 @@
   angular.module('musicHub')
     .controller('LoginController', loginController);
 
-  loginController.$inject = ['$rootScope', '$cookies', '$http', '$location', 'AuthenticationService', 'FlashService'];
+  loginController.$inject = ['$rootScope', '$cookies', '$http', '$location', 'AuthenticationService', 'flash'];
 
-  function loginController($rootScope, $cookies, $http, $location, AuthenticationService, FlashService) {
+  function loginController($rootScope, $cookies, $http, $location, AuthenticationService, flash) {
     var vm = this;
     AuthenticationService.clearCredentials
     vm.login = login;
 
     function login() {
       vm.dataLoading = true;
-      AuthenticationService.login(vm.username, vm.password, loginCallback);
+      AuthenticationService.setCredentials(vm.username, vm.password);
+      AuthenticationService.login(vm.username, vm.password, loginSuccessCallback, loginErrorCallback);
     }
 
-    function loginCallback(response) {
-      var vm = this;
-      if(response.success) {
-          AuthenticationService.setCredentials(vm.username, vm.password);
-          $location.path('/');
+    function loginSuccessCallback(response) {
+      $location.path('/me');
+    }
+
+    function loginErrorCallback(response) {
+      if (response != null) {
+        flash('danger', response.message);
       } else {
-          FlashService.Error(response.message);
-          vm.dataLoading = false;
+        flash('danger', 'Usuario y/o Contraseña incorrectos.');
       }
+      vm.dataLoading = false;
     }
   }
-
 
 })();

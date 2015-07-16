@@ -7,9 +7,7 @@
   mainController.$inject = ['$scope', '$http'];
 
   function mainController($scope, $http) {
-    $scope.menuVisible = true;
-    $scope.config = {
-      theme: "../../vendor/videogular-themes-default/videogular.min.css"
-    };
+    var vm = this;
+    vm.menuVisible = true;
   }
 })();
