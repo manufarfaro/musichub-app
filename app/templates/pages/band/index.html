@@ -1,101 +1,106 @@
 <section class="row mh-me-presentacion">
-  <div class="col-md-3 col-sm-3 center-block">
-    <img class="mh-me-imagen-artista" src="img/intoxicadosbanda.jpg"/>
-  </div>
-  <div class="col-md-9 col-sm-9 center-block ">
-      <h1 class="mh-me-nombre">Cristian "Pity" Alvarez</h1>
-    <p class="mh-me-descripcion">
+  <div class="col-xs-5 col-sm-3 col-md-3 col-sm-3 center-block">
+    <img class="mh-me-avatar" gravatar-src="'none'" gravatar-size="300"/>
+    <small class="mh-gravatar-legend hidden-xs hidden-sm">
+      Podés cambiar tu avatar en <a href="https://es.gravatar.com" target="_blank">gravatar.com</a>
+    </small>
+    <p class="mh-me-descripcion hidden-xs hidden-sm">
       Cantante - Guitarrista - Compositor.
       Vivo en Chacarita. integrante de <a href="#">Viejas locas</a>, rock and roll.
     </p>
-    <h4 class="mh-me-lista-banda">Integrantes</h4>
-    <ul class="mh-me-lista-integrantes">
-      <li>Cristian "pity" Alvarez</li>
-      <li>Jorge Rossi</li>
-      <li>Abel Meyer</li>
-      <li>Felipe Barrozo</li>
-    </ul>
+  </div>
+  <div class="col-xs-7 col-sm-9 col-md-9 col-sm-9 center-block">
+      <h1 class="mh-me-nombre">Cristian "Pity" Alvarez</h1>
+      <section class="row mh-me-reproductor hidden-xs hidden-sm">
+        <div class="col-md-12 col-sm-12 center-block mh-me-legend">
+          <h1>REPRODUCTOR +</h1>
+        </div>
+      </section>
   </div>
 </section>
 
-<section class="row mh-me-home-reproductor">
-  <div class="col-md-12 col-sm-12 center-block mh-me-reproductor-legend">
-    <h1>REPRODUCTOR</h1>
-
+<section class="row mh-me-description hidden-md hidden-lg">
+  <div class="col-md-12 col-sm-12 center-block mh-me-legend">
+    Cantante - Guitarrista - Compositor.
+    Vivo en Chacarita. integrante de <a href="#">Viejas locas</a>, rock and roll.
   </div>
 </section>
 
-<section class="row mh-me-home-imagenes">
-  <div class="col-md-12 col-sm-12 center-block mh-me-imagenes-legend">
+<section class="row mh-me-reproductor hidden-md hidden-lg">
+  <div class="col-md-12 col-sm-12 center-block mh-me-legend">
+    <h1>REPRODUCTOR +</h1>
+  </div>
+</section>
+
+<section class="row mh-me-box">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 center-block mh-me-legend">
+    <h1>INTEGRANTES +</h1>
+    <div class="row">
+      <div class="col-xs-3 col-sm-3 col-md-1 col-lg-1">
+        <a href="#">
+          <img class="mh-me-avatar" gravatar-src="'none'" gravatar-size="300"/>
+        </a>
+      </div>
+      <div class="col-xs-9 col-sm-9 col-md-11 col-lg-11">
+        <h4 class="media-heading">Jack Sparrow +</h4>
+        <i class="fa fa-twitter"></i>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3 col-sm- col-md-1 col-lg-1">
+        <a href="#">
+          <img class="mh-me-avatar" gravatar-src="'none'" gravatar-size="300"/>
+        </a>
+      </div>
+      <div class="col-xs-9 col-sm-9 col-md-11 col-lg-11">
+        <h4 class="media-heading">Jack Sparrow +</h4>
+        <i class="fa fa-twitter"></i>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3 col-sm- col-md-1 col-lg-1">
+        <a href="#">
+          <img class="mh-me-avatar" gravatar-src="'none'" gravatar-size="300"/>
+        </a>
+      </div>
+      <div class="col-xs-9 col-sm-9 col-md-11 col-lg-11">
+        <h4 class="media-heading">Jack Sparrow +</h4>
+        <i class="fa fa-twitter"></i>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="row mh-me-imagenes">
+  <div class="col-md-12 col-sm-12 center-block mh-me-legend">
     <h1>IMAGENES +</h1>
-    <div class="owl-carousel">
-  			<div class="item"><h4>1</h4></div>
-  			<div class="item"><h4>2</h4></div>
-  			<div class="item"><h4>3</h4></div>
-  			<div class="item"><h4>4</h4></div>
-  			<div class="item"><h4>5</h4></div>
-  			<div class="item"><h4>6</h4></div>
-  			<div class="item"><h4>7</h4></div>
-  			<div class="item"><h4>8</h4></div>
-  			<div class="item"><h4>9</h4></div>
-  			<div class="item"><h4>10</h4></div>
-  			<div class="item"><h4>11</h4></div>
-  			<div class="item"><h4>12</h4></div>
-  		</div>
+    <owl-carousel class="owl-carousel mh-owl-carousel" data-options="{loop:false, autoHeight : true, margin:10, lazyLoad:true, nav:false, responsive:{ 0:{ items:1 }, 600:{ items:3 }, 1000:{ items:5 } } }">
+      <div owl-carousel-item="" ng-repeat="photo in vm.photos" class="item">
+        <img class="lazyOwl" ng-src="http://drive.google.com/uc?export=view&id={{photo.fileId}}" alt="{{photo.title}}" width="100%" />
+      </div>
+    </owl-carousel>
   </div>
 </section>
 
-<section class="row mh-me-home-videos">
-  <div class="col-md-12 col-sm-12 center-block mh-me-videos-legend">
+<section class="row mh-me-videos">
+  <div class="col-md-12 col-sm-12 center-block mh-me-legend">
+    <div class="mh-separator"></div>
     <h1>VIDEOS +</h1>
-    <div class="owl-carousel1">
-      <div class="item-video"><a class="owl-video" href="https://www.youtube.com/watch?v=CJezAqoNxRQ"></a></div>
-      <div class="item-video"><a class="owl-video" href="https://www.youtube.com/watch?v=CJezAqoNxRQ"></a></div>
-      <div class="item-video"><a class="owl-video" href="https://www.youtube.com/watch?v=CJezAqoNxRQ"></a></div>
-      <div class="item-video"><a class="owl-video" href="https://www.youtube.com/watch?v=CJezAqoNxRQ"></a></div>
-      <div class="item-video"><a class="owl-video" href="https://www.youtube.com/watch?v=CJezAqoNxRQ"></a></div>
-      <div class="item-video"><a class="owl-video" href="https://www.youtube.com/watch?v=CJezAqoNxRQ"></a></div>
-      <div class="item-video"><a class="owl-video" href="https://www.youtube.com/watch?v=CJezAqoNxRQ"></a></div>
-      <div class="item-video"><a class="owl-video" href="https://www.youtube.com/watch?v=CJezAqoNxRQ"></a></div>
-  	</div>
+    <owl-carousel class="owl-carousel mh-owl-carousel" data-options="{ items: 3, merge:true, loop:false, lazyLoad:true, nav:false, margin:10, video:false, responsive:{0:{ items:1 }, 480:{items:1},600:{items:4}}}">
+      <div owl-carousel-item="" data-merge="1.54" ng-repeat="video in vm.videos" class="item-custom-video">
+        <video class='videoPlayer' controls preload='metadata'>
+          <source src='{{video.url}}' type='{{video.format}}'>
+        </video>
+      </div>
+    </owl-carousel>
   </div>
 </section>
-
-
-<script>
- $('.owl-carousel1').owlCarousel({
-    items:1,
-    merge:true,
-    loop:true,
-    margin:10,
-    video:true,
-    lazyLoad:true,
-    center:true,
-    responsive:{
-        480:{
-            items:2
-        },
-        600:{
-            items:4
-        }
-    }
-})
-
-$('.owl-carousel').owlCarousel
-  ({
-    loop:true,
-    margin:10,
-    nav:false,
-    responsive:{
-      0:{
-        items:1
-      },
-      600:{
-        items:3
-      },
-      1000:{
-        items:5
-      }
-    }
-  })
-</script>
+<section class="row mh-me-comments">
+  <div class="col-md-12 col-sm-12 center-block mh-me-legend">
+    <h1>COMENTARIOS +</h1>
+    <dir-disqus disqus-shortname="musichub"
+             disqus-identifier="{{ identifier }}"
+             disqus-url="{{ url }}">
+    </dir-disqus>
+  </div>
+</section>

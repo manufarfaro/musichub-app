@@ -1,0 +1,194 @@
+<section class="row mh-me-presentacion">
+  <div class="col-xs-5 col-sm-3 col-md-3 col-sm-3 center-block">
+    <img class="mh-me-avatar" gravatar-src="'none'" gravatar-size="300"/>
+    <small class="mh-gravatar-legend hidden-xs hidden-sm">
+      Podés cambiar tu avatar en <a href="https://es.gravatar.com" target="_blank">gravatar.com</a>
+    </small>
+    <p class="mh-me-descripcion hidden-xs hidden-sm">
+      Cantante - Guitarrista - Compositor.
+      Vivo en Chacarita. integrante de <a href="#">Viejas locas</a>, rock and roll.
+    </p>
+    <dl>
+      <dt>Dirección</dt>
+      <dd>Idaho 326 - Lomas de zamora</dd>
+      <dt>Teléfono</dt>
+      <dd>+54 11 4901-1121</dd>
+      <dt>Links</dt>
+      <dd>
+        <a href="#">
+          <i class="fa fa-cloud"></i>
+        </a>
+        <a href="#">
+          <i class="fa fa-facebook-square"></i>
+        </a>
+        <a href="#">
+          <i class="fa fa-twitter-square"></i>
+        </a>
+        <a href="#">
+          <i class="fa fa-google-plus-square"></i>
+        </a>
+      </dd>
+    </dl>
+  </div>
+  <div class="col-xs-7 col-sm-9 col-md-9 col-sm-9 center-block">
+      <h1 class="mh-me-nombre">Groove St. Restó-Pub</h1>
+      <section class="row mh-me-box mh-ribbon-warning hidden-xs hidden-sm">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 center-block mh-me-legend">
+          <h1>FECHAS +</h1>
+          <div class="row">
+            <div class="col-xs-3 col-sm-3 col-md-1 col-lg-1">
+              <a href="#">
+                <img class="mh-me-avatar" gravatar-src="'none'" gravatar-size="300"/>
+              </a>
+            </div>
+            <div class="col-xs-9 col-sm-9 col-md-11 col-lg-11">
+              <h4 class="media-heading">Jack Sparrow +</h4>
+              <i class="fa fa-twitter"></i>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-3 col-sm- col-md-1 col-lg-1">
+              <a href="#">
+                <img class="mh-me-avatar" gravatar-src="'none'" gravatar-size="300"/>
+              </a>
+            </div>
+            <div class="col-xs-9 col-sm-9 col-md-11 col-lg-11">
+              <h4 class="media-heading">Jack Sparrow +</h4>
+              <i class="fa fa-twitter"></i>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-3 col-sm- col-md-1 col-lg-1">
+              <a href="#">
+                <img class="mh-me-avatar" gravatar-src="'none'" gravatar-size="300"/>
+              </a>
+            </div>
+            <div class="col-xs-9 col-sm-9 col-md-11 col-lg-11">
+              <h4 class="media-heading">Jack Sparrow +</h4>
+              <i class="fa fa-twitter"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+  </div>
+</section>
+
+<section class="row mh-me-description hidden-md hidden-lg">
+  <div class="col-md-12 col-sm-12 center-block mh-me-legend">
+    Cantante - Guitarrista - Compositor.
+    Vivo en Chacarita. integrante de <a href="#">Viejas locas</a>, rock and roll.
+  </div>
+</section>
+
+<section class="row mh-me-box mh-ribbon-warning hidden-md hidden-lg">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 center-block mh-me-legend">
+    <h1>FECHAS +</h1>
+    <div class="row">
+      <div class="col-xs-3 col-sm-3 col-md-1 col-lg-1">
+        <a href="#">
+          <img class="mh-me-avatar" gravatar-src="'none'" gravatar-size="300"/>
+        </a>
+      </div>
+      <div class="col-xs-9 col-sm-9 col-md-11 col-lg-11">
+        <h4 class="media-heading">Jack Sparrow +</h4>
+        <i class="fa fa-twitter"></i>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3 col-sm- col-md-1 col-lg-1">
+        <a href="#">
+          <img class="mh-me-avatar" gravatar-src="'none'" gravatar-size="300"/>
+        </a>
+      </div>
+      <div class="col-xs-9 col-sm-9 col-md-11 col-lg-11">
+        <h4 class="media-heading">Jack Sparrow +</h4>
+        <i class="fa fa-twitter"></i>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3 col-sm- col-md-1 col-lg-1">
+        <a href="#">
+          <img class="mh-me-avatar" gravatar-src="'none'" gravatar-size="300"/>
+        </a>
+      </div>
+      <div class="col-xs-9 col-sm-9 col-md-11 col-lg-11">
+        <h4 class="media-heading">Jack Sparrow +</h4>
+        <i class="fa fa-twitter"></i>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="row mh-me-imagenes">
+  <div class="col-md-12 col-sm-12 center-block mh-me-legend">
+    <h1>IMAGENES +</h1>
+    <owl-carousel class="owl-carousel mh-owl-carousel" data-options="{loop:false, autoHeight : true, margin:10, lazyLoad:true, nav:false, responsive:{ 0:{ items:1 }, 600:{ items:3 }, 1000:{ items:5 } } }">
+      <div owl-carousel-item="" ng-repeat="photo in vm.photos" class="item">
+        <img class="lazyOwl" ng-src="http://drive.google.com/uc?export=view&id={{photo.fileId}}" alt="{{photo.title}}" width="100%" />
+      </div>
+    </owl-carousel>
+  </div>
+</section>
+
+<section class="row mh-me-box hidden-xs hidden-sm">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 center-block mh-me-legend">
+    <h1>POSTULACIONES +</h1>
+    <div class="row">
+      <div class="col-xs-3 col-sm-3 col-md-1 col-lg-1">
+        <a href="#">
+          <img class="mh-me-avatar" gravatar-src="'none'" gravatar-size="300"/>
+        </a>
+      </div>
+      <div class="col-xs-9 col-sm-9 col-md-11 col-lg-11">
+        <h4 class="media-heading">Jack Sparrow +</h4>
+        <i class="fa fa-twitter"></i>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3 col-sm- col-md-1 col-lg-1">
+        <a href="#">
+          <img class="mh-me-avatar" gravatar-src="'none'" gravatar-size="300"/>
+        </a>
+      </div>
+      <div class="col-xs-9 col-sm-9 col-md-11 col-lg-11">
+        <h4 class="media-heading">Jack Sparrow +</h4>
+        <i class="fa fa-twitter"></i>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3 col-sm- col-md-1 col-lg-1">
+        <a href="#">
+          <img class="mh-me-avatar" gravatar-src="'none'" gravatar-size="300"/>
+        </a>
+      </div>
+      <div class="col-xs-9 col-sm-9 col-md-11 col-lg-11">
+        <h4 class="media-heading">Jack Sparrow +</h4>
+        <i class="fa fa-twitter"></i>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="row mh-me-videos">
+  <div class="col-md-12 col-sm-12 center-block mh-me-legend">
+    <div class="mh-separator"></div>
+    <h1>VIDEOS +</h1>
+    <owl-carousel class="owl-carousel mh-owl-carousel" data-options="{ items: 3, merge:true, loop:false, lazyLoad:true, nav:false, margin:10, video:false, responsive:{0:{ items:1 }, 480:{items:1},600:{items:4}}}">
+      <div owl-carousel-item="" data-merge="1.54" ng-repeat="video in vm.videos" class="item-custom-video">
+        <video class='videoPlayer' controls preload='metadata'>
+          <source src='{{video.url}}' type='{{video.format}}'>
+        </video>
+      </div>
+    </owl-carousel>
+  </div>
+</section>
+
+<section class="row mh-me-comments">
+  <div class="col-md-12 col-sm-12 center-block mh-me-legend">
+    <h1>COMENTARIOS +</h1>
+    <dir-disqus disqus-shortname="musichub"
+             disqus-identifier="{{ identifier }}"
+             disqus-url="{{ url }}">
+    </dir-disqus>
+  </div>
+</section>
