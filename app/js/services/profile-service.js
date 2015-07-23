@@ -8,13 +8,21 @@
 
   function profileService($http, API_URL) {
     return {
-      bands: getBands
+      bands: getBands,
+      postulations: getPostulations
     };
 
     function getBands() {
       return $http({
         method: 'GET',
         url: API_URL + '/profile/bands'
+      });
+    }
+
+    function getPostulations() {
+      return $http({
+        method: 'GET',
+        url: API_URL + '/profile/postulations'
       });
     }
   }
