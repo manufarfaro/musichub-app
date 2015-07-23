@@ -7,9 +7,9 @@
   <div class="col-md-12 col-sm-12 center-block mh-videos-legend">
     <h1>VIDEOS +</h1>
     <owl-carousel class="owl-carousel mh-owl-carousel" data-options="{ items: 3, merge:true, loop:false, lazyLoad:true, nav:false, margin:10, video:false, responsive:{0:{items:1}, 480:{items:2},600:{items:4}}}">
-      <div owl-carousel-item="" data-merge="1.54" ng-repeat="video in vm.videos" class="item-custom-video">
+      <div owl-carousel-item="" data-merge="1.54" ng-repeat="video in vm.videos" ng-show="video.url" class="item-custom-video">
         <video class='videoPlayer' controls preload='metadata'>
-          <source src='{{video.url}}' type='video/mp4'>
+          <source src='{{video.url}}' type='{{video.format}}'>
         </video>
       </div>
     </owl-carousel>

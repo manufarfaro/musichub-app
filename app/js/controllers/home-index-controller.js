@@ -4,10 +4,11 @@
   angular.module('musicHub')
     .controller('HomeIndexController', homeIndexController);
 
-  homeIndexController.$inject = ['$sce', '$http'];
+  homeIndexController.$inject = ['$sce', '$http', 'VideoService'];
 
-  function homeIndexController($sce, $http) {
+  function homeIndexController($sce, $http, VideoService) {
     var vm = this;
+    vm.videos = VideoService.random({limit: 5});
     vm.photos = [
       {
         "class": "com.musichub.Photo",
@@ -56,56 +57,6 @@
         "id": 88,
         "fileId": "0B7q228Dq2WUuSTJkUnh1OS15enM",
         "title": "lobby"
-      }
-    ];
-    vm.videos = [
-      {
-        "class": "com.musichub.Video",
-        "id": 77,
-        "fileId": "dxygkyyloux1oixgvnpf",
-        "format": "mp4",
-        "title": "Promo Banda",
-        "url": $sce.trustAsResourceUrl("https://res.cloudinary.com/musichub/video/upload/v1436008708/wyyvnciqxwfwzf8szj62.mp4")
-      },
-      {
-        "class": "com.musichub.Video",
-        "id": 89,
-        "fileId": "dxygkyyloux1oixgvnpf",
-        "format": "mp4",
-        "title": "nyan Cat",
-        "url": $sce.trustAsResourceUrl("https://res.cloudinary.com/musichub/video/upload/v1435740103/dxygkyyloux1oixgvnpf.mp4")
-      },
-      {
-        "class": "com.musichub.Video",
-        "id": 101,
-        "fileId": "dxygkyyloux1oixgvnpf",
-        "format": "mp4",
-        "title": "nyan again 30 seconds :",
-        "url": $sce.trustAsResourceUrl("https://res.cloudinary.com/musichub/video/upload/v1435740103/dxygkyyloux1oixgvnpf.mp4")
-      },
-      {
-        "class": "com.musichub.Video",
-        "id": 77,
-        "fileId": "dxygkyyloux1oixgvnpf",
-        "format": "mp4",
-        "title": "Promo Banda",
-        "url": $sce.trustAsResourceUrl("https://res.cloudinary.com/musichub/video/upload/v1436008708/wyyvnciqxwfwzf8szj62.mp4")
-      },
-      {
-        "class": "com.musichub.Video",
-        "id": 89,
-        "fileId": "dxygkyyloux1oixgvnpf",
-        "format": "mp4",
-        "title": "nyan Cat",
-        "url": $sce.trustAsResourceUrl("https://res.cloudinary.com/musichub/video/upload/v1435740103/dxygkyyloux1oixgvnpf.mp4")
-      },
-      {
-        "class": "com.musichub.Video",
-        "id": 101,
-        "fileId": "dxygkyyloux1oixgvnpf",
-        "format": "mp4",
-        "title": "nyan again 30 seconds :",
-        "url": $sce.trustAsResourceUrl("https://res.cloudinary.com/musichub/video/upload/v1435740103/dxygkyyloux1oixgvnpf.mp4")
       }
     ];
   }
