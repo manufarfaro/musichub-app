@@ -4,7 +4,10 @@
   angular.module('musicHub')
     .controller('ProfilePropousalsController', profilePropousalsController);
 
-  profilePropousalsController.$inject = ['$scope', '$http'];
+  profilePropousalsController.$inject = ['$scope', '$http', 'AuthenticationService'];
 
-  function profilePropousalsController($scope, $http) {}
+  function profilePropousalsController($scope, $http, AuthenticationService) {
+    var vm = this;
+    AuthenticationService.checkIsLoggedIn();
+  }
 })();

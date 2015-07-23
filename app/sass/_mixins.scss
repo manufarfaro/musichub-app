@@ -2,3 +2,14 @@
 @mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4)) {
     text-shadow: $x $y $blur $color;
 }
+
+@mixin mh-owl-item($background-color: #3fbf79, $color: #fff) {
+  background: $background-color;
+  padding: 30px 0px;
+  margin: 10px;
+  color: $color;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  text-align: center;
+}

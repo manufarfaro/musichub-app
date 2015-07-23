@@ -5,15 +5,16 @@
     .factory('AuthenticationService', authenticationServiceFactory)
       .run(runBlock);
 
-  authenticationServiceFactory.$inject = ['$http', '$cookies', '$rootScope', 'Base64Service'];
-  runBlock.$inject = ['$rootScope', '$location', '$cookies', '$http'];
+  authenticationServiceFactory.$inject = ['$http', 'localStorageService', '$rootScope', '$state', 'Base64Service', 'API_URL'];
+  runBlock.$inject = ['$rootScope', '$location', 'localStorageService', '$http'];
 
-  function authenticationServiceFactory($http, $cookies, $rootScope, Base64Service, API_URL) {
-    var service = {};
-    service.login = login;
-    service.setCredentials = setCredentials;
-    service.clearCredentials = clearCredentials;
-    return service;
+  function authenticationServiceFactory($http, localStorageService, $rootScope, $state, Base64Service, API_URL) {
+    return {
+      login: login,
+      setCredentials: setCredentials,
+      clearCredentials: clearCredentials,
+      checkIsLoggedIn: checkIsLoggedIn
+    };
 
     function login(username, password, callbackSuccess, callbackError) {
       $http({
@@ -43,18 +44,32 @@
           }
       };
       $http.defaults.headers.common.Authorization = 'Basic ' + authdata; // jshint ignore:line
-      $cookies.put('globals', $rootScope.globals);
+      localStorageService.set('globals', $rootScope.globals);
     }
 
-    function clearCredentials($rootScope, $cookies, $http) {
-      $rootScope.globals = {};
-      $cookies.remove('globals');
+    function clearCredentials() {
+      localStorageService.remove('globals');
+      if (!$rootScope.globals) {
+        $rootScope.globals = {};
+      }
       $http.defaults.headers.common.Authorization = 'Basic ';
+    }
+
+    function checkIsLoggedIn() {
+      var allowedPages = ["login", "register", 'resetPassword'];
+      if (!localStorageService.get('globals') || !localStorageService.get('globals').currentUser) {
+        $state.go('login');
+      } else {
+        console.log("logged!" + $state.current.name);
+        if (allowedPages.indexOf($state.current.name) > -1) {
+          $state.go('home');
+        }
+      }
     }
   }
 
-  function runBlock ($rootScope, $location, $cookies, $http) {
-    $rootScope.globals = $cookies.get('globals') || {};
+  function runBlock ($rootScope, $location, localStorageService, $http) {
+    $rootScope.globals = localStorageService.get('globals') || {};
     if ($rootScope.globals.currentUser) {
         $http.defaults.headers.common.Authorization = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
     }

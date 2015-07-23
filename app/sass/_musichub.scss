@@ -211,7 +211,6 @@ body {
   max-height: 100%;
   & .mh-videos-legend {
     text-transform: uppercase;
-    position: absolute;
     margin-top: 20px;
     left: 0;
     right: 0;
@@ -579,7 +578,6 @@ list-style: none;
   width: 96%;
   margin: 10px auto;
   min-height: 180px;
-  max-height: 100%;
   border-top-style: solid;
   border-top-color: $brand-primary;
   background-color: rgba($gray-darker,0.7);
@@ -930,28 +928,42 @@ list-style: none;
 
 // Carousel
 
-.item{
-  background: #3fbf79;
-  padding: 30px 0px;
-  margin: 10px;
-  color: #FFF;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  text-align: center;
+.item {
+  @include mh-owl-item($brand-success);
 }
 
-
+.mh-item-new {
+  @include mh-owl-item($brand-primary, $gray-base);
+  max-width: 300px;
+  .mh-me-avatar {
+    font-size: 3em;
+    max-height: 290px;
+    line-height: 290px;
+    @media (min-width: $screen-xs-min) and (max-width: $screen-sm-max){
+      font-size: 1em;
+      max-height: 190px;
+      line-height: 190px;
+    }
+    img {
+      width: 60%;
+      margin: 0 auto;
+    }
+  }
+  h4 {
+    @media (min-width: $screen-xs-min) and (max-width: $screen-sm-max){
+      font-size: 1em;
+    }
+  }
+}
 
 .item-video {
-  @extend .item;
+  @include mh-owl-item($brand-success);
   height: 300px;
 }
 
 .item-events {
-  @extend .item;
+  @include mh-owl-item($brand-warning);
   max-width: 300px;
-  background-color: $brand-warning;
   & p {
     font-weight: normal;
   }
@@ -962,11 +974,12 @@ list-style: none;
 
 .mh-owl-carousel {
   position: relative;
-  height: 300px;
+  //height: 300px;
   & .owl-stage {
     height: 300px;
     & .owl-item {
       width: 100%;
+      min-height: 100%;
       & .item-custom-video {
       background-color: $gray-base;
         min-height: 100%;

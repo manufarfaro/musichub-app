@@ -1,0 +1,69 @@
+<section ng-show="band" class="row mh-me-box mh-ribbon-success">
+  <div class="col-md-12 col-sm-12 center-block mh-me-legend">
+    <h1>{{band.name}}</h1>
+  </br>
+    <form novalidate>
+
+      <div class="form-group">
+        <label for="inputEmail3" class="control-label">Avatar</label>
+        <br />
+        <img class="" gravatar-src="'{{band.email}}'" width="120" height="120" gravatar-size="120"/>
+        <br />
+        <small class="mh-gravatar-legend hidden-xs hidden-sm">
+          Podés cambiar tu avatar en <a href="https://es.gravatar.com" target="_blank">gravatar.com</a>
+        </small>
+    	</div>
+
+      <div class="form-group">
+        <label for="inputEmail3" class="control-label">Nombre</label>
+        <input type="text" class="form-control input-lg" ng-model="band.name" id="inputEmail3" placeholder="Nombre" required>
+    	</div>
+
+      <div class="form-group">
+    		<label for="email" class="control-label">Email</label>
+    		<input type="text" class="form-control input-lg" ng-model="band.email" id="email" placeholder="Email" required>
+    	</div>
+
+      <div class="form-group">
+  			<label for="inputEmail3" class="control-label">Twitter</label>
+        <div class="input-group">
+          <span class="input-group-addon" id="mh-twitter-at">@</span>
+          <input type="text" pattern="^([_A-z0-9]){3,}$" ng-model="band.twitterId" maxlength="50" class="form-control input-lg" id="inputTwitter" placeholder="Twitter" required>
+        </div>
+    	</div>
+
+      <div class="form-group">
+    		<label for="inputEmail3" class="control-label">Facebook</label>
+        <div class="input-group">
+          <span class="input-group-addon" id="mh-twitter-at">https://facebook.com/</span>
+    		  <input type="text" class="form-control input-lg" ng-model="band.facebookId" id="inputEmail3" placeholder="facebook" required>
+        </div>
+    	</div>
+
+      <div class="form-group">
+    		<label for="inputEmail3" class="control-label">g+</label>
+        <div class="input-group">
+          <span class="input-group-addon" id="mh-google-plus-at">http://plus.google.com/</span>
+    		  <input type="text" class="form-control input-lg" id="inputEmail3" ng-model="band.googlePlusId" placeholder="google" required>
+        </div>
+    	</div>
+
+      <div class="form-group">
+      	<label for="inputEmail3" class="control-label">Slug</label>
+        <div class="input-group">
+          <span class="input-group-addon" id="mh-musichub-at">http://musichub.com.ar/b/</span>
+    		  <input type="text"  pattern="^([_A-z0-9]){3,36}$" class="form-control input-lg" id="slug" ng-model="band.slug" placeholder="Slug" required>
+        </div>
+    	</div>
+
+      <div class="form-group">
+  			<label for="bio" class="control-label">Bio</label>
+    		<textarea class="form-control" rows="3" id="bio" ng-model="band.bio" placeholder="bio" required></textarea>
+    	</div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-success btn-block">&iexcl;Actualizar!</button>
+      </div>
+    </form>
+  </div>
+</section>

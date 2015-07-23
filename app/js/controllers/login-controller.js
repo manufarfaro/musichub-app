@@ -8,7 +8,7 @@
 
   function loginController($rootScope, $cookies, $http, $location, AuthenticationService, flash) {
     var vm = this;
-    AuthenticationService.clearCredentials
+    AuthenticationService.checkIsLoggedIn();
     vm.login = login;
 
     function login() {

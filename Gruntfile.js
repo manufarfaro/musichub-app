@@ -17,6 +17,7 @@ module.exports = function(grunt) {
           'app/vendor/bootstrap-sass-official/assets/javascripts/bootstrap.min.js',
           'app/vendor/angular/angular.js',
           'app/vendor/angular-cookies/angular-cookies.js',
+          'app/vendor/angular-local-storage/dist/angular-local-storage.js',
           'app/vendor/angular-route/angular-route.js',
           'app/vendor/angular-ui-router/release/angular-ui-router.js',
           'app/vendor/angular-ui-router.stateHelper/statehelper.js',
