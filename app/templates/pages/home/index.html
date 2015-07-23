@@ -99,7 +99,7 @@
     <h1>IMAGENES +</h1>
     <owl-carousel class="owl-carousel mh-owl-carousel" data-options="{loop:false, autoHeight : false, margin:10, lazyLoad:true, nav:false, responsive:{ 0:{ items:1 }, 600:{ items:3 }, 1000:{ items:5 } } }">
       <div owl-carousel-item="" data-merge="" ng-repeat="photo in vm.photos" ng-show="photo.fileId" class="item">
-        <img class="lazyOwl" src="http://drive.google.com/uc?export=view&id={{photo.fileId}}" alt="{{photo.title}}" width="100%" />
+        <img class="lazyOwl" ng-src="http://drive.google.com/uc?export=view&id={{photo.fileId}}" alt="{{photo.title}}" width="100%" />
       </div>
     </owl-carousel>
   </div>
