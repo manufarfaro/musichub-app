@@ -8,7 +8,7 @@
 
   function postulateService($resource, API_URL) {
     return $resource(
-      API_URL + '/postulate/:id',
+      API_URL + '/postulates/:id',
       {},
       {
         'update': {

@@ -1,0 +1,35 @@
+<section class="row mh-me-box mh-ribbon-success">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 center-block mh-me-legend">
+    <h1>B&Uacute;SQUEDAS +</h1>
+    <div class="input-group mh-search-box">
+      <input
+        type="text"
+        ng-model="vm.eventsSeachBox"
+        placeholder="Búsquedas"
+        ng-change="vm.updateFilteredList()"
+        class="form-control">
+      <span class="fa fa-search form-control-feedback" aria-hidden="true"></span>
+    </div>
+    <table class="table table-striped" at-table at-paginated at-list="vm.filteredList" at-config="vm.config">
+      <tbody>
+        <tr>
+          <td>
+            <h4>
+              <i class="fa fa-music"></i>
+              {{item.title}}
+              <small>
+                <a class="btn btn-danger btn-xs" href="#">
+                  Postulate +
+                </a>
+              <small>
+            </h4>
+            <p>{{item.text}}</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <at-pagination class="text-center" at-list="vm.filteredList" at-config="vm.config"></at-pagination>
+
+  </div>
+</section>
