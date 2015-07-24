@@ -24,6 +24,7 @@ module.exports = function(grunt) {
           'app/vendor/angular-sanitize/angular-sanitize.js',
           'app/vendor/angular-resource/angular-resource.js',
           'app/vendor/angular-media-player/dist/angular-media-player.js',
+          'app/vendor/at-table/dist/angular-table.js',
           'app/vendor/owl.carousel/dist/owl.carousel.js',
           'app/vendor/typeahead.js/dist/typeahead.bundle.js',
           'app/vendor/angular-bootstrap/ui-bootstrap.js',

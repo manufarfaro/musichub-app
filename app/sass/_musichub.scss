@@ -582,6 +582,15 @@ list-style: none;
   border-top-color: $brand-primary;
   background-color: rgba($gray-darker,0.7);
   @include box-shadow(0 3px 9px rgba(0,0,0,.5));
+  table {
+    background-color: transparent;
+    tr {
+      min-height: 150px;
+      &:nth-child(odd){
+        background-color: rgba($gray-darker,0.7);
+      }
+    }
+  }
   & .mh-me-legend {
     text-transform: uppercase;
     left: 0;
@@ -601,10 +610,7 @@ list-style: none;
       }
     }
     p {
-      color: $violet-base;
       font-size: 1.3em;
-      padding-left: 10px;
-      font-weight: bolder;
       margin-bottom: 0;
       @include text-shadow();
       @media (max-width: $screen-sm-max) and (min-width: $screen-xs-max) {
@@ -1095,4 +1101,8 @@ list-style: none;
   @include gradient-striped;
   background-size: 40px 40px;
   @include animation(progress-bar-stripes 2s linear infinite);
+}
+
+.mh-photo-table {
+  height: 150px;
 }

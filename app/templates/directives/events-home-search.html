@@ -1,0 +1,37 @@
+<section class="row mh-me-box mh-ribbon-warning">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 center-block mh-me-legend">
+    <h1>
+      FECHAS +
+    </h1>
+      <div class="input-group mh-search-box">
+        <input
+          type="text"
+          ng-model="vm.eventsSeachBox"
+          placeholder="Buscar Fechas"
+          ng-change="vm.updateFilteredList()"
+          class="form-control">
+        <span class="fa fa-search form-control-feedback" aria-hidden="true"></span>
+      </div>
+    <table class="table table-striped" at-table at-paginated at-list="vm.filteredList" at-config="vm.config">
+      <tbody>
+        <tr>
+          <td>
+            <mh-render-photo class="mh-photo-table" id="item.photo.id"></mh-render-photo>
+          </td>
+          <td>
+            <h4>
+              {{item.name}}
+              <small>
+                {{item.date | date :'dd/MM/yyyy'}}
+              <small>
+            </h4>
+            <p>{{item.text}}</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <at-pagination class="text-center" at-list="vm.filteredList" at-config="vm.config"></at-pagination>
+
+  </div>
+</section>

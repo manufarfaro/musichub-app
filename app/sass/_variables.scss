@@ -448,20 +448,20 @@ $nav-pills-active-link-hover-color:         $component-active-color;
 //##
 
 $pagination-color:                     $link-color;
-$pagination-bg:                        $btn-default-bg;
-$pagination-border:                    rgba(0, 0, 0, 0.6);
+$pagination-bg:                        $brand-warning;
+$pagination-border:                    rgba($brand-warning, 0.6);
 
 $pagination-hover-color:               $link-hover-color;
 $pagination-hover-bg:                  transparent;
-$pagination-hover-border:              rgba(0, 0, 0, 0.6);
+$pagination-hover-border:              rgba($brand-warning, 0.6);
 
-$pagination-active-color:              #fff;
+$pagination-active-color:              #eee;
 $pagination-active-bg:                 darken($pagination-bg, 10%);
-$pagination-active-border:             rgba(0, 0, 0, 0.6);
+$pagination-active-border:             rgba($brand-warning, 0.6);
 
 $pagination-disabled-color:            $gray-light;
 $pagination-disabled-bg:               #fff;
-$pagination-disabled-border:           rgba(0, 0, 0, 0.6);
+$pagination-disabled-border:           rgba($brand-info, 0.4);
 
 
 //== Pager

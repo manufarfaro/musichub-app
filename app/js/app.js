@@ -19,7 +19,8 @@
       'ui.bootstrap',
       'flash',
       'angularUtils.directives.dirDisqus',
-      'ui.gravatar'
+      'ui.gravatar',
+      'angular-table'
     ])
     .run(run);
 

@@ -27,6 +27,10 @@
     "angular-flash-messages": "~1.2.0",
     "angular-utils-disqus": "~0.3.0",
     "angular-gravatar": "~0.3.2",
-    "angular-local-storage": "~0.2.2"
+    "angular-local-storage": "~0.2.2",
+    "at-table": "~1.0.4"
+  },
+  "resolutions": {
+    "angular": ">=1.0.0 <1.5.0"
   }
 }
