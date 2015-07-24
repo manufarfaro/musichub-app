@@ -1,0 +1,37 @@
+<div class="row mh-media-player">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <videogular class="videogular-container audio">
+        <vg-media vg-src="vm.config.sources" vg-type="audio"></vg-media>
+        <vg-controls>
+            <vg-play-pause-button></vg-play-pause-button>
+            <vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
+            <vg-scrub-bar>
+                <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+            </vg-scrub-bar>
+            <vg-time-display>{{ timeLeft | date:'mm:ss' }}</vg-time-display>
+            <vg-volume>
+                <vg-mute-button></vg-mute-button>
+            </vg-volume>
+        </vg-controls>
+    </videogular>
+    <div class="row mh-playlist-container">
+      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 mh-artwork">
+        <img class="mh-artwork-img" src="../../img/mh-disc-no-artwork.png" alt="Artwork not found" />
+      </div>
+      <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 mh-playlist">
+        <div class="list-group">
+          <a href="#" class="list-group-item active">
+            Cras justo odio
+          </a>
+          <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+          <a href="#" class="list-group-item">Morbi leo risus</a>
+          <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+          <a href="#" class="list-group-item">Vestibulum at eros</a>
+          <a href="#" class="list-group-item">Vestibulum at eros</a>
+          <a href="#" class="list-group-item">Vestibulum at eros</a>
+          <a href="#" class="list-group-item">Vestibulum at eros</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

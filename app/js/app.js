@@ -20,7 +20,10 @@
       'flash',
       'angularUtils.directives.dirDisqus',
       'ui.gravatar',
-      'angular-table'
+      'angular-table',
+      'com.2fdevs.videogular',
+      'com.2fdevs.videogular.plugins.controls',
+      'ngEqualizer'
     ])
     .run(run);
 

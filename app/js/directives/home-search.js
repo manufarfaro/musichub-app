@@ -17,7 +17,6 @@
       link: linkFunction,
       bindToController: true
     }
-    function linkFunction($scope, element, attrs) {
-    }
+    function linkFunction(scope, element, attrs) {}
   }
 })();

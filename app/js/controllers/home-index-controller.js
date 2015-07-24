@@ -10,6 +10,5 @@
     var vm = this;
     vm.videos = VideoService.random({limit: 5});
     vm.photos = PhotoService.random({limit: 10});
-
   }
 })();

@@ -28,9 +28,16 @@
     "angular-utils-disqus": "~0.3.0",
     "angular-gravatar": "~0.3.2",
     "angular-local-storage": "~0.2.2",
-    "at-table": "~1.0.4"
+    "at-table": "~1.0.4",
+    "videogular": "~1.2.4",
+    "videogular-themes-default": "~1.2.4",
+    "videogular-controls": "~1.2.4",
+    "angular-vertilize": "~1.0.1",
+    "angular-equalizer": "~2.0.1"
   },
   "resolutions": {
-    "angular": ">=1.0.0 <1.5.0"
+    "angular": "~1.4.2",
+    "angular-sanitize": "~1.4.2",
+    "jquery": "~2.1.3"
   }
 }
