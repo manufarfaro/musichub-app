@@ -1,0 +1,30 @@
+<section class="row mh-me-box">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 center-block mh-me-legend">
+    <h1>INTEGRANTES +</h1>
+    <div class="row" ng-if="artists.length > 0 || leader" ng-repeat="artist in members | unique:'id'">
+      <div class="col-xs-3 col-sm-3 col-md-1 col-lg-1">
+        <a ui-sref='artist({id: artist.slug})'>
+          <img class="mh-me-avatar" gravatar-src="'{{artist.email}}'" gravatar-size="300"/>
+        </a>
+      </div>
+      <div class="col-xs-9 col-sm-9 col-md-11 col-lg-11">
+        <h4 class="media-heading">
+          <span ng-if="artist.isLeader === true" class="badge">
+            Lider
+          </span>
+          {{artist.name}} {{artist.lastname}}
+          <small>
+            <a ui-sref='artist({id: artist.slug})' class="btn btn-danger btn-xs">
+              Ver Perfil +
+            </a>
+          <small>
+        </h4>
+        <small>
+          <small>
+            <p ng-bind="artist.bio"></p>
+          </small>
+        </small>
+      </div>
+    </div>
+  </div>
+</section>

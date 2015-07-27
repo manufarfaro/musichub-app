@@ -31,19 +31,19 @@
         controllerAs: 'vm'
       })
       .state('artist', {
-        url: '/a/{id:[a-zA-Z0-9_]{3,50}}',
+        url: '/a/{id:[a-zA-Z0-9-_]{3,50}}',
         templateUrl: 'templates/pages/artist/index.html',
         controller: 'ArtistController',
         controllerAs: 'vm'
       })
       .state('band', {
-        url: '/b/{id:[a-zA-Z0-9_]{3,50}}',
+        url: '/b/{id:[a-zA-Z0-9-_]{3,50}}',
         templateUrl: 'templates/pages/band/index.html',
         controller: 'BandController',
         controllerAs: 'vm'
       })
       .state('place', {
-        url: '/p/{id:id:[a-zA-Z0-9_]{3,50}}',
+        url: '/p/{id:[a-zA-Z0-9-_]{3,50}}',
         templateUrl: 'templates/pages/place/index.html',
         controller: 'PlaceController',
         controllerAs: 'vm'

@@ -14,6 +14,9 @@
       controller: 'MusicPlayerController',
       controllerAs: 'vm',
       link: linkFunction,
+      scope: {
+        discs: '='
+      },
       bindToController: true
     }
     function linkFunction(scope, element, attrs) {

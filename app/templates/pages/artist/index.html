@@ -1,22 +1,22 @@
 <section class="row mh-me-presentacion">
   <div class="col-xs-5 col-sm-3 col-md-3 col-sm-3 center-block">
-    <img class="mh-me-avatar" gravatar-src="'{{artist.email}}'" gravatar-size="300"/>
+    <img class="mh-me-avatar" gravatar-src="'{{vm.artist.email}}'" gravatar-size="300"/>
     <small class="mh-gravatar-legend hidden-xs hidden-sm">
       Podés cambiar tu avatar en <a href="https://es.gravatar.com" target="_blank">gravatar.com</a>
     </small>
     <p class="mh-me-descripcion hidden-xs hidden-sm">
-      {{artist.bio}}
+      {{vm.artist.bio}}
     </p>
   </div>
   <div class="col-xs-7 col-sm-9 col-md-9 col-sm-9 center-block">
       <h1 class="mh-me-nombre">
-        {{artist.name}}
-        {{artist.lastname}}
+        {{vm.artist.name}}
+        {{vm.artist.lastname}}
       </h1>
       <section class="row mh-me-reproductor hidden-xs hidden-sm">
         <div class="col-md-12 col-sm-12 center-block mh-me-legend">
           <h1>REPRODUCTOR +</h1>
-          <music-player></music-player>
+          <music-player ng-if="vm.artist.discs.length > 0" discs="vm.artist.discs"></music-player>
         </div>
       </section>
   </div>
@@ -24,22 +24,22 @@
 
 <section class="row mh-me-description hidden-md hidden-lg">
   <div class="col-md-12 col-sm-12 center-block mh-me-legend">
-    {{artist.bio}}
+    {{vm.artist.bio}}
   </div>
 </section>
 
 <section class="row mh-me-reproductor hidden-md hidden-lg">
   <div class="col-md-12 col-sm-12 center-block mh-me-legend">
     <h1>REPRODUCTOR +</h1>
-    <music-player></music-player>
+    <music-player ng-if="vm.artist.discs.length > 0" discs="artist.discs"></music-player>
   </div>
 </section>
 
-<section class="row mh-me-imagenes">
+<section ng-if="artist.photos.length > 0" class="row mh-me-imagenes">
   <div class="col-md-12 col-sm-12 center-block mh-me-legend">
     <h1>IMAGENES +</h1>
     <owl-carousel class="owl-carousel mh-owl-carousel" data-options="{loop:false, autoHeight : true, margin:10, lazyLoad:true, nav:false, responsive:{ 0:{ items:1 }, 600:{ items:3 }, 1000:{ items:5 } } }">
-      <div owl-carousel-item="" ng-repeat="photo in artist.photos" class="item">
+      <div owl-carousel-item="" ng-repeat="photo in vm.artist.photos" class="item">
         <img class="lazyOwl" ng-src="http://drive.google.com/uc?export=view&id={{photo.fileId}}" alt="{{photo.title}}" width="100%" />
       </div>
     </owl-carousel>
@@ -49,7 +49,7 @@
 <section class="row mh-me-box mh-ribbon-warning">
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 center-block mh-me-legend">
     <h1>BANDAS +</h1>
-    <div ng-repeat="band in artist.bands" class="row">
+    <div ng-repeat="band in vm.artist.bands" class="row">
       <div class="col-xs-3 col-sm-3 col-md-11 col-lg-1">
         <img gravatar-src="'{{band.email}}'" alt="{{band.name}}" />
       </div>
@@ -74,7 +74,7 @@
 <section class="row mh-me-box">
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 center-block mh-me-legend">
     <h1>B&Uacute;SQUEDAS +</h1>
-    <div ng-repeat="postulation in artist.postulations" class="row">
+    <div ng-repeat="postulation in vm.artist.postulations" class="row">
       <div class="col-xs-9 col-sm-9 col-md-11 col-lg-11">
         <h4 class="media-heading">
           <i class="fa fa-music"></i>
@@ -93,14 +93,14 @@
   </div>
 </section>
 
-<section class="row mh-me-videos">
+<section ng-if="vm.artist.videos.length > 0" class="row mh-me-videos">
   <div class="col-md-12 col-sm-12 center-block mh-me-legend">
     <div class="mh-separator"></div>
     <h1>VIDEOS +</h1>
     <owl-carousel class="owl-carousel mh-owl-carousel" data-options="{ items: 3, merge:true, loop:false, lazyLoad:true, nav:false, margin:10, video:false, responsive:{0:{ items:1 }, 480:{items:1},600:{items:4}}}">
-      <div owl-carousel-item="" ng-show="video.url" data-merge="1.54" ng-repeat="video in artist.videos" class="item-custom-video">
+      <div owl-carousel-item="" ng-show="video.url" data-merge="1.54" ng-repeat="video in vm.artist.videos" class="item-custom-video">
         <video class='videoPlayer' controls preload='metadata'>
-          <source src='{{video.url}}' type='{{video.format}}'>
+          <source ng-src='{{video.url}}' type='{{video.format}}'>
         </video>
       </div>
     </owl-carousel>

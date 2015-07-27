@@ -4,14 +4,17 @@
   angular.module('musicHub')
     .controller('ArtistController', artistController);
 
-  artistController.$inject = ['$scope', '$state', '$stateParams', 'ArtistService'];
+  artistController.$inject = ['$scope', '$sce', '$state', '$stateParams', 'ArtistService'];
 
-  function artistController($scope, $state, $stateParams, ArtistService) {
-    $scope.artist = ArtistService.get({id:$stateParams.id}, artistSuccess, artistError);
-    console.log($scope.artist);
-    $scope.artistHref = $state.href;
-    console.log($scope.artistHref);
-    function artistSuccess() {}
+  function artistController($scope, $sce, $state, $stateParams, ArtistService) {
+    var vm = this;
+    vm.artist = ArtistService.get({id:$stateParams.id}, artistSuccess, artistError);
+    vm.artistHref = $state.href;
+    function artistSuccess(response) {
+      angular.forEach(response.videos, function(value, key) {
+        value.url = $sce.trustAsResourceUrl(value.url);
+      });
+    }
     function artistError() {
       $state.go('home');
     }

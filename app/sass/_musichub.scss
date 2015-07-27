@@ -73,7 +73,6 @@ body {
 
     transition: all 0.5s ease 0s;
     padding-left: 0;
-    height: 100%;
     @media (min-width: $screen-xs-min) and (max-width: $screen-xs-max) {
       margin-left: percentage((8.8 / 12))
     }
@@ -479,7 +478,7 @@ body {
 //me
 .mh-me-presentacion {
   position: relative;
-  max-height: 100%;
+  min-height: 100%;
   margin-left: 0;
   margin: 0px auto;
   @media (min-width: $screen-md-min) {
@@ -640,7 +639,7 @@ list-style: none;
 .mh-me-reproductor {
   margin-top: 1%;
   position: relative;
-  min-height: 180px;
+  min-height: 250px;
   height: 100%;
   border-top-style: solid;
   border-top-color: $brand-warning;
@@ -708,14 +707,13 @@ list-style: none;
   margin-left: 2%;
   border-top-style: solid;
   border-top-color: $brand-success;
-  min-height: 470px;
+  min-height: 280px;
   & .mh-me-legend {
     text-transform: uppercase;
-    position: absolute;
     left: 0;
     right: 0;
     & .owl-carousel {
-      height: 420px;
+      max-height: 420px;
       & .owl-stage-outer {
         min-height: 100%;
       }
@@ -735,7 +733,6 @@ list-style: none;
     }
   }
 }
-
 
 
 .mh-me-videos {
@@ -1014,6 +1011,7 @@ list-style: none;
     width: 100%;
     height: 320px;
     margin: auto;
+    background-color: $brand-primary;
     overflow: hidden;
 }
 

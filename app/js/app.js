@@ -23,7 +23,8 @@
       'angular-table',
       'com.2fdevs.videogular',
       'com.2fdevs.videogular.plugins.controls',
-      'ngEqualizer'
+      'ngEqualizer',
+      'angular.filter'
     ])
     .run(run);
 

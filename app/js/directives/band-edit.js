@@ -20,19 +20,14 @@
     }
 
     function linkFunction(scope, element, attrs) {
-      console.log(scope);
       scope.$watch('vm.id', function (newValue, oldValue) {
         if (oldValue === newValue) {
           return;
         }
-        console.log(newValue);
         scope.band = BandService.get({id:newValue})
-          //.success(bandQuerySuccess)
-          //.error(bandQueryError);
       });
     }
     function bandQuerySuccess(response) {
-      console.log(response);
       scope.band = response;
     }
     function bandQueryError(response) {

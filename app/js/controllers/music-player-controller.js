@@ -4,9 +4,9 @@
   angular.module('musicHub')
     .controller('MusicPlayerController', musicPlayerController);
 
-  musicPlayerController.$inject = ['$sce'];
+  musicPlayerController.$inject = ['$scope', '$sce'];
 
-  function musicPlayerController($sce) {
+  function musicPlayerController($scope, $sce) {
     var vm = this;
     vm.config = {
       sources: [

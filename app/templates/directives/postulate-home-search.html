@@ -14,6 +14,11 @@
       <tbody>
         <tr>
           <td>
+            <a ng-href="{{item.offerer.uiSref}}" href="#">
+              <img class="mh-me-avatar" gravatar-src="'{{item.offerer.email}}'" gravatar-size="150"/>
+            </a>
+          </td>
+          <td>
             <h4>
               <i class="fa fa-music"></i>
               {{item.title}}
@@ -24,6 +29,12 @@
               <small>
             </h4>
             <p>{{item.text}}</p>
+            <h6>
+              Ofertante:
+              <a ng-href="{{item.offerer.uiSref}}" href="#">
+                {{item.offerer.name}} {{item.offerer.lastname}}
+              </a>
+            </h6>
           </td>
         </tr>
       </tbody>

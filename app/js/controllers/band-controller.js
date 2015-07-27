@@ -4,12 +4,22 @@
   angular.module('musicHub')
     .controller('BandController', bandController);
 
-  bandController.$inject = ['$scope', 'BandService', '$state', '$stateParams'];
+  bandController.$inject = ['$scope', '$sce', 'BandService', '$state', '$stateParams', 'ArtistService', '$timeout'];
 
-  function bandController($scope, BandService, $state, $stateParams) {
-    $scope.band = BandService.get({id:$stateParams.id}, bandSuccess, bandError);
-    $scope.bandHref = $state.href;
-    function bandSuccess() {}
+  function bandController($scope, $sce, BandService, $state, $stateParams, ArtistService, $timeout) {
+    var vm = this;
+    vm.band = BandService.get({id:$stateParams.id}, bandSuccess, bandError);
+    vm.bandHref = $state.href;
+    vm.band.$promise.then(function(dataBand) {
+      vm.members = dataBand.artists;
+    });
+
+    function bandSuccess(response) {
+      angular.forEach(response.videos, function(value, key) {
+        value.url = $sce.trustAsResourceUrl(value.url);
+      });
+    }
+
     function bandError() {
       $state.go('home');
     }
