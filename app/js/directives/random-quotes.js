@@ -19,7 +19,10 @@
     function linkFunction(scope, element, attrs) {
       $http({
         method: 'GET',
-        url: API_URL + '/quotes/random?limit=1'
+        url: API_URL + '/quotes/random',
+        params: {
+          limit: '1'
+        }
       }).success(quoteSuccess)
       .error(quoteError);
 
@@ -31,9 +34,8 @@
       }
 
       function quoteError(response) {
-        element.css({
-          'background-image': 'url("http://drive.google.com/uc?export=view&id=0B3pR1yPz3ddiblBsR1lHSUtsUHc");'
-        });
+        element.css('background-image','url(http://drive.google.com/uc?export=view&id=0B3pR1yPz3ddiblBsR1lHSUtsUHc)');
+        console.log(element.css('background-image'));
         scope.vm.quote = 'Somos Actores de ese gran escenario que se llama vida, pasiones, amores, traiciones, sueños y mentiras...';
       }
     }
