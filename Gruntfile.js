@@ -36,6 +36,7 @@ module.exports = function(grunt) {
           'app/vendor/videogular-controls/vg-controls.js',
           'app/vendor/angular-equalizer/angular-equalizer.js',
           'app/vendor/angular-filter/dist/angular-filter.js',
+          'app/vendor/angular-google-analytics/dist/angular-google-analytics.js',
           'app/js/app.js',
           'app/js/constants.js',
           'app/js/globals.js',

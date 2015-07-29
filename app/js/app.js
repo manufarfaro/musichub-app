@@ -24,7 +24,8 @@
       'com.2fdevs.videogular',
       'com.2fdevs.videogular.plugins.controls',
       'ngEqualizer',
-      'angular.filter'
+      'angular.filter',
+      'angular-google-analytics'
     ])
     .run(run);
 

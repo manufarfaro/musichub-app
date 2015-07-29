@@ -34,7 +34,8 @@
     "videogular-controls": "~1.2.4",
     "angular-vertilize": "~1.0.1",
     "angular-equalizer": "~2.0.1",
-    "angular-filter": "~0.5.4"
+    "angular-filter": "~0.5.4",
+    "angular-google-analytics": "~0.0.17"
   },
   "resolutions": {
     "angular": "~1.4.2",

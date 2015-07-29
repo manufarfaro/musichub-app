@@ -6,11 +6,15 @@
     .config(urlRouterProvider)
     .config(locationProvider)
     .config(localStorageServiceProvider)
+    .config(gravatarServiceProvider)
+    .config(analyticsProvider)
     .config(decoratorProvider);
 
   httpProviderConfig.$inject = ['$httpProvider'];
   urlRouterProvider.$inject = ['$urlRouterProvider'];
   localStorageServiceProvider.$inject = ['localStorageServiceProvider'];
+  gravatarServiceProvider.$inject = ['gravatarServiceProvider'];
+  analyticsProvider.$inject = ['AnalyticsProvider'];
   decoratorProvider.$inject = ['$provide'];
 
   function httpProviderConfig($httpProvider) {
@@ -18,8 +22,7 @@
     $httpProvider.interceptors.push('CsrfCookieService');
   }
 
-  function decoratorProvider($provide) {
-  }
+  function decoratorProvider($provide) {}
 
   function locationProvider($locationProvider) {
     //$locationProvider.html5Mode(true);
@@ -32,6 +35,20 @@
       .setStorageType('sessionStorage')
       .setNotify(true, true)
   };
+
+  function gravatarServiceProvider(gravatarServiceProvider) {
+    gravatarServiceProvider.defaults = {
+      size     : 150,
+      "default": 'mm'  // Mystery man as default for missing avatars
+    };
+  }
+
+  function analyticsProvider(AnalyticsProvider) {
+      AnalyticsProvider.setAccount('UA-65732145-1');
+      AnalyticsProvider.trackPages(true);
+      AnalyticsProvider.trackUrlParams(true);
+      
+  }
 
   function urlRouterProvider($urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
