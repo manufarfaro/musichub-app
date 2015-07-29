@@ -20,7 +20,6 @@
 
     function linkFunction(scope, element, attrs) {
       scope.$watch('currentUser', function() {
-
         $timeout(function () {
           $rootScope.$apply();
         });

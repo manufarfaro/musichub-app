@@ -21,8 +21,6 @@
 
     function linkFunction(scope, element, attrs) {
       localStorageService.bind(scope, 'globals');
-      scope.$watch('scope.globals', function(data) {
-      });
       $timeout(function () {
         $rootScope.$apply();
       });
