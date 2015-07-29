@@ -38,7 +38,6 @@
 
   function gravatarServiceProvider(gravatarServiceProvider) {
     gravatarServiceProvider.defaults = {
-      size     : 150,
       "default": 'mm'  // Mystery man as default for missing avatars
     };
   }
