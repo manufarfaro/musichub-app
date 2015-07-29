@@ -3,59 +3,75 @@
     <h1>
       INFORMACION PERSONAL +
       <small>
-        <a href="#/a/artistsview">Ver Perfil</a>
+        <a ng-href="{{vm.profile.uiSref}}" href="#">Ver Perfil</a>
       </small>
     </h1>
     <hr />
     <form novalidate>
       <div class="form-group">
-        <label for="inputEmail3" class="control-label">Nombre</label>
-        <input type="text" class="form-control" id="inputEmail3" placeholder="Nombre" required>
+        <label for="name" class="control-label">Nombre</label>
+        <input type="text" class="form-control input-lg" id="name" ng-model="vm.profile.name" placeholder="Nombre" required>
     	</div>
 
       <div class="form-group">
-    		<label for="inputEmail3" class="control-label">Genero</label>
-    		<input type="text" class="form-control" id="inputEmail3" placeholder="Genero" required>
+        <label for="name" class="control-label">Apellido</label>
+        <input type="text" class="form-control input-lg" id="name" ng-model="vm.profile.lastname" placeholder="Apellido" required>
+    	</div>
+
+      <div class="form-group">
+    		<label for="gender" class="control-label">G&eacute;nero</label>
+    		<input type="text" class="form-control input-lg" ng-model="vm.profile.gender" id="gender" placeholder="Género" required>
     	</div>
 
       <div class="form-group">
   			<label for="inputEmail3" class="control-label">Twitter</label>
-        <input type="text" pattern="^([_A-z0-9]){3,}$" maxlength="20" class="form-control" id="inputTwitter" placeholder="Twitter" required>
+        <div class="input-group">
+          <span class="input-group-addon" id="mh-twitter-at">@</span>
+          <input type="text" pattern="^([_A-z0-9]){3,}$" ng-model="band.twitterId" maxlength="50" class="form-control input-lg" id="inputTwitter" placeholder="Twitter" required>
+        </div>
     	</div>
 
       <div class="form-group">
-    		<label for="inputEmail3" class="control-label">Facebook</label>
-    		<input type="text" class="form-control" id="inputEmail3" placeholder="facebook" required>
+    		<label for="facebook" class="control-label">Facebook</label>
+        <div class="input-group">
+          <span class="input-group-addon" id="mh-facebook-at">https://facebook.com/</span>
+    		  <input type="text" class="form-control input-lg" ng-model="vm.profile.facebookId" id="facebook" placeholder="Facebook" required>
+        </div>
     	</div>
 
       <div class="form-group">
-    		<label for="inputEmail3" class="control-label">g+</label>
-    		<input type="text" class="form-control" id="inputEmail3" placeholder="google" required>
+    		<label for="google-plus" class="control-label">g+</label>
+        <div class="input-group">
+          <span class="input-group-addon" id="mh-google-plus-at">http://plus.google.com/</span>
+    		  <input type="text" class="form-control input-lg" id="google-plus" ng-model="vm.profile.googlePlusId" placeholder="Google Plus Id" required>
+        </div>
     	</div>
 
       <div class="form-group">
-      	<label for="inputEmail3" class="control-label">Telefono</label>
-    		<input type="text"  pattern="[0-9]*" class="form-control" id="inputEmail3" placeholder="Tel" required>
+      	<label for="phone" class="control-label">Tel&eacute;fono</label>
+    		<input type="text" ng-model="vm.profile.phone"  pattern="[0-9]*" class="form-control input-lg" id="phone" placeholder="Teléfono" required>
     	</div>
-
-    	<div class="form-group">
-        <label for="inputEmail3" class="control-label">Edad</label>
-  			<input type="text"  pattern="[0-9]*" class="form-control" id="inputEmail3" placeholder="Edad" required>
-  		</div>
 
       <div class="form-group">
-				<label for="inputEmail3" class="control-label">Ciudad</label>
-        <input type="text" class="form-control" id="inputEmail3" placeholder="ciudad" required>
-    	</div>
+        <label for="region" class="control-label">Ciudad</label>
+        <country-select class="input-lg" region="vm.profile.region"></country-select>
+      </div>
 
       <div class="form-group">
 				<label for="inputEmail3" class="control-label">Fecha de nacimiento</label>
-        <input type="text" class="form-control" id="inputEmail3" placeholder="DD/MM/AAAA" required>
+        <div class="input-group">
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default btn-lg" ng-click="open($event)">
+              <i class="fa fa-calendar"></i>
+            </button>
+          </span>
+          <input type="text" ng-model="vm.profile.birthdate" class="form-control input-lg" id="inputEmail3" datepicker-popup placeholder="Fecha de Nacimiento" required disabled>
+        </div>
     	</div>
 
       <div class="form-group">
-  			<label for="inputEmail3" class="control-label">Bio</label>
-    		<textarea class="form-control" rows="3" id="inputEmail3"  placeholder="bio" required></textarea>
+  			<label for="bio" class="control-label">Bio</label>
+    		<textarea ng-model="vm.profile.bio" class="form-control" rows="3" id="bio"  placeholder="Bio" required style="resize: vertical;"></textarea>
     	</div>
 
       <div class="form-group">

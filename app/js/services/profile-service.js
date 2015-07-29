@@ -10,8 +10,16 @@
     return {
       postulations: getPostulations,
       bands: getBands,
-      postulated: getPostulated
+      postulated: getPostulated,
+      profile: getProfile
     };
+
+    function getProfile() {
+      return $http({
+        method: 'GET',
+        url: API_URL + '/profile'
+      });
+    }
 
     function getBands() {
       return $http({

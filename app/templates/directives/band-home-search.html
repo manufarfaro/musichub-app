@@ -1,0 +1,42 @@
+<section class="row mh-me-box mh-ribbon-warning">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 center-block mh-me-legend">
+    <h1>
+      Bandas +
+    </h1>
+      <div class="input-group mh-search-box">
+        <input
+          type="text"
+          ng-model="vm.bandSeachBox"
+          placeholder="Buscar Bandas"
+          ng-change="vm.updateFilteredList()"
+          class="form-control">
+        <span class="fa fa-search form-control-feedback" aria-hidden="true"></span>
+      </div>
+    <table class="table table-striped" at-table at-paginated at-list="vm.filteredList" at-config="vm.config">
+      <tbody>
+        <tr>
+          <td ng-if="false" at-attribute="id" at-sortable at-initial-sorting="desc">
+            {{item.id}}
+          </td>
+          <td style="width:1%; white-space:nowrap;">
+            <img gravatar-src="item.email" gravatar-size="150"/>
+          </td>
+          <td>
+            <h4>
+              {{item.name}}
+              <small>
+                <a ui-sref='band({id: item.slug})' class="btn btn-danger btn-xs">
+                  Ver Perfil +
+                </a>
+              <small>
+            </h4>
+            <p>{{item.bio}}</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <at-pagination class="text-center" at-list="vm.filteredList" at-config="vm.config"></at-pagination>
+
+  </div>
+</section>

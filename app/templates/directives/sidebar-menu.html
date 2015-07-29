@@ -6,41 +6,29 @@
     <img src="img/mh-logo-header-inverted.png" class="mh-sidebar-brand-logo" />
   </header>
   <hr />
-  <home-search></home-search>
-  <hr />
+  <user-credentials current-user="globals"></user-credentials>
   <ul class="nav nav-pills nav-stacked mh-sidebar-nav">
     <li ui-sref-active-eq="active"><a ui-sref="home">Inicio</a></li>
     <li ui-sref-active-eq="active"><a ui-sref="myProfile">Mi Perfil</a></li>
     <li ui-sref-active-eq="active"><a ui-sref="myBands">Mis Bandas</a></li>
     <li ui-sref-active-eq="active"><a ui-sref="myPropousals">Mis Postulaciones</a></li>
   </ul>
+  <non-logged-user-actions current-user="globals"></non-logged-user-actions>
   <hr />
-  <section class="mh-auth-wrapper">
-    <a ui-sref="register" class="btn btn-success btn-block">
-      &iexcl;Registrate Gratis!
-    </a>
-    <p class="text-center mh-auth-haveaccount">
-      &iquest;Ya ten&eacute;s una cuenta? <a ui-sref="login" href="">Ingres&aacute;</a>
-    </p>
-    <p class="text-center mh-auth-haveaccount">
-      Olvidaste la contraseña <a ui-sref="recoverPassword" href="">Recuperar</a>
-    </p>
-  </section>
   <footer class="text-center mh-sidebar-footer">
-    <hr />
     <div class="mh-sidebar-footer-social row">
       <div class="col-md-4 col-sm-4 col-xs-4">
-        <a href="#">
+        <a target="_blank" href="https://www.facebook.com/musichubofficial">
           <i class="fa fa-facebook-square"></i>
         </a>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-4">
-        <a href="#">
-          <i class="fa fa-twitter"></i>
+        <a target="_blank" href="https://www.youtube.com/c/MusichubArOfficial ">
+          <i class="fa fa-youtube-square"></i>
         </a>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-4">
-        <a href="#">
+        <a target="_blank" href="https://www.google.com/+MusichubArOfficial">
           <i class="fa fa-google-plus-square"></i>
         </a>
       </div>

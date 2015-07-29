@@ -4,9 +4,9 @@
   angular.module('musicHub')
     .controller('LoginController', loginController);
 
-  loginController.$inject = ['$rootScope', '$cookies', '$http', '$location', 'AuthenticationService', 'flash'];
+  loginController.$inject = ['$rootScope', '$window', '$cookies', '$http', '$location', 'AuthenticationService', 'flash'];
 
-  function loginController($rootScope, $cookies, $http, $location, AuthenticationService, flash) {
+  function loginController($rootScope, $window, $cookies, $http, $location, AuthenticationService, flash) {
     var vm = this;
     AuthenticationService.checkIsLoggedIn();
     vm.login = login;
@@ -19,6 +19,7 @@
 
     function loginSuccessCallback(response) {
       $location.path('/me');
+      $window.location.reload();
     }
 
     function loginErrorCallback(response) {

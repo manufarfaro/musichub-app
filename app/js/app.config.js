@@ -25,8 +25,8 @@
   function decoratorProvider($provide) {}
 
   function locationProvider($locationProvider) {
-    //$locationProvider.html5Mode(true);
     $locationProvider.hashPrefix('!');
+    //$locationProvider.html5Mode(true);
   }
 
   function localStorageServiceProvider(localStorageServiceProvider) {
@@ -47,7 +47,7 @@
       AnalyticsProvider.setAccount('UA-65732145-1');
       AnalyticsProvider.trackPages(true);
       AnalyticsProvider.trackUrlParams(true);
-      
+
   }
 
   function urlRouterProvider($urlRouterProvider) {

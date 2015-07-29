@@ -1,6 +1,6 @@
 <section class="row mh-me-presentacion">
   <div class="col-xs-5 col-sm-3 col-md-3 col-sm-3 center-block">
-    <img class="mh-me-avatar" gravatar-src="'{{vm.band.email}}'" gravatar-size="300"/>
+    <img class="mh-me-avatar" gravatar-src="vm.band.email" gravatar-size="300"/>
     <small class="mh-gravatar-legend hidden-xs hidden-sm">
       Podés cambiar tu avatar en <a href="https://es.gravatar.com" target="_blank">gravatar.com</a>
     </small>
@@ -72,7 +72,7 @@
     <owl-carousel class="owl-carousel mh-owl-carousel" data-options="{ items: 3, merge:true, loop:false, lazyLoad:true, nav:false, margin:10, video:false, responsive:{0:{ items:1 }, 480:{items:1},600:{items:4}}}">
       <div owl-carousel-item="" data-merge="1.54" ng-if="video.url" ng-repeat="video in vm.band.videos" class="item-custom-video">
         <video class='videoPlayer' controls preload='metadata'>
-          <source ng-src='{{video.url}}' type='{{video.format}}'>
+          <source ng-src='{{video.url}}' type="{{video.format}}; codecs='theora, vorbis'">
         </video>
       </div>
     </owl-carousel>

@@ -5,32 +5,34 @@
     .factory('AuthenticationService', authenticationServiceFactory)
       .run(runBlock);
 
-  authenticationServiceFactory.$inject = ['$http', 'localStorageService', '$rootScope', '$state', 'Base64Service', 'API_URL'];
+  authenticationServiceFactory.$inject = ['$http', '$window', 'localStorageService', '$rootScope', '$state', 'Base64Service', 'API_URL'];
   runBlock.$inject = ['$rootScope', '$location', 'localStorageService', '$http'];
 
-  function authenticationServiceFactory($http, localStorageService, $rootScope, $state, Base64Service, API_URL) {
+  function authenticationServiceFactory($http,$window, localStorageService, $rootScope, $state, Base64Service, API_URL) {
     return {
       login: login,
       setCredentials: setCredentials,
       clearCredentials: clearCredentials,
-      checkIsLoggedIn: checkIsLoggedIn
+      checkIsLoggedIn: checkIsLoggedIn,
+      isLogged: isLogged,
+      logout: logout
     };
 
     function login(username, password, callbackSuccess, callbackError) {
       $http({
         method: 'GET',
-        url: 'http://api.musichub.com.ar/profile'
+        url: API_URL + '/profile'
       })
       .success(loginSuccess)
       .error(loginError);
 
       function loginSuccess(response) {
-        console.log("Musichub | login success -> response: " + response == null ? response.message : 'Undefined');
+        console.log("Musichub | login success -> response: " + response.message);
         callbackSuccess(response);
       }
 
       function loginError(response) {
-        console.log("Musichub | login error -> response: " + response == null ? response.message : 'Undefined');
+        console.log("Musichub | login error -> response: " + response.message);
         callbackError(response);
       }
     }
@@ -55,15 +57,25 @@
       $http.defaults.headers.common.Authorization = 'Basic ';
     }
 
+    function isLogged() {
+      return (localStorageService.get('globals') && localStorageService.get('globals').currentUser);
+    }
+
     function checkIsLoggedIn() {
       var allowedPages = ["login", "register", 'resetPassword'];
       if (!localStorageService.get('globals') || !localStorageService.get('globals').currentUser) {
         $state.go('login');
       } else {
-        console.log("logged!" + $state.current.name);
         if (allowedPages.indexOf($state.current.name) > -1) {
           $state.go('home');
         }
+      }
+    }
+
+    function logout() {
+      if(this.isLogged()) {
+        this.clearCredentials();
+        $window.location.reload();
       }
     }
   }

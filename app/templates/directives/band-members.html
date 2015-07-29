@@ -4,7 +4,7 @@
     <div class="row" ng-if="artists.length > 0 || leader" ng-repeat="artist in members | unique:'id'">
       <div class="col-xs-3 col-sm-3 col-md-1 col-lg-1">
         <a ui-sref='artist({id: artist.slug})'>
-          <img class="mh-me-avatar" gravatar-src="'{{artist.email}}'" gravatar-size="300"/>
+          <img class="mh-me-avatar" gravatar-src="artist.email" gravatar-size="300"/>
         </a>
       </div>
       <div class="col-xs-9 col-sm-9 col-md-11 col-lg-11">

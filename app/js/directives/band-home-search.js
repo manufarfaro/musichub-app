@@ -2,16 +2,16 @@
   'use strict';
 
   angular.module('musicHub')
-    .directive('eventsHomeSearch', homeSearch);
+    .directive('bandHomeSearch', bandSearch);
 
-  homeSearch.$inject = [];
+  bandSearch.$inject = [];
 
-  function homeSearch() {
+  function bandSearch() {
     return {
       restrict: 'EA',
       replace: 'true',
-      templateUrl: 'templates/directives/events-home-search.html',
-      controller: 'EventsHomeSearchController',
+      templateUrl: 'templates/directives/band-home-search.html',
+      controller: 'BandHomeSearchController',
       controllerAs: 'vm',
       scope: {},
       link: linkFunction,
