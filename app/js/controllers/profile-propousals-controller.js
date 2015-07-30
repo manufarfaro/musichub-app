@@ -13,12 +13,23 @@
       .postulations()
       .success(profilePropousalsSuccess)
       .error(profilePropousalsError);
+
     ProfileService
       .postulated()
       .success(profilePostulatedSuccess)
       .error(profilePostulatedError);
 
       function profilePropousalsSuccess(response) {
+        angular.forEach(response, function(propousalData) {
+          propousalData.artists = [];
+          propousalData.bands = [];
+          angular.forEach(propousalData.artistsPostulants, function(artistData) {
+            propousalData.artists.push(artistData);
+          });
+          angular.forEach(propousalData.bandsPostulants, function(bandData) {
+            propousalData.bands.push(bandData);
+          });
+        });
         vm.propousals = response;
       }
       function profilePostulatedSuccess(response) {

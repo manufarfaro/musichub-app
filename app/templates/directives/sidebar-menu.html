@@ -8,10 +8,30 @@
   <hr />
   <user-credentials current-user="globals"></user-credentials>
   <ul class="nav nav-pills nav-stacked mh-sidebar-nav">
-    <li ui-sref-active-eq="active"><a ui-sref="home">Inicio</a></li>
-    <li ng-if="vm.isLogged" ui-sref-active-eq="active"><a ui-sref="myProfile">Mi Perfil</a></li>
-    <li ng-if="vm.isLogged && (vm.currentUser.class === 'com.musichub.Artist')" ui-sref-active-eq="active"><a ui-sref="myBands">Mis Bandas</a></li>
-    <li ng-if="vm.isLogged" ui-sref-active-eq="active"><a ui-sref="myPropousals">Mis Postulaciones</a></li>
+    <li ui-sref-active-eq="active">
+      <a ui-sref="home">
+        <i class="fa fa-home"></i>
+        Inicio
+      </a>
+    </li>
+    <li ng-if="vm.isLogged" ui-sref-active-eq="active">
+      <a ui-sref="myProfile">
+        <i class="fa fa-user"></i>
+        Mi Perfil
+      </a>
+    </li>
+    <li ng-if="vm.isLogged && (vm.currentUser.class === 'com.musichub.Artist')" ui-sref-active-eq="active">
+      <a ui-sref="myBands">
+        <i class="fa fa-users"></i>
+        Mis Bandas
+      </a>
+    </li>
+    <li ng-if="vm.isLogged" ui-sref-active-eq="active">
+      <a ui-sref="myPropousals">
+        <i class="fa fa-calendar"></i>
+        Mis Postulaciones
+      </a>
+    </li>
   </ul>
   <non-logged-user-actions current-user="globals"></non-logged-user-actions>
   <hr />

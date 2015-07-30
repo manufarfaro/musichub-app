@@ -8,6 +8,8 @@
 
   function mhRenderPhotoController($scope, PhotoService) {
     var vm = this;
-    vm.photo = PhotoService.get({id: $scope.id});
+    PhotoService.get({id: $scope.id}).$promise.then(function(data) {
+      vm.photo = data
+    });
   }
 })();

@@ -23,7 +23,7 @@
 
 <section class="row mh-me-box mh-ribbon-warning">
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 center-block mh-me-legend">
-    <h1>MIS POSTULACIONES+</h1>
+    <h1>B&Uacute;SQUEDAS +</h1>
     <div ng-repeat="propousal in vm.propousals" class="row">
       <div class="col-xs-9 col-sm-9 col-md-11 col-lg-11">
         <h4 class="media-heading">
@@ -37,6 +37,35 @@
             </p>
           </small>
         </small>
+        <h4 style="font-weight: bolder;">Postulantes:</h4>
+        <h5>Artistas:</h5>
+        <ul>
+          <li ng-repeat="artist in propousal.artists">
+            <div class="row">
+              <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                <img class="mh-me-avatar" gravatar-src="artist.email" gravatar-size="300"/>
+              </div>
+              <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                {{artist.name}} {{artist.lastname}}
+                <p>{{artist.bio}}</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <h5>Bandas:</h5>
+        <ul>
+          <li ng-repeat="band in propousal.bands">
+            <div class="row">
+              <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                <img class="mh-me-avatar" gravatar-src="band.email" gravatar-size="300"/>
+              </div>
+              <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                {{band.name}}
+                <p>{{band.bio}}</p>
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </div>

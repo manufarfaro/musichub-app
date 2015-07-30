@@ -33,7 +33,7 @@
       <section ng-if="vm.band.discs.length > 0" class="row mh-me-reproductor hidden-xs hidden-sm">
         <div class="col-md-12 col-sm-12 center-block mh-me-legend">
           <h1>REPRODUCTOR +</h1>
-          <music-player discs="vm.band.discs"></music-player>
+          <music-player ng-if="vm.band.discs.length > 0" discs="vm.band.discs"></music-player>
         </div>
       </section>
   </div>
@@ -48,7 +48,7 @@
 <section class="row mh-me-reproductor hidden-md hidden-lg">
   <div class="col-md-12 col-sm-12 center-block mh-me-legend">
     <h1>REPRODUCTOR +</h1>
-    <music-player discs="vm.band.discs"></music-player>
+    <music-player ng-if="vm.band.discs.length > 0" discs="vm.band.discs"></music-player>
   </div>
 </section>
 

@@ -6,6 +6,26 @@
     </small>
     <p class="mh-me-descripcion hidden-xs hidden-sm">
       {{vm.artist.bio}}
+      <dl>
+        <dt>Links</dt>
+        <dd>
+          <a ng-if="vm.artist.email" ng-href="mailto:{{vm.artist.email}}">
+            <i class="fa fa-envelope"></i>
+          </a>
+          <a ng-if="vm.artist.website" ng-href="{{vm.artist.website}}">
+            <i class="fa fa-cloud"></i>
+          </a>
+          <a ng-if="vm.artist.facebookId" ng-href="https://facebook.com/{{vm.artist.facebookId}}">
+            <i class="fa fa-facebook-square"></i>
+          </a>
+          <a ng-if="vm.artist.twitterId" ng-href="https://twitter.com/{{vm.artist.twitterId}}">
+            <i class="fa fa-twitter-square"></i>
+          </a>
+          <a ng-if="vm.artist.googlePlusId" ng-href="https://plus.google.com/{{vm.artist.googlePlusId}}">
+            <i class="fa fa-google-plus-square"></i>
+          </a>
+        </dd>
+      </dl>
     </p>
   </div>
   <div class="col-xs-7 col-sm-9 col-md-9 col-sm-9 center-block">
@@ -34,7 +54,7 @@
 <section ng-if="vm.artist.discs.length > 0" class="row mh-me-reproductor hidden-md hidden-lg">
   <div class="col-md-12 col-sm-12 center-block mh-me-legend">
     <h1>REPRODUCTOR +</h1>
-    <music-player ng-if="vm.artist.discs.length > 0" discs="artist.discs"></music-player>
+    <music-player ng-if="vm.artist.discs.length > 0" discs="vm.artist.discs"></music-player>
   </div>
 </section>
 
