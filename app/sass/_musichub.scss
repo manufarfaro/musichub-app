@@ -1120,6 +1120,10 @@ list-style: none;
         @media (min-width: $screen-xs-min) and (max-width: $screen-sm-max){
           height: 200px;
         }
+        :hover {
+          cursor: hand;
+          cursor: pointer;
+        }
         .mh-artwork {
           text-align: center;
           .mh-artwork-img {

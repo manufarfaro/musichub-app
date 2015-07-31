@@ -17,7 +17,7 @@
     <div class="row mh-playlist-container">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mh-playlist">
         <div class="list-group">
-          <a ng-click="vm.setTrack(key)" href="#" class="list-group-item active" ng-repeat="(key, track) in tracks">
+          <a ng-click="vm.setTrack(key)" class="list-group-item" ng-class="{'active': key === currentTrack}" ng-repeat="(key, track) in tracks">
             <div class="row">
               <div class="col-xs-3 col-sm-3 col-md-1 col-lg-2 mh-artwork">
                 <img ng-if="!track.disc.artwork.id" class="mh-artwork-img" src="../../img/mh-disc-no-artwork.png" alt="Artwork" />
