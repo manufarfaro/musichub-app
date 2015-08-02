@@ -57,7 +57,7 @@
       .state('register', {
         url: '/register',
         templateUrl: 'templates/pages/register/index.html',
-        controller: 'RecoverPasswordController',
+        controller: 'RegisterController',
         controllerAs: 'vm'
       })
       .state('recoverPassword', {

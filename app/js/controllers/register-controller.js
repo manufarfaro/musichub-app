@@ -1,17 +1,22 @@
 (function(){
   'use strict';
 
-  angular.module('musicHub.authentication')
+  angular.module('musicHub')
   .controller('RegisterController', registerController);
 
-  registerController.$inject = ['$scope', '$http'];
+  registerController.$inject = ['RegisterService'];
 
-  function registerController($scope, $http) {
+  function registerController(RegisterService) {
     var vm = this;
     vm.register = register;
+    vm.user = {
+      user_type: 'artist'
+    };
 
     function register() {
       vm.dataLoading = true;
+      console.log(vm.user);
+      RegisterService.register(vm.user);
     }
   }
 })();

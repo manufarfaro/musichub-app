@@ -5,9 +5,9 @@
     .factory('RegisterService', registerServiceFactory)
       .run(runBlock);
 
-  registerServiceFactory.$inject = ['$scope', '$http', 'API_URL'];
+  registerServiceFactory.$inject = ['$http', 'API_URL'];
 
-  function registerServiceFactory($scope, $http, API_URL) {
+  function registerServiceFactory($http, API_URL) {
     return {
       register: register
     }

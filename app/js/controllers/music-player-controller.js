@@ -28,10 +28,13 @@
       vm.setTrack($scope.currentIndexTrack);
     }
     function setTrack(index) {
-      //console.log(vm.trackAPI);
-      //vm.trackAPI.stop();
+      if (vm.trackAPI.currentState === 'play') {
+        vm.trackAPI.stop();
+      }
+      console.log(vm.trackAPI.sources);
       $scope.currentIndexTrack = index;
-      $scope.track = $scope.tracks[index];
+      $scope.track = [];
+      $scope.track.push($scope.tracks[index]);
       $timeout(
         vm.trackAPI.play.bind(vm.trackAPI)
       , 100);

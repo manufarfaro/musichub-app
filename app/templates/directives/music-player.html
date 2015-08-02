@@ -1,6 +1,6 @@
 <div class="row mh-media-player">
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <videogular vg-player-ready="vm.onPlayerReady($API)" vg-complete="vm.onCompleteTrack()" class="videogular-container audio">
+    <videogular vg-player-ready="vm.onPlayerReady($API)" vg-complete="vm.onCompleteTrack()" class="videogular-container audio" preload="auto">
       <vg-media vg-src="[tracks[currentIndexTrack]]" vg-type="audio"></vg-media>
       <vg-controls>
           <vg-play-pause-button></vg-play-pause-button>
@@ -8,6 +8,7 @@
           <vg-scrub-bar>
               <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
           </vg-scrub-bar>
+          <vg-time-display>{{ timeLeft | date:'mm:ss' }}</vg-time-display>
           <vg-volume>
             <vg-mute-button></vg-mute-button>
             <vg-volume-bar></vg-volume-bar>

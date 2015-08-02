@@ -5,31 +5,67 @@
         <h2 class="text-center">Registrate en Musichub</h2>
         <br />
         <alert-flash-messages></alert-flash-messages>
-        <form name="form" role="form" novalidate>
+        <form ng-submit="vm.register()" name="form" role="form">
           <div class="form-group">
             <label for="mh-whois">&iquest;Qu&eacute; sos?</label>
-            <select id="mh-whois" class="form-control input-lg">
-              <option value="0">Artista</option>
-              <option value="1">Lugar para Tocar</option>
+            <select id="mh-whois" ng-model="vm.user.user_type" class="form-control input-lg">
+              <option value="artist" selected="">Artista</option>
+              <option value="bar">Lugar para Tocar</option>
             </select>
           </div>
-          <div class="form-group">
+          <div class="form-group has-feedback">
+            <label for="mh-username">Nombre de Usuario</label>
+            <input
+              ng-model="vm.user.username"
+              type="text"
+              class="form-control input-lg"
+              id="username"
+              name="username"
+              placeholder="Usuario"
+              ng-model-options="{ debounce : { 'default' : 500 } }"
+              validate-username-available
+              ng-minlength=5
+              user-type="vm.user.user_type"
+              required
+            >
+            <span ng-if="form.username.$pending" style="font-size: 2em;" class="fa fa-circle-o-notch fa-spin form-control-feedback" aria-hidden="true"></span>
+            <span ng-if="form.username.$error.usernameAvailable" style="font-size: 2em; color: #ee5f5b;" class="fa fa-remove form-control-feedback" aria-hidden="true">
+            <span ng-if="form.username.$error.minLength" style="font-size: 2em; color: #ee5f5b;" class="fa fa-remove form-control-feedback" aria-hidden="true">
+            <span ng-if="form.username.$error.required" style="font-size: 2em; color: #ee5f5b;" class="fa fa-remove form-control-feedback" aria-hidden="true">
+          </div>
+          <div class="form-group has-feedback">
             <label for="mh-email">Email</label>
-            <input type="email" class="form-control input-lg" id="mh-email" placeholder="Email">
+            <input
+              ng-model="vm.user.email"
+              type="email"
+              class="form-control input-lg"
+              id="email"
+              name="email"
+              placeholder="Email"
+            >
+            <span ng-if="form.email.$error.email" style="font-size: 2em; color: #ee5f5b;" class="fa fa-remove form-control-feedback" aria-hidden="true">
+              <span ng-if="form.email.$error.required" style="font-size: 2em; color: #ee5f5b;" class="fa fa-remove form-control-feedback" aria-hidden="true">
           </div>
-          <div class="form-group">
-            <label for="mh-password">Password</label>
-            <input type="password" class="form-control input-lg" id="mh-password" placeholder="Password">
+          <div class="form-group has-feedback">
+            <label for="password">Password</label>
+            <input
+              ng-model="vm.user.password"
+              type="password"
+              class="form-control input-lg"
+              id="password"
+              name="password"
+              placeholder="Password"
+              required
+            >
+            <span ng-if="form.password.$error.required" style="font-size: 2em; color: #ee5f5b;" class="fa fa-remove form-control-feedback" aria-hidden="true">
           </div>
-          <div class="form-group">
-            <label for="mh-password-confirm">Confirmar Password</label>
-            <input type="password" class="form-control input-lg" id="mh-password-confirm" placeholder="Password">
-          </div>
-          <button type="submit" class="btn btn-success btn-block">&iexcl;Registrate!</button>
+          <button type="submit" ng-class="{'mh-stripped-button-loading': vm.dataLoading}" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-success btn-block">
+            &iexcl;Registrate!
+          </button>
         </form>
         <hr />
         <p class="text-right mh-auth-haveaccount">
-          &iquest;Ya ten&eacute;s una cuenta? <a href="#/login">Ingres&aacute;</a>
+          &iquest;Ya ten&eacute;s una cuenta? <a ui-sref="login">Ingres&aacute;</a>
         </p>
         <div class="mh-auth-quote">
           <blockquote>

@@ -22,22 +22,29 @@
       scope.tracks = [];
       scope.currentIndexTrack = 0;
       scope.track = [];
+      scope.onPlayerReady = onPlayerReady;
+
       scope.$watch('discs', function(discsData) {
         angular.forEach(scope.discs, function (discValue, discKey) {
           angular.forEach(discValue.tracks, function (trackValue, trackKey) {
             TrackService.get({id: trackValue.id}).$promise.then(function(track){
               track.disc = discValue;
-              track.src = $sce.trustAsResourceUrl('http://drive.google.com/uc?export=view&id=' + track.fileId);
-              track.type = 'audio/mpeg';
+              track.src = $sce.trustAsResourceUrl(track.url);
+              track.type = track.format;
               scope.tracks.push(track);
             });
           });
         });
       });
 
-      $timeout(function () {
+      scope.$watch('tracks', function(tracksData, tracksKey) {
         scope.track = [scope.tracks[0]];
-      }, 10);
+        console.log(scope.track);
+      });
+
+      function onPlayerReady(api) {
+        scope.trackAPI = api;
+      }
     }
   }
 })();
