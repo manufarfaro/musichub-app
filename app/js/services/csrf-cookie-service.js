@@ -2,10 +2,7 @@
   'use strict';
 
   angular.module('musicHub')
-    .provider("CsrfCookieService", csrfCookieService)
-      .config(configBlock);
-
-  configBlock.$inject = ['$httpProvider'];
+    .provider("CsrfCookieService", csrfCookieService);
 
   function csrfCookieService() {
     var vm = this;
@@ -26,8 +23,9 @@
     function get($cookies) {
       return {
         request: function(config) {
+
           if(vm.getAllowedMethods().indexOf(config.method) === -1) {
-            config.headers[vm.getHeaderName] = $cookies[vm.getCookieName];
+            config.headers[vm.getHeaderName()] = $cookies[vm.getCookieName()];
           }
           return config;
         }
@@ -57,10 +55,6 @@
     function setAllowedMethods(methods) {
       allowedMethods = methods;
     }
-  }
-
-  function configBlock($httpProvider) {
-    $httpProvider.interceptors.push('CsrfCookieService');
   }
 
 })();

@@ -12,20 +12,12 @@
       register: register
     }
 
-    function register() {
-      $http({
-        method: 'GET',
-        url: API_URL + '/users/register'
-      })
-      .success(registerSuccess)
-      .error(registerError);
-
-      function registerSuccess() {
-
-      }
-      function registerError() {
-
-      }
+    function register(user) {
+      return $http({
+        method: 'POST',
+        url: API_URL + '/users/register',
+        params: user
+      });
     }
   }
 
