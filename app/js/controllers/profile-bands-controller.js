@@ -33,9 +33,7 @@
         templateUrl: '../../templates/pages/profile/band-create-modal.html',
         controller: 'BandCreateController',
         controllerAs: 'vm',
-        resolve: {
-          
-        }
+        resolve: {}
       });
 
     }
