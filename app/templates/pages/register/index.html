@@ -55,8 +55,10 @@
               id="password"
               name="password"
               placeholder="Password"
+              ng-minlength=8
               required
             >
+            <span ng-if="form.password.$error.minlength" style="font-size: 2em; color: #ee5f5b;" class="fa fa-remove form-control-feedback" aria-hidden="true">
             <span ng-if="form.password.$error.required" style="font-size: 2em; color: #ee5f5b;" class="fa fa-remove form-control-feedback" aria-hidden="true">
           </div>
           <button type="submit" ng-class="{'mh-stripped-button-loading': vm.dataLoading}" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-success btn-block">
