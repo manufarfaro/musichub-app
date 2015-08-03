@@ -22,16 +22,17 @@
 
     function actualizar() {
       vm.dataLoading = true;
-      console.log($scope.me);
+      console.log(vm.profile);
       ProfileService
-        .putProfile($scope.me)
-        .$promise
+        .putProfile(vm.profile)
         .then(meSuccess, meFailure);
       function meSuccess(response) {
-        flash('success', 'Tus datos se guardaron correctamente.')
+        flash('success', 'Tus datos se guardaron correctamente.');
+        vm.dataLoading = false;
       }
       function meFailure(response) {
-        flash('danger', 'Ha ocurrido un error en la carga de datos. Intentá mas tarde...')
+        flash('danger', 'Ha ocurrido un error en la carga de datos. Intentá mas tarde...');
+        vm.dataLoading = false;
       }
     }
   }

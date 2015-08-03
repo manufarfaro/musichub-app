@@ -100,6 +100,26 @@
     	</div>
 
       <div class="form-group has-feedback">
+        <label for="slug" class="control-label">Slug</label>
+        <div class="input-group">
+          <span class="input-group-addon" id="mh-musichub-at">http://musichub.com.ar/b/</span>
+          <input
+
+            ng-model="vm.profile.slug"
+            type="text"
+            class="form-control"
+            id="slug"
+            name="slug"
+            placeholder="Slug"
+            ng-model-options="{ debounce : { 'default' : 500 } }"
+
+          >
+          <span ng-if="form.slug.$error.minLength" style="font-size: 2em; color: #ee5f5b;" class="fa fa-remove form-control-feedback" aria-hidden="true">
+          <span ng-if="form.slug.$error.required" style="font-size: 2em; color: #ee5f5b;" class="fa fa-remove form-control-feedback" aria-hidden="true">
+        </div>
+      </div>
+
+      <div class="form-group has-feedback">
       	<label for="phone" class="control-label">Tel&eacute;fono</label>
         <input
 
