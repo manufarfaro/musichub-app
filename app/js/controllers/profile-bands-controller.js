@@ -34,9 +34,7 @@
         controller: 'BandCreateController',
         controllerAs: 'vm',
         resolve: {
-          items: function () {
-            return $scope.items;
-          }
+          
         }
       });
 

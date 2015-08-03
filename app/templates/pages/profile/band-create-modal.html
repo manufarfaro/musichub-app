@@ -7,9 +7,48 @@
       <a ng-click="selected.item = item">{{ item }}</a>
     </li>
   </ul>
-  Selected: <b>{{ selected.item }}</b>
+<alert-flash-messages></alert-flash-messages>
+  <form ng-submit="vm.save()" name="form" role="form">
+
+    <div class="form-group has-feedback">
+      <label for="name" class="control-label">Nombre</label>
+      <input
+        ng-model="band.name"
+        type="text"
+        class="form-control"
+        id="name"
+        name="name"
+        placeholder="Nombre"
+        ng-model-options="{ debounce : { 'default' : 500 } }"
+        required
+      >
+      <span ng-if="form.name.$error.minLength" style="font-size: 2em; color: #ee5f5b;" class="fa fa-remove form-control-feedback" aria-hidden="true">
+      <span ng-if="form.name.$error.required" style="font-size: 2em; color: #ee5f5b;" class="fa fa-remove form-control-feedback" aria-hidden="true">
+    </div>
+
+    <div class="form-group has-feedback">
+      <label for="email" class="control-label">Email</label>
+      <input
+        ng-model="band.email"
+        type="text"
+        class="form-control"
+        id="email"
+        name="email"
+        placeholder="Email"
+        ng-model-options="{ debounce : { 'default' : 500 } }"
+        ng-minlength=8
+        required
+      >
+      <span ng-if="form.name.$error.minLength" style="font-size: 2em; color: #ee5f5b;" class="fa fa-remove form-control-feedback" aria-hidden="true">
+      <span ng-if="form.name.$error.required" style="font-size: 2em; color: #ee5f5b;" class="fa fa-remove form-control-feedback" aria-hidden="true">
+    </div>
+
+
+
 </div>
 <div class="modal-footer">
-  <button class="btn btn-success" ng-click="ok()">&iexcl;Crear!</button>
+
+  <button class="btn btn-success" type="submit" ng-class="{'mh-stripped-button-loading': vm.dataLoading}" ng-disabled="form.$invalid || vm.dataLoading" >&iexcl;Crear!</button>
   <button class="btn btn-danger" ng-click="$close()">Cancelar</button>
 </div>
+  </form>
