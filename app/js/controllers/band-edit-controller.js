@@ -8,11 +8,11 @@
 
   function bandEditController($scope, BandService, flash) {
     var vm = this;
+    $scope.band = {};
     vm.actualizate = actualizate;
     function actualizate() {
       vm.dataLoading = true;
-      console.log($scope.banda);
-      BandService.save($scope.banda).$promise.then(bandSuccess, bandFailure);
+      BandService.save($scope.band).$promise.then(bandSuccess, bandFailure);
       function bandSuccess(response) {
         flash('success', 'Tus datos se guardaron correctamente.');
         vm.dataLoading = false;
