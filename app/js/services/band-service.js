@@ -11,7 +11,7 @@
       API_URL + '/bands/:id',
       {},
       {
-        'update': { 
+        'update': {
           method:'PUT'
         }
       }

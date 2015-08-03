@@ -3,7 +3,7 @@
     <h1>MIS BANDAS +</h1>
     <owl-carousel class="owl-carousel mh-owl-carousel" data-options="{loop:false, autoHeight : false, margin:10, lazyLoad:true, nav:false, responsive:{ 0:{ items:3 }, 600:{ items:3 }, 1000:{ items:5 } } }">
       <div owl-carousel-item data-merge="" ng-repeat="band in vm.bands" class="item">
-        <a ng-click="vm.bandSelected = band.id" href="#">
+        <a ng-click="vm.bandSelected = band.id" style="cursor: pointer;">
           <img class="mh-me-avatar" gravatar-src="band.email" gravatar-size="300"/>
           <h4>{{band.name}}</h4>
         </a>

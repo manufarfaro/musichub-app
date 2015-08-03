@@ -2,7 +2,8 @@
   <div class="col-md-12 col-sm-12 center-block mh-me-legend">
     <h1>{{band.name}}</h1>
   </br>
-    <form novalidate>
+    <alert-flash-messages></alert-flash-messages>
+    <form  ng-submit="vm.actualizate()" name="form" role="form">
 
       <div class="form-group">
         <label for="inputEmail3" class="control-label">Avatar</label>
@@ -14,55 +15,132 @@
         </small>
     	</div>
 
-      <div class="form-group">
-        <label for="inputEmail3" class="control-label">Nombre</label>
-        <input type="text" class="form-control input-lg" ng-model="band.name" id="inputEmail3" placeholder="Nombre" required>
+      <div class="form-group has-feedback">
+        <label for="name" class="control-label">Nombre</label>
+        <input
+          ng-model="band.name"
+          type="text"
+          class="form-control"
+          id="name"
+          name="name"
+          placeholder="Nombre"
+          ng-model-options="{ debounce : { 'default' : 500 } }"
+        >
+        <span ng-if="form.name.$error.minLength" style="font-size: 2em; color: #ee5f5b;" class="fa fa-remove form-control-feedback" aria-hidden="true">
+        <span ng-if="form.name.$error.required" style="font-size: 2em; color: #ee5f5b;" class="fa fa-remove form-control-feedback" aria-hidden="true">
     	</div>
 
-      <div class="form-group">
+      <div class="form-group has-feedback">
     		<label for="email" class="control-label">Email</label>
-    		<input type="text" class="form-control input-lg" ng-model="band.email" id="email" placeholder="Email" required>
+        <input
+          ng-model="band.email"
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          placeholder="Email"
+          ng-model-options="{ debounce : { 'default' : 500 } }"
+        >
+        <span ng-if="form.email.$error.minLength" style="font-size: 2em; color: #ee5f5b;" class="fa fa-remove form-control-feedback" aria-hidden="true">
+        <span ng-if="form.email.$error.required" style="font-size: 2em; color: #ee5f5b;" class="fa fa-remove form-control-feedback" aria-hidden="true">
     	</div>
 
-      <div class="form-group">
-  			<label for="inputEmail3" class="control-label">Twitter</label>
+      <div class="form-group has-feedback">
+  			<label for="twitterId" class="control-label">Twitter</label>
         <div class="input-group">
           <span class="input-group-addon" id="mh-twitter-at">@</span>
-          <input type="text" pattern="^([_A-z0-9]){3,}$" ng-model="band.twitterId" maxlength="50" class="form-control input-lg" id="inputTwitter" placeholder="Twitter" required>
+          <input
+            ng-model="band.twitterId"
+            type="text"
+            class="form-control"
+            id="twitterId"
+            name="twitterId"
+            placeholder="Twitter"
+            ng-model-options="{ debounce : { 'default' : 500 } }"
+
+          >
+          <span ng-if="form.twitter.$error.minLength" style="font-size: 2em; color: #ee5f5b;" class="fa fa-remove form-control-feedback" aria-hidden="true">
+          <span ng-if="form.twitter.$error.required" style="font-size: 2em; color: #ee5f5b;" class="fa fa-remove form-control-feedback" aria-hidden="true">
         </div>
     	</div>
 
-      <div class="form-group">
-    		<label for="inputEmail3" class="control-label">Facebook</label>
+      <div class="form-group has-feedback">
+    		<label for="facebookId" class="control-label">Facebook</label>
         <div class="input-group">
           <span class="input-group-addon" id="mh-twitter-at">https://facebook.com/</span>
-    		  <input type="text" class="form-control input-lg" ng-model="band.facebookId" id="inputEmail3" placeholder="facebook" required>
+          <input
+            ng-model="band.facebookId"
+            type="text"
+            class="form-control"
+            id="facebookId"
+            name="facebookId"
+            placeholder="Facebook"
+            ng-model-options="{ debounce : { 'default' : 500 } }"
+
+          >
+          <span ng-if="form.facebook.$error.minLength" style="font-size: 2em; color: #ee5f5b;" class="fa fa-remove form-control-feedback" aria-hidden="true">
+          <span ng-if="form.facebook.$error.required" style="font-size: 2em; color: #ee5f5b;" class="fa fa-remove form-control-feedback" aria-hidden="true">
         </div>
     	</div>
 
-      <div class="form-group">
-    		<label for="inputEmail3" class="control-label">g+</label>
+      <div class="form-group has-feedback">
+    		<label for="googlePlusId" class="control-label">g+</label>
         <div class="input-group">
           <span class="input-group-addon" id="mh-google-plus-at">http://plus.google.com/</span>
-    		  <input type="text" class="form-control input-lg" id="inputEmail3" ng-model="band.googlePlusId" placeholder="google" required>
+          <input
+            ng-model="band.googlePlusId"
+            type="text"
+            class="form-control"
+            id="googlePlusId"
+            name="googlePlusId"
+            placeholder="Google"
+            ng-model-options="{ debounce : { 'default' : 500 } }"
+
+          >
+          <span ng-if="form.google.$error.minLength" style="font-size: 2em; color: #ee5f5b;" class="fa fa-remove form-control-feedback" aria-hidden="true">
+          <span ng-if="form.google.$error.required" style="font-size: 2em; color: #ee5f5b;" class="fa fa-remove form-control-feedback" aria-hidden="true">
         </div>
     	</div>
 
-      <div class="form-group">
-      	<label for="inputEmail3" class="control-label">Slug</label>
+      <div class="form-group has-feedback">
+      	<label for="slug" class="control-label">Slug</label>
         <div class="input-group">
           <span class="input-group-addon" id="mh-musichub-at">http://musichub.com.ar/b/</span>
-    		  <input type="text"  pattern="^([_A-z0-9]){3,36}$" class="form-control input-lg" id="slug" ng-model="band.slug" placeholder="Slug" required>
+          <input
+
+            ng-model="band.slug"
+            type="text"
+            class="form-control"
+            id="slug"
+            name="slug"
+            placeholder="Slug"
+            ng-model-options="{ debounce : { 'default' : 500 } }"
+
+          >
+          <span ng-if="form.slug.$error.minLength" style="font-size: 2em; color: #ee5f5b;" class="fa fa-remove form-control-feedback" aria-hidden="true">
+          <span ng-if="form.slug.$error.required" style="font-size: 2em; color: #ee5f5b;" class="fa fa-remove form-control-feedback" aria-hidden="true">
         </div>
     	</div>
 
-      <div class="form-group">
+      <div class="form-group has-feedback">
   			<label for="bio" class="control-label">Bio</label>
-    		<textarea class="form-control" rows="3" id="bio" ng-model="band.bio" placeholder="bio" required></textarea>
+    		<textarea
+        class="form-control"
+        rows="3"
+        id="bio"
+        name="bio"
+        ng-model="band.bio"
+        ng-model-options="{ debounce : { 'default' : 500 } }"
+        placeholder="bio">
+      </textarea>
+      <span ng-if="form.bio.$error.minLength" style="font-size: 2em; color: #ee5f5b;" class="fa fa-remove form-control-feedback" aria-hidden="true">
+      <span ng-if="form.bio.$error.required" style="font-size: 2em; color: #ee5f5b;" class="fa fa-remove form-control-feedback" aria-hidden="true">
     	</div>
 
       <div class="form-group">
-        <button type="submit" class="btn btn-success btn-block">&iexcl;Actualizar!</button>
+        <button type="submit" ng-class="{'mh-stripped-button-loading': vm.dataLoading}" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-success btn-block">
+          &iexcl;Actualizar!
+        </button>
       </div>
     </form>
   </div>

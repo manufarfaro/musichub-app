@@ -4,9 +4,11 @@
   angular.module('musicHub')
     .directive('postulateHomeSearch', postulateHomeSearch);
 
-  postulateHomeSearch.$inject = [];
+  postulateHomeSearch.$inject = ['$modal'];
 
-  function postulateHomeSearch() {
+  function postulateHomeSearch($modal) {
+
+
     return {
       restrict: 'EA',
       replace: 'true',
@@ -17,6 +19,23 @@
       link: linkFunction,
       bindToController: true
     }
+
     function linkFunction(scope, element, attrs) {}
+
+    function openPostulate() {
+      console.log('open modal');
+      var modalInstance = $modal.open({
+        templateUrl: 'templates/directives/home-postulate-modal.html',
+        controller: 'PostulateHomeSearchController',
+        controllerAs: 'vm',
+        resolve: {
+          items: function () {
+            return $scope.items;
+          }
+        }
+      });
+
+    }
+
   }
 })();

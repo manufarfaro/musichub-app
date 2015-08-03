@@ -1,21 +1,43 @@
 <section class="row mh-me-box mh-ribbon-success">
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 center-block mh-me-legend">
     <h1>CREAR POSTULACI&Oacute;N +</h1>
-    <form role="form" novalidate>
-      <div class="form-group">
-        <label for="mh-me-titulo-postulacion">Titulo</label>
-        <input type="text" class="form-control" id="mh-me-titulo-postulacion" placeholder="Titulo">
+    <form ng-submit="vm.create()" name="form" role="form">
+      <div class="form-group has-feedback">
+        <label for="title">Titulo</label>
+        <input
+          ng-model="vm.propousal.title"
+          type="text"
+          class="form-control"
+          id="title"
+          name="title"
+          placeholder="Titulo"
+          ng-model-options="{ debounce : { 'default' : 500 } }"
+          ng-minlength=5
+          required
+        >
+        <span ng-if="form.title.$error.minLength" style="font-size: 2em; color: #ee5f5b;" class="fa fa-remove form-control-feedback" aria-hidden="true">
+        <span ng-if="form.title.$error.required" style="font-size: 2em; color: #ee5f5b;" class="fa fa-remove form-control-feedback" aria-hidden="true">
+      </div>
+      <div class="form-group has-feedback">
+        <label for="text">Descripcion</label>
+        <input
+          ng-model="vm.propousal.text"
+          type="text"
+          class="form-control"
+          id="text"
+          name="text"
+          placeholder="Descripción"
+          ng-model-options="{ debounce : { 'default' : 500 } }"
+          ng-minlength=5
+          required
+        >
+        <span ng-if="form.text.$error.minLength" style="font-size: 2em; color: #ee5f5b;" class="fa fa-remove form-control-feedback" aria-hidden="true">
+        <span ng-if="form.text.$error.required" style="font-size: 2em; color: #ee5f5b;" class="fa fa-remove form-control-feedback" aria-hidden="true">
       </div>
       <div class="form-group">
-        <label for="mh-me-datetime-postulacion">Fecha</label>
-        <input type="datetime" class="form-control" id="mh-me-datetime-postulacion" placeholder="datetime">
-      </div>
-      <div class="form-group">
-        <label for="mh-me-descripcion-postulacion">Descripcion</label>
-        <input type="text" class="form-control" id="mh-me-descripcion-postulacion" placeholder="Descripcion">
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-success btn-block">&iexcl;Crear!</button>
+        <button type="submit" ng-class="{'mh-stripped-button-loading': vm.dataLoading}" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-success btn-block">
+          &iexcl;Crear!
+        </button>
       </div>
     </form>
   </div>

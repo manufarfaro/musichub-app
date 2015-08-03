@@ -11,13 +11,22 @@
       postulations: getPostulations,
       bands: getBands,
       postulated: getPostulated,
-      profile: getProfile
+      profile: getProfile,
+      putProfile: putProfile
     };
 
     function getProfile() {
       return $http({
         method: 'GET',
         url: API_URL + '/profile'
+      });
+    }
+
+    function putProfile(user) {
+      return $http({
+        method: 'PUT',
+        url: API_URL + '/profile',
+        params: user
       });
     }
 

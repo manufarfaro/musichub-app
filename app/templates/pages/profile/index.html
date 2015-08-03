@@ -7,75 +7,154 @@
       </small>
     </h1>
     <hr />
-    <form novalidate>
-      <div class="form-group">
+    <alert-flash-messages></alert-flash-messages>
+    <form ng-submit="vm.actualizar()" name="form" role="form">
+      <div class="form-group has-feedback">
         <label for="name" class="control-label">Nombre</label>
-        <input type="text" class="form-control input-lg" id="name" ng-model="vm.profile.name" placeholder="Nombre" required>
+        <input
+          ng-model="vm.profile.name"
+          type="text"
+          class="form-control"
+          id="name"
+          name="name"
+          placeholder="Nombre"
+          ng-model-options="{ debounce : { 'default' : 500 } }"
+        >
     	</div>
 
-      <div class="form-group">
-        <label for="name" class="control-label">Apellido</label>
-        <input type="text" class="form-control input-lg" id="name" ng-model="vm.profile.lastname" placeholder="Apellido" required>
+      <div class="form-group has-feedback">
+        <label for="lastname" class="control-label">Apellido</label>
+        <input
+          ng-model="vm.profile.lastname"
+          type="text"
+          class="form-control"
+          id="lastname"
+          name="lastname"
+          placeholder="Apellido"
+          ng-model-options="{ debounce : { 'default' : 500 } }"
+        >
     	</div>
 
-      <div class="form-group">
+      <div class="form-group has-feedback">
     		<label for="gender" class="control-label">G&eacute;nero</label>
-    		<input type="text" class="form-control input-lg" ng-model="vm.profile.gender" id="gender" placeholder="Género" required>
+        <input
+          ng-model="vm.profile.gender"
+          type="text"
+          class="form-control"
+          id="gender"
+          name="gender"
+          placeholder="Genero"
+          ng-model-options="{ debounce : { 'default' : 500 } }"
+        >
     	</div>
 
-      <div class="form-group">
-  			<label for="inputEmail3" class="control-label">Twitter</label>
+      <div class="form-group has-feedback">
+  			<label for="twitterId" class="control-label">Twitter</label>
         <div class="input-group">
           <span class="input-group-addon" id="mh-twitter-at">@</span>
-          <input type="text" pattern="^([_A-z0-9]){3,}$" ng-model="band.twitterId" maxlength="50" class="form-control input-lg" id="inputTwitter" placeholder="Twitter" required>
+          <input
+            ng-model="vm.profile.twitterId"
+            type="text"
+            class="form-control"
+            id="twitterId"
+            name="twitterId"
+            placeholder="Twitter"
+            ng-model-options="{ debounce : { 'default' : 500 } }"
+
+          >
         </div>
     	</div>
 
-      <div class="form-group">
+      <div class="form-group has-feedback">
     		<label for="facebook" class="control-label">Facebook</label>
         <div class="input-group">
           <span class="input-group-addon" id="mh-facebook-at">https://facebook.com/</span>
-    		  <input type="text" class="form-control input-lg" ng-model="vm.profile.facebookId" id="facebook" placeholder="Facebook" required>
+          <input
+            ng-model="vm.profile.facebookId"
+            type="text"
+            class="form-control"
+            id="facebook"
+            name="facebook"
+            placeholder="Facebook"
+            ng-model-options="{ debounce : { 'default' : 500 } }"
+
+          >
         </div>
     	</div>
 
-      <div class="form-group">
+      <div class="form-group has-feedback">
     		<label for="google-plus" class="control-label">g+</label>
         <div class="input-group">
           <span class="input-group-addon" id="mh-google-plus-at">http://plus.google.com/</span>
-    		  <input type="text" class="form-control input-lg" id="google-plus" ng-model="vm.profile.googlePlusId" placeholder="Google Plus Id" required>
+          <input
+            ng-model="vm.profile.googlePlusId"
+            type="text"
+            class="form-control"
+            id="google-plus"
+            name="google-plus"
+            placeholder="Ggoogle"
+            ng-model-options="{ debounce : { 'default' : 500 } }"
+
+          >
         </div>
     	</div>
 
-      <div class="form-group">
+      <div class="form-group has-feedback">
       	<label for="phone" class="control-label">Tel&eacute;fono</label>
-    		<input type="text" ng-model="vm.profile.phone"  pattern="[0-9]*" class="form-control input-lg" id="phone" placeholder="Teléfono" required>
+        <input
+
+          ng-model="vm.profile.phone"
+          type="text"
+          class="form-control"
+          id="phone"
+          name="phone"
+          placeholder="Teléfono"
+          ng-model-options="{ debounce : { 'default' : 500 } }"
+        >
     	</div>
 
-      <div class="form-group">
+      <div class="form-group has-feedback">
         <label for="region" class="control-label">Ciudad</label>
-        <country-select class="input-lg" region="vm.profile.region"></country-select>
+        <country-select
+          class="form-control"
+          region="vm.profile.region"
+          id="phone"
+          name="phone">
+        </country-select>
       </div>
 
-      <div class="form-group">
-				<label for="inputEmail3" class="control-label">Fecha de nacimiento</label>
+      <div class="form-group has-feedback">
+				<label for="birthdate" class="control-label">Fecha de nacimiento</label>
         <div class="input-group">
-          <span class="input-group-btn">
-            <button type="button" class="btn btn-default btn-lg" ng-click="open($event)">
-              <i class="fa fa-calendar"></i>
-            </button>
-          </span>
-          <input type="text" ng-model="vm.profile.birthdate" class="form-control input-lg" id="inputEmail3" datepicker-popup placeholder="Fecha de Nacimiento" required disabled>
+          <input
+            ng-model="vm.profile.birthdate"
+            type="text"
+            class="form-control"
+            id="birthdate"
+            name="birthdate"
+            placeholder="DD-MM-AAAA"
+            ng-model-options="{ debounce : { 'default' : 500 } }"
+          >
         </div>
     	</div>
 
-      <div class="form-group">
+      <div class="form-group has-feedback">
   			<label for="bio" class="control-label">Bio</label>
-    		<textarea ng-model="vm.profile.bio" class="form-control" rows="3" id="bio"  placeholder="Bio" required style="resize: vertical;"></textarea>
+    		<textarea
+          ng-model="vm.profile.bio"
+          class="form-control"
+          rows="3"
+          id="bio"
+          name="bio"
+          placeholder="Bio"
+          required style="resize: vertical;">
+        </textarea>
     	</div>
 
       <div class="form-group">
-        <button type="submit" class="btn btn-success btn-block">&iexcl;Actualizar!</button>
+        <button type="submit" ng-class="{'mh-stripped-button-loading': vm.dataLoading}" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-success btn-block">
+          &iexcl;Actualizar!
+        </button>
       </div>
 
     </form>

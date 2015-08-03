@@ -26,12 +26,14 @@
         }
         scope.band = BandService.get({id:newValue})
       });
+      function bandQuerySuccess(response) {
+        scope.band = response;
+      }
+      function bandQueryError(response) {
+        scope.band = null;
+      }
+
     }
-    function bandQuerySuccess(response) {
-      scope.band = response;
-    }
-    function bandQueryError(response) {
-      scope.band = null;
-    }
+
   }
 })();

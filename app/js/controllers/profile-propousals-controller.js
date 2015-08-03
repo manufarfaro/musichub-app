@@ -4,16 +4,18 @@
   angular.module('musicHub')
     .controller('ProfilePropousalsController', profilePropousalsController);
 
-  profilePropousalsController.$inject = ['$scope', '$http', 'ProfileService', 'AuthenticationService', '$rootScope', '$state', 'flash'];
+  profilePropousalsController.$inject = ['$scope', 'PostulateService', 'ProfileService', 'AuthenticationService', '$rootScope', '$state', 'flash', '$window'];
 
-  function profilePropousalsController($scope, $http, ProfileService, AuthenticationService, $rootScope, $state, flash) {
+  function profilePropousalsController($scope, PostulateService, ProfileService, AuthenticationService, $rootScope, $state, flash, $window) {
     var vm = this;
+    vm.propousal = create;
+    vm.propousal = {};
+    vm.create = create;
     AuthenticationService.checkIsLoggedIn();
     ProfileService
       .postulations()
       .success(profilePropousalsSuccess)
       .error(profilePropousalsError);
-
     ProfileService
       .postulated()
       .success(profilePostulatedSuccess)
@@ -32,6 +34,7 @@
         });
         vm.propousals = response;
       }
+
       function profilePostulatedSuccess(response) {
         vm.postulateds = response;
       }
@@ -50,6 +53,13 @@
           flash('danger', 'Su sesión ha expirado.');
           $state.go('login');
         }
+      }
+
+      function create() {
+        vm.dataLoading = true;
+        console.log(vm.propousal);
+        PostulateService.save(vm.propousal);
+        $window.location.reload();
       }
   }
 })();
