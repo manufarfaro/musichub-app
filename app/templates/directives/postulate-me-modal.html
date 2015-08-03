@@ -1,0 +1,23 @@
+<div class="modal-header">
+  <h3 class="">Seleccioná a quien querés postular:</h3>
+</div>
+<div class="modal-body">
+  <ul>
+    <li>
+      {{vm.modalData.artist.name}}
+      {{vm.modalData.artist.lastname}}
+      <small>
+        <a class="btn btn-danger btn-xs" style="cursor: pointer;" ng-click="vm.doPostulate(vm.modalData.artist, vm.modalData.postulation.id)">Postulate</a>
+      </small>
+    </li>
+    <li ng-repeat="band in vm.modalData.bands">
+      {{band[0].name}}
+      <small>
+        <a class="btn btn-danger btn-xs" ng-click="vm.doPostulate(band[0], vm.modalData.postulation.id)">Postulate</a>
+      </small>
+    </li>
+  </ul>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-danger" ng-click="$close()">Cerrar</button>
+</div>

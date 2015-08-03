@@ -13,6 +13,10 @@
       {
         'update': {
           method:'PUT'
+        },
+        'postulate': {
+          method: 'POST',
+          url: API_URL + '/bands/:band_id/postulates/:postulate_id/postulate'
         }
       }
     );

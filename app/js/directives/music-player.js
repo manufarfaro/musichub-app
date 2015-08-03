@@ -39,7 +39,6 @@
 
       scope.$watch('tracks', function(tracksData, tracksKey) {
         scope.track = [scope.tracks[0]];
-        console.log(scope.track);
       });
 
       function onPlayerReady(api) {

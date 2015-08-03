@@ -13,6 +13,13 @@
       {
         'update': {
           method:'PUT'
+        },
+        'postulate': {
+          method: 'POST',
+          url: API_URL + '/postulates/:id/postulate',
+          params: {
+            id : '@id'
+          }
         }
       }
     );

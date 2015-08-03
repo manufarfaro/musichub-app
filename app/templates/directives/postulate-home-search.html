@@ -22,11 +22,7 @@
             <h4>
               <i class="fa fa-music"></i>
               {{item.title}}
-              <small>
-                <a class="btn btn-danger btn-xs" ng-click="postulateHomeSearch()" href="#">
-                  Postulate +
-                </a>
-              <small>
+              <postulate-me postulation="item"></postulate-me>
             </h4>
             <p>{{item.text}}</p>
             <h6>
