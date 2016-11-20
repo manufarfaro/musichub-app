@@ -25,7 +25,7 @@
     "grunt-contrib-concat": "~0.5.1"
   },
   "scripts": {
-    "postinstall": "bower install",
+    "postinstall": "bower install && grunt build",
     "prestart": "npm install",
     "start": "node app.js",
     "pretest": "npm install",
